@@ -1,0 +1,1071 @@
+{
+    "common": {
+        "name": "Brandsafety Admicro",
+        "domain": "brandsafety.service.vn",
+        "home": "Trang chủ",
+        "loading": "Đang tải dữ liệu...",
+        "support": "Trợ giúp",
+        "docs": "Tài liệu",
+        "dataNotFound": "Không có dữ liệu hiển thị trong chế độ này.",
+        "placeholder": "Từ khóa...",
+        "confirm": "Xác nhận",
+        "confirmMessage": "Bạn có chắc chắn thực hiện hành động này!",
+        "sequence": "#",
+        "viewAll": "Xem tất cả",
+        "viewDetail": "Xem chi tiết",
+        "clickToEdit": "Click để sửa thông tin",
+        "noResult": "No Result!",
+        "websApps": "Webs, Apps",
+        "columnList": "Danh sách cột hiển thị",
+        "noData": "Không có dữ liệu",
+        "admicroTool": "Admicro Tool",
+        "frontEndAdtech": " - Frontend Adtech",
+        "export": "Tải xuống",
+        "male": "Nam giới",
+        "female": "Nữ giới",
+        "languages": {
+            "vi": "Tiếng Việt",
+            "en": "English"
+        },
+        "search": {
+            "button": "Tìm kiếm",
+            "placeHolder": "Nhập từ khóa cần tìm kiếm...",
+            "keyword": "Từ khóa",
+            "searchAllWithKeyword": "Đang tìm kiếm segment với từ khóa \"<strong>{{ keyword }}</strong>\"",
+            "searchHeader": "Nhập tên, ID audience để tìm kiếm..."
+        },
+        "button": {
+            "search": "Tìm kiếm",
+            "delete": "Xóa",
+            "cancel": "Hủy bỏ",
+            "edit": "Chỉnh sửa",
+            "detail": "Chi tiết",
+            "ok": "Đồng ý",
+            "save": "Lưu lại",
+            "returnToDashboard": "Trở về trang chủ",
+            "downloadExcel": "Tải file excel",
+            "report": "Báo cáo",
+            "send": "Gửi",
+            "viewAll": "Xem tất cả",
+            "disable": "Vô hiệu hóa",
+            "register": "Đăng ký",
+            "info": "Thông tin",
+            "create": "Tạo",
+            "update": "Cập nhật",
+            "export": "Tải dữ liệu",
+            "analytic": "Phân tích",
+            "assign": "Assign",
+            "share": "Chia sẻ",
+            "history": "Lịch sử",
+            "close": "Đóng",
+            "copy": "Sao chép",
+            "subscribe": "Theo dõi",
+            "clear": "Xóa bộ lọc",
+            "settings": "Cài đặt",
+            "getData": "Lấy dữ liệu"
+        },
+        "notify": {
+            "success": {
+                "title": "Thông báo",
+                "message": "Đã cập nhật dữ liệu thành công!"
+            },
+            "error": {
+                "title": "Cảnh báo",
+                "message": "Có lỗi xảy ra trong quá trình xử lý dữ liệu!",
+                "messageAccessDeny": "Quyền truy cập bị từ chối, vui lòng kiểm tra lại!",
+                "chooseFail": "Vị trí không được chọn do không có cùng số lượng chia sẻ"
+            },
+            "createSuccess": {
+                "title": "Thông báo",
+                "message": "Dữ liệu được tạo thành công!"
+            },
+            "updateSuccess": {
+                "title": "Thông báo",
+                "message": "Cập nhật thông tin thành công!"
+            },
+            "deleteSuccess": {
+                "title": "Thông báo",
+                "message": "Xóa thông tin thành công!"
+            },
+            "copy": {
+                "title": "Thông báo",
+                "message": "Sao chép dữ liệu thành công!"
+            }
+        },
+        "paginator": {
+            "itemsPerPageLabel": "Hiển thị",
+            "nextPage": "Trang sau",
+            "previousPage": "Trang trước",
+            "firstPage": "Trang đầu",
+            "lastPage": "Trang cuối",
+            "ofLabel": "của",
+            "pageNumber": "Số trang",
+            "perPages": "/"
+        },
+        "datePicker": {
+            "applyLabel": "Áp dụng",
+            "cancelLabel": "Hủy",
+            "customRangeLabel": "Tùy chỉnh",
+            "today": "Hôm nay",
+            "yesterday": "Hôm qua",
+            "7daysAgo": "7 ngày trước",
+            "30daysAgo": "30 ngày trước",
+            "thisMonth": "Tháng này",
+            "lastMonth": "Tháng trước",
+            "threeMonth": "Ba tháng",
+            "days": {
+                "monday": "T2",
+                "tuesday": "T3",
+                "wednesday": "T4",
+                "thursday": "T5",
+                "friday": "T6",
+                "saturday": "T7",
+                "sunday": "CN"
+            },
+            "months": {
+                "january": "Tháng 1",
+                "february": "Tháng 2",
+                "march": "Tháng 3",
+                "april": "Tháng 4",
+                "may": "Tháng 5",
+                "june": "Tháng 6",
+                "july": "Tháng 7",
+                "august": "Tháng 8",
+                "september": "Tháng 9",
+                "october": "Tháng 10",
+                "november": "Tháng 11",
+                "december": "Tháng 12"
+            }
+        },
+        "dualListBox": {
+            "addBtn": ">",
+            "addAllBtn": ">>",
+            "removeBtn": "<",
+            "removeAllBtn": "<<"
+        },
+        "validator": {
+            "notHtmlTag": "Đầu vào không được chứa thẻ HTML!",
+            "excessSpace": "Đầu vào không được chứa khoảng trắng dư thừa!"
+        },
+        "table": {
+            "settingColumnDescription": "Bạn có thể bật/tắt để hiển thị trường dữ liệu hoặc di chuyển để thay đổi vị trí giữa các trường thông tin"
+        },
+        "listApp": {
+            "title": "Danh sách Apps",
+            "contentInsight": {
+                "name": "Content Insight",
+                "description": "Nền tảng quản lý dữ liệu, phân tích nội dung nhằm nhắm mục tiêu hiệu quả cho các chiến dịch quảng cáo."
+            },
+            "brandsafety": {
+                "name": "Brandsafety",
+                "description": "Nền tảng quản lý dữ liệu, giúp phân tích nội dung để nhắm, loại bỏ mục tiêu trong chiến dịch quảng cáo."
+            },
+            "dmp": {
+                "name": "Data management platform",
+                "description": "Nền tảng thu thập và quản lý dữ liệu, phân khúc đối tượng và nhắm mục tiêu trong các chiến dịch quảng cáo."
+            },
+            "inventoryTrading": {
+                "name": "Inventory-trading",
+                "description": "Nền tảng báo cáo, thống kê dữ liệu, booking, quản lý inventory cho hệ thống Ads của Admicro."
+            }
+        }
+    },
+    "breadcrumbs": {
+        "home": "Trang chủ",
+        "admin": "Quản trị"
+    },
+    "sideBar": {
+        "home": "Trang chủ",
+        "admin": "Quản trị",
+        "users": "Người dùng",
+        "apps": "Quản lý App",
+        "roles": "Roles",
+        "routes": "Routes",
+        "permissions": "Permissions",
+        "showHideSidebar": "Ẩn / Hiện",
+        "logAction": "Action Logs",
+        "adminTool": "Admin BS",
+        "keywords": "Quản lý từ khóa",
+        "brandSafety": {
+            "audience": {
+                "name": "Audiences"
+            },
+            "keyword": {
+                "name": "Từ khóa"
+            },
+            "segment": {
+                "title": "Segments",
+                "manage": "Manage",
+                "listBanner": "Get List Banner"
+            },
+            "zoneMapping": "Zone mapping",
+            "analytics": "Thống kê từ khóa",
+            "assignBannerManage": "Assign Banner Manage",
+            "assignAudienceManage": "Assign Audience Manage",
+            "getBanner": "Get Banner",
+            "getUrl": "Get Url",
+            "getTopic": "Get Topic"
+        }
+    },
+    "modules": {
+        "admin": {
+            "common": {
+                "name": "Quản trị hệ thống",
+                "featureFlag": "Tính năng được mở"
+            },
+            "role": {
+                "common": {
+                    "notSet": "-- Không cho phép truy cập --",
+                    "title": "Roles",
+                    "id": "Id",
+                    "name": "Tên role",
+                    "description": "Mô tả",
+                    "roleName": "Tên role...",
+                    "roleDescription": "Mô tả...",
+                    "createRole": "Tạo Role",
+                    "createNewRole": "Khởi tạo Role mới",
+                    "roleInfo": "Thông tin Role",
+                    "status": "Trạng thái",
+                    "status0": "Không hoạt động",
+                    "status1": "Hoạt động",
+                    "permission": "Phân quyền",
+                    "permissionLocked": "Khoá phân quyền",
+                    "permissionLocked0": "Không khoá",
+                    "permissionLocked1": "Khoá",
+                    "nameExists": "Role đã tồn tại",
+                    "switchUser": "Chuyển tài khoản"
+                },
+                "breadcrumbs": {
+                    "name": "Role",
+                    "search": "Quản lý role",
+                    "searchDescription": "Xem danh sách, chỉnh sửa thông tin của các role trong hệ thống"
+                },
+                "validatedErrors": {
+                    "nameExist": "Name đã tồn tại trên hệ thống!",
+                    "required": "Tên role không được để trống!",
+                    "maxLength": "Tên role vượt quá giới hạn ký tự!",
+                    "minLength": "Tên role độ dài tối thiểu chưa đủ!"
+                }
+            },
+            "user": {
+                "common": {
+                    "selectAllRole": "-- Tất cả các role --",
+                    "selectAllStatus": "-- Tất cả trạng thái --",
+                    "title": "Users",
+                    "id": "ID",
+                    "username": "Tên tài khoản",
+                    "email": "Email",
+                    "source_limit": "Số lượng source giới hạn",
+                    "fullName": "Tên liên hệ",
+                    "role": "Role",
+                    "status": "Trạng thái",
+                    "status-1": "Vô hiệu hóa",
+                    "status0": "Không hoạt động",
+                    "status1": "Hoạt động",
+                    "newPassword": "Mật khẩu mới",
+                    "newPasswordConfirm": "Xác nhận mật khẩu mới",
+                    "createUser": "Khởi tạo người dùng",
+                    "createNewUser": "Khởi tạo người dùng mới",
+                    "userInfo": "Thông tin người dùng",
+                    "generatePassword": "Tạo mật khẩu",
+                    "roleName": "Tên Role",
+                    "userGroup": "Tệp người dùng app",
+                    "userGroupPlaceHolder": "Chọn tệp người dùng cho app",
+                    "allow": "Cho phép",
+                    "allow1": "Cho phép",
+                    "name": "Tên",
+                    "action": "Hành động",
+                    "allStatus": "-- Tất cả trạng thái --",
+                    "allRoles": "-- Tất cả quyền --",
+                    "search": "Tìm kiếm",
+                    "noData": "Không có dữ liệu hiển thị trong chế độ này",
+                    "google2faSecret": "Google Authenticator Secret",
+                    "firstName": "Họ",
+                    "lastName": "Tên",
+                    "apps": "Apps",
+                    "selectApps": "Chọn Apps",
+                    "selectAllApps": "Tất cả các Apps",
+                    "password": "Mật khẩu",
+                    "confirmPassword": "Xác nhận mật khẩu",
+                    "phone": "Số điện thoại",
+                    "telegramId": "Telegram ID",
+                    "searchKeywordPlaceholder": "Nhập tên, user ID hoặc email...",
+                    "createdTime": "Thời gian tạo",
+                    "userId": "User ID",
+                    "roleNotExist": "Chưa được gán quyền",
+                    "noteInfo": "Mở telegram, tìm bot @brandsafety_bot hoặc click <a href='{{ url }}' target='_blank'>Tại đây</a> để lấy Telegram ID"
+                },
+                "validatedErrors": {
+                    "passwordRequired": "Mật khẩu không được để rỗng!",
+                    "passwordMinLength": "Độ dài tối thiểu của mật khẩu là 6!",
+                    "passwordMatch": "Mật khẩu không khớp!",
+                    "emailRequired": "Email không được để rỗng!",
+                    "emailInvalid": "Email không hợp lệ!",
+                    "firstNameRequired": "Họ không được để rỗng!",
+                    "lastNameRequired": "Tên không được để rỗng!",
+                    "roleRequired": "Role không được để rỗng!",
+                    "firstNameMinLength": "Độ dài tối thiểu của họ là 2 kí tự!",
+                    "firstNameMaxLength": "Độ dài tối đa của họ là 50 kí tự!",
+                    "lastNameMinLength": "Độ dài tối thiểu của tên là 2 kí tự!",
+                    "lastNameMaxLength": "Độ dài tối đa của tên là 50 kí tự!",
+                    "domainsRequired": "Apps không được để rỗng!",
+                    "phoneInvalid": "Số điện thoại không hợp lệ!",
+                    "telegramIdNumber": "Telegram ID phải là số.",
+                    "currentPassword": {
+                        "required": "Mật khẩu hiện tại không được để rỗng!"
+                    },
+                    "newPassword": {
+                        "required": "Mật khẩu mới không được để rỗng!",
+                        "pattern": "Mật khẩu phải từ 6 - 30 kí tự, chứa ít nhất 1 chữ số, 1 chữ cái viết hoa, 1 kí tự đặc biệt!"
+                    },
+                    "confirmPassword": {
+                        "required": "Xác nhận mật khẩu không được để rỗng!",
+                        "notMatch": "Mật khẩu không trùng khớp!"
+                    }
+                },
+                "breadcrumbs": {
+                    "name": "Thành viên",
+                    "search": "Quản lý thành viên",
+                    "searchDescription": "Xem danh sách, chỉnh sửa thông tin của các thành viên trong hệ thống",
+                    "description": "Xem danh sách thông tin thành viên trong hệ thống."
+                },
+                "notify": {
+                    "createUserSuccess": "Tạo người dùng mới thành công",
+                    "createUserFailed": "Tạo người dùng mới thất bại",
+                    "accountExist": "Tài khoản đã tồn tại",
+                    "error": "Có lỗi xảy ra trong quá trình xử lý dữ liệu!"
+                }
+            },
+            "route": {
+                "common": {
+                    "title": "Routes",
+                    "name": "Tên",
+                    "groupName": "Nhóm",
+                    "route": "Route",
+                    "uri": "URI",
+                    "method": "Phương thức",
+                    "package": "Package",
+                    "controller": "Controller",
+                    "middleware": "Middleware",
+                    "allow": "Cho phép",
+                    "sync": "Đồng bộ",
+                    "namePlaceHolder": "Nhập tên route",
+                    "routePlaceHolder": "Nhập route",
+                    "groupNamePlaceHolder": "Nhập tên group (ký tự alphabet)"
+                },
+                "breadcrumbs": {
+                    "name": "Route",
+                    "search": "Quản lý route",
+                    "searchDescription": "Xem danh sách, thông tin của các route trong hệ thống"
+                }
+            },
+            "permission": {
+                "common": {
+                    "userInfo": "Thông tin User",
+                    "roleInfo": "Thông tin Role",
+                    "allRoutes": "Tất cả Routes",
+                    "assignToUser": "Phân quyền cho thành viên \"{{ username }}\"",
+                    "assignToRole": "Phân quyền cho role \"{{ roleName }}\"",
+                    "allowRoutes": "Routes được quyền truy cập",
+                    "denyRoutes": "Routes bị cấm truy cập",
+                    "extra": "Quyền bổ sung"
+                }
+            },
+            "actionLog": {
+                "common": {
+                    "userInfo": "Thông tin người dùng",
+                    "name": "Action logs",
+                    "namePlaceHolder": "Action logs ghi lại các thao tác với dữ liệu của người dùng.",
+                    "breadcrumb": "Action Logs",
+                    "userName": "Tên người dùng",
+                    "action": "Hoạt động",
+                    "module": "Module",
+                    "route": "Đường dẫn",
+                    "fullName":"Họ tên",
+                    "body": "Body",
+                    "account": "Account",
+                    "oldBody": "Old body",
+                    "param": "Params",
+                    "ip": "IP",
+                    "originalUser": "User gốc",
+                    "device": "Loại thiết bị",
+                    "email": "Email",
+                    "time": "Thời gian",
+                    "detail": "Chi tiết",
+                    "noData": "Không có dữ liệu hiển thị trong chế độ này",
+                    "userId": "User ID",
+                    "copyCode": "Sao chép mã",
+                    "copyCodeSuccess": "Sao chép mã thành công",
+                    "allAction": "-- Toàn bộ hoạt động --",
+                    "allModule": "-- Toàn bộ Module --",
+                    "allApp": "-- Toàn bộ Apps --",
+                    "app": "App - Web",
+                    "deviceMobile": "Truy cập từ điện thoại",
+                    "deviceDesktop": "Truy cập từ desktop",
+                    "searchKeywordPlaceholder": "Nhập tên hoặc email...",
+                    "exportData": {
+                        "index": "STT",
+                        "fullName": "Họ tên",
+                        "fileTitle": "DỮ LIỆU HÀNH ĐỘNG NGƯỜI DÙNG",
+                        "fileName": "USER-ACTION-LOG-DATA",
+                        "sendingTime": "Thời gian gửi",
+                        "titleSheet": "Dữ liệu hành động người dùng",
+                        "fileExcel": "Excel (.xlsx)",
+                        "fileJson": "File (.json)",
+                        "system": "Hệ thống",
+                        "total": "Tổng",
+                        "time": "Thời gian",
+                        "account": "Tài khoản",
+                        "email": "Email",
+                        "ip": "IP",
+                        "device": "Loại thiết bị",
+                        "route": "Route",
+                        "module": "Module",
+                        "action": "Action",
+                        "originalUser": "User thực hiện",
+                        "bodyRequest": "Body request",
+                        "oldBodyRequest": "Old body request",
+                        "timeTitle": "Thời gian"
+                    }
+                },
+                "breadcrumbs": {
+                    "search": "Ghi lại hành động của người dùng",
+                    "description": "Action logs ghi lại các thao tác với dữ liệu của người dùng.",
+                    "detail": "Chi tiết Action Log"
+                }
+            }
+        },
+        "auth": {
+            "common": {
+                "username": "Tên đăng nhập",
+                "email": "Email",
+                "emailLogin": "Email đăng nhập",
+                "password": "Mật khẩu",
+                "remember": "Lưu đăng nhập",
+                "forgotPassword": "Quên mật khẩu?",
+                "orSignInWith": "hoặc đăng nhập với",
+                "orSignInWithOtherAccount": "hoặc đăng nhập với tài khoản khác",
+                "dontHaveAccount": "Bạn chưa có tài khoản?",
+                "termCondition": "Bằng cách bấm vào nút \"Đăng nhập\", bạn xác nhận rằng bạn đã đọc Điều khoản & Điều kiện và Chính sách cookie của chúng tôi.",
+                "buttons": {
+                    "signIn": "Đăng nhập",
+                    "signUp": "Đăng ký",
+                    "logout": "Đăng xuất",
+                    "backToUserOriginal": "Trở về tài khoản của bạn"
+                },
+                "message": {
+                    "error": {
+                        "unknown": "Có lỗi trong quá trình xử lý dữ liệu. Xin bạn vui lòng thử lại!",
+                        "wrongEmailOrPassword": "Sai tên truy cập hoặc mật khẩu!",
+                        "wrongOTP": "Mã xác thực hai bước không chính xác!",
+                        "wrongOrInvalidEmail": "Có lỗi xảy ra hoặc email không thuộc tổ chức!",
+                        "wrongUserNameOrPassword": "Sai tên truy cập hoặc mật khẩu!",
+                        "notPermission": "Chưa được bật quyền truy cập, vui lòng liên hệ với Admin!"
+                    }
+                }
+            },
+            "login": {
+                "title": "Đăng nhập",
+                "loginToAccount": "Đăng nhập vào tài khoản của bạn",
+                "enterCredential": "Nhập thông tin đăng nhập của bạn bên dưới",
+                "emailPlaceHolder": "Nhập địa chỉ email của bạn",
+                "passwordPlaceHolder": "•••••••••••",
+                "userNamePlaceHolder": "Nhập tên đăng nhập"
+            },
+            "otp": {
+                "title": "Xác Thực Hai Bước",
+                "inputPlaceHolder1": "Nhập Mã Xác Minh Chữ số 1",
+                "inputPlaceHolder2": "Nhập Mã Xác Minh Chữ số 2",
+                "inputPlaceHolder3": "Nhập Mã Xác Minh Chữ số 3",
+                "inputPlaceHolder4": "Nhập Mã Xác Minh Chữ số 4",
+                "inputPlaceHolder5": "Nhập Mã Xác Minh Chữ số 5",
+                "inputPlaceHolder6": "Nhập Mã Xác Minh Chữ số 6"
+            },
+            "google": {
+                "common": {
+                    "loading": "Đang tải dữ liệu..."
+                },
+                "callback": {
+                    "description": "Vui lòng không đóng của sổ và chờ trong giây lát!",
+                    "closeWindow": "Đóng cửa sổ"
+                }
+            }
+        },
+        "error": {
+            "common": {
+                "title": "Rất tiếc, đã xảy ra lỗi",
+                "titlePermission": "Rất tiếc, bạn chưa được cấp quyền sử dụng hệ thống này.",
+                "notePermission": "Vui lòng liên hệ với Admin hoặc kỹ thuật để kiểm tra, xin cảm ơn!"
+            },
+            "403": {
+                "title": "Truy cập của bạn có thể bị lỗi hoặc không tìm thấy nội dung"
+            },
+            "404": {
+                "title": "Truy cập của bạn có thể bị lỗi hoặc không tìm thấy nội dung"
+            },
+            "500": {
+                "title": "Truy cập của bạn có thể bị lỗi hoặc không tìm thấy nội dung"
+            }
+        },
+        "user": {
+            "common": {
+                "profile": "Tài khoản",
+                "userId": "User ID",
+                "username": "Tên tài khoản",
+                "email": "Email",
+                "mobile": "Số điện thoại",
+                "telegramId": "Telegram ID",
+                "changePassword": "Thay đổi mật khẩu",
+                "currentPassword": "Mật khẩu hiện tại",
+                "newPassword": "Mật khẩu mới",
+                "confirmPassword": "Xác nhận mật khẩu",
+                "guideDoc": "Tài liệu hướng dẫn",
+                "here": "Tại đây."
+            },
+            "validatedErrors": {
+                "confirmPasswordNotMatch": "Mật khẩu xác nhận không trùng khớp!",
+                "currentPasswordNotCorrect": "Mật khẩu hiện tại không chính xác!",
+                "currentPassword": {
+                    "required": "Mật khẩu hiện tại là bắt buộc!"
+                },
+                "newPassword": {
+                    "required": "Mật khẩu mới là bắt buộc!",
+                    "pattern": "Mật khẩu phải từ 6 - 30 kí tự, chứa ít nhất 1 chữ số, 1 chữ cái viết hoa, 1 kí tự đặc biệt!"
+                },
+                "confirmPassword": {
+                    "required": "Xác nhận mật khẩu là bắt buộc!",
+                    "notMatch": "Mật khẩu không trùng khớp!"
+                }
+            }
+        },
+        "page": {
+            "policy": {
+                "title": "Chính sách bảo mật"
+            }
+        },
+        "brandSafety": {
+            "common": {
+                "zoneMapping": "Zone mapping",
+                "statusActive": "Hoạt động",
+                "statusDisabled": "Vô hiệu hóa",
+                "statusInactive": "Không hoạt động",
+                "action": "Hành động",
+                "allStatus": "-- Tất cả trạng thái --",
+                "home": "Trang chủ",
+                "audience": "Audiences",
+                "segment": "Segments",
+                "analytics": "Analytics",
+                "listBanner": "List banner",
+                "assignManage": "Assign manage",
+                "assignBannerManage": "Assign banner manage",
+                "assignBanner": "Chia sẻ cho banner",
+                "downloadKeyword": "Tải từ khóa",
+                "downloadData": "Tải dữ liệu",
+                "welcome": "Chào mừng đến với Brandsafety Service Tool",
+                "statsWelcome": "Brandsafety Service là một dịch vụ được sử dụng để quản lý dữ liệu, cho phép xác định phân tích các yếu tố liên quan đến nội dung. Được sử dụng để nhắm và loại bỏ các mục tiêu cụ thể trong các chiến dịch quảng cáo của Admicro.",
+                "selectTypeTime": "-- Chọn kiểu thời gian --",
+                "day": "Ngày",
+                "week": "Tuần",
+                "month": "Tháng",
+                "detail": "Chi tiết",
+                "keyword": "Từ khóa",
+                "segmentDetail": "Chi tiết segment",
+                "userNotExist": "Không có người dùng nào tồn tại trong danh sách người dùng sso!",
+                "userNotActivated": "Người dùng chưa được kích hoạt!",
+                "userIsBlocked": "Người dùng bị chặn!",
+                "getBanner": "Lấy dữ liệu banner",
+                "getUrl": "Lấy dữ liệu Url",
+                "getTopic": "Lấy dũ liệu topic"
+            },
+            "admin": {
+                "listUser": "Quản lý thành viên",
+                "listApp": "Quản lý app",
+                "keyword": {
+                    "confirmDelete": "Bạn có chắc chắn muốn xóa từ khóa '{{name}}'!",
+                    "categoryOther": "Khác",
+                    "categoryViloence": "Bạo lực",
+                    "categorySexual": "Tình dục",
+                    "categoryPolictic": "Chính trị",
+                    "categoryAll": "-- Tất cả danh mục --",
+                    "createKeyword": "Tạo từ khóa",
+                    "update": "Sửa từ khóa",
+                    "create": "Tạo từ khóa",
+                    "manage": "Quản lý từ khóa",
+                    "name": "Từ khóa",
+                    "category": "Danh mục",
+                    "remove": "Xóa từ khóa",
+                    "add": "Thêm từ khóa",
+                    "placeholder": {
+                        "filterKeyword": "Tìm kiếm theo từ khóa...",
+                        "keyword": "Nhập từ khóa hoặc dán nhiều từ khóa...",
+                        "keywordUpdate": "Nhập từ khóa..."
+                    },
+                    "validator": {
+                        "nameIsRequired": "Từ khóa là bắt buộc!",
+                        "nameMaxLength": "Từ khóa tối đa là 255 kí tự!",
+                        "nameMinLength": "Từ khóa tối thiểu là 2 kí tự!"
+                    },
+                    "notify": {
+                        "createKeywordSuccess": "Tạo từ khóa thành công!",
+                        "createKeywordFailed": "Tạo từ khóa thất bại!",
+                        "updateKeywordSuccess": "Cập nhật từ khóa thành công!",
+                        "updateKeywordFailed": "Cập nhật từ khóa thất bại!",
+                        "deleteKeywordSuccess": "Xóa từ khóa thành công!",
+                        "deleteKeywordFailed": "Xóa từ khóa thất bại!"
+                    }
+                },
+                "user": {
+                    "selectAllRole": "-- Tất cả các role --",
+                    "selectAllStatus": "-- Tất cả trạng thái --",
+                    "title": "Users",
+                    "id": "Id",
+                    "userName": "Tên người dùng",
+                    "email": "Email",
+                    "source_limit": "Số lượng source giới hạn",
+                    "fullName": "Tên liên hệ",
+                    "role": "Role",
+                    "status": "Trạng thái",
+                    "status-1": "Vô hiệu hóa",
+                    "status0": "Không hoạt động",
+                    "status1": "Hoạt động",
+                    "status-2": "Chưa đăng nhập",
+                    "newPassword": "Mật khẩu mới",
+                    "newPasswordConfirm": "Xác nhận mật khẩu mới",
+                    "createUser": "Khởi tạo người dùng",
+                    "updateUser": "Cập nhật người dùng",
+                    "createNewUser": "Tạo người dùng",
+                    "userInfo": "Thông tin người dùng",
+                    "generatePassword": "Tạo mật khẩu",
+                    "roleName": "Tên Role",
+                    "userGroup": "Tệp người dùng app",
+                    "userGroupPlaceHolder": "Chọn tệp người dùng cho app",
+                    "allow": "Cho phép",
+                    "allow1": "Cho phép",
+                    "name": "Tên",
+                    "action": "Hành động",
+                    "allStatus": "-- Tất cả trạng thái --",
+                    "allRoles": "-- Tất cả quyền --",
+                    "search": "Tìm kiếm",
+                    "noData": "Không có dữ liệu hiển thị trong chế độ này",
+                    "google2faSecret": "Google Authenticator Secret",
+                    "firstName": "Họ",
+                    "lastName": "Tên",
+                    "apps": "Apps",
+                    "selectApps": "Chọn Apps",
+                    "selectAllApps": "Tất cả các Apps",
+                    "password": "Mật khẩu",
+                    "confirmPassword": "Xác nhận mật khẩu",
+                    "phone": "Số điện thoại",
+                    "telegramId": "Telegram ID",
+                    "searchKeywordPlaceholder": "Nhập tên, user ID hoặc email...",
+                    "createdTime": "Thời gian tạo",
+                    "userId": "User ID",
+                    "edit": "Chỉnh sửa",
+                    "infoRole": "Thông tin nhóm quyền",
+                    "validatedErrors": {
+                        "passwordRequired": "Mật khẩu không được để rỗng!",
+                        "passwordMinLength": "Độ dài tối thiểu của mật khẩu là 6!",
+                        "passwordMatch": "Mật khẩu không khớp!",
+                        "emailRequired": "Email không được để rỗng!",
+                        "emailInvalid": "Email không hợp lệ!",
+                        "userNameRequired": "Tên người dùng không được để trống!",
+                        "roleRequired": "Role không được để rỗng!",
+                        "userNameMinLength": "Độ dài tối thiểu của tên người dùng là 2 kí tự!",
+                        "userNameMaxLength": "Độ dài tối đa của tên người dùng là 50 kí tự!",
+                        "domainsRequired": "Apps không được để rỗng!",
+                        "phoneInvalid": "Số điện thoại không hợp lệ!",
+                        "emailExist": "Email đã tồn tại trên hệ thống!",
+                        "currentPassword": {
+                            "required": "Mật khẩu hiện tại không được để rỗng!"
+                        },
+                        "newPassword": {
+                            "required": "Mật khẩu mới không được để rỗng!",
+                            "pattern": "Mật khẩu phải từ 6 - 30 kí tự, chứa ít nhất 1 chữ số, 1 chữ cái viết hoa, 1 kí tự đặc biệt!"
+                        },
+                        "confirmPassword": {
+                            "required": "Xác nhận mật khẩu không được để rỗng!",
+                            "notMatch": "Mật khẩu không trùng khớp!"
+                        },
+                        "telegramIdInvalid": "Telegram ID chỉ được phép chứa số!"
+                    },
+                    "breadcrumbs": {
+                        "name": "Thành viên",
+                        "search": "Quản lý thành viên",
+                        "searchDescription": "Xem danh sách, chỉnh sửa thông tin của các thành viên trong hệ thống",
+                        "description": "Xem danh sách thông tin thành viên trong hệ thống.",
+                        "roleDescription": "Xem danh sách thông tin nhóm quyền trong hệ thống."
+                    },
+                    "notify": {
+                        "createUserSuccess": "Tạo người dùng mới thành công",
+                        "createUserFailed": "Tạo người dùng mới thất bại",
+                        "updateUserSuccess": "Cập nhật người dùng thành công",
+                        "updateUserFailed": "Cập nhật người dùng thất bại",
+                        "accountExist": "Tài khoản đã tồn tại",
+                        "error": "Có lỗi xảy ra trong quá trình xử lý dữ liệu!"
+                    }
+                },
+                "app": {
+                    "common": {
+                        "edit": "Chỉnh sửa",
+                        "remove": "Xóa",
+                        "appName": "Tên app",
+                        "appUsername": "Tên liên hệ",
+                        "appKey": "App Key",
+                        "domain": "Domain",
+                        "apiPermissions": "Permissions api",
+                        "appPassword": "Mật khẩu",
+                        "createApp": "Tạo app",
+                        "updateApp": "Cập nhật app",
+                        "status": "Trạng thái",
+                        "active": "Hoạt động",
+                        "inactive": "Không hoạt động",
+                        "createKey": "Gen key",
+                        "createdTime": "Thời gian tạo",
+                        "appId": "App ID",
+                        "noData": "Không có dữ liệu hiển thị trong chế độ này.",
+                        "search": "Nhập từ khóa"
+                    },
+                    "breadcrumbs": {
+                        "name": "App",
+                        "search": "Quản lý app",
+                        "searchDescription": "Đây là danh sách thông tin app dùng để xác thực thông tin khi sử dụng các api truy vấn dữ liệu được cung cấp cho các đội sản phẩm"
+                    },
+                    "placeholder": {
+                        "enterName": "Nhập tên app",
+                        "enterKey": "Gen key",
+                        "enterUsername": "Nhập tên username",
+                        "enterTitle": "Nhập title",
+                        "enterPassword": "Nhập mật khẩu",
+                        "enterDomain": "Nhập domain",
+                        "enterDescription": "Nhập mô tả",
+                        "enterValue": "Nhập giá trị",
+                        "selectValue": "-- Chọn giá trị --",
+                        "selectProduct": "-- Chọn sản phẩm --",
+                        "selectMiniumMatch": "-- Minium match --",
+                        "product": "Nhập sản phẩm"
+                    },
+                    "validator": {
+                        "nameIsRequired": "Tên app là bắt buộc!",
+                        "nameMinLength": "Tên app tối thiểu là 2 kí tự!",
+                        "nameMaxLength": "Tên app tối đa là 255 kí tự!",
+                        "usernameIsRequired": "Username là bắt buộc!",
+                        "usernameMinLength": "Username tối thiểu là 2 kí tự!",
+                        "usernameMaxLength": "Username tối đa là 255 kí tự!",
+                        "passwordIsRequired": "Mật khẩu là bắt buộc!",
+                        "passwordValidate": "Mật khẩu có ít nhất 8 ký tự, bao gồm chữ hoa, chữ thường, số và ký tự đặc biệt!",
+                        "passwordMaxLength": "Mật khẩu tối đa là 255 kí tự!",
+                        "domainIsRequired": "Domain là bắt buộc!",
+                        "domainValidate": "Domain chưa đúng định dạng!",
+                        "keyIsRequired": "Khóa là bắt buộc!"
+                    },
+                    "notify": {
+                        "createAppSuccess": "Tạo app thành công!",
+                        "createAppFailed": "Tạo app thất bại!",
+                        "updateAppSuccess": "Cập nhật app thành công!",
+                        "updateAppFailed": "Cập nhật app thất bại!"
+                    }
+                }
+            },
+            "audience": {
+                "common": {
+                    "searchPlaceholder": "Nhập tên, ID hoặc nhãn hàng để tìm kiếm...",
+                    "manageAudiences": "Quản lý audience",
+                    "createAudience": "Tạo audience",
+                    "updateAudience": "Chỉnh sửa audience",
+                    "editAudience": "Chỉnh sửa tệp '{{name}}'",
+                    "copyAudience": "Sao chép tệp '{{name}}'",
+                    "audienceList": "Danh sách audience",
+                    "info": "Thông tin",
+                    "id": "ID",
+                    "username": "Tài khoản",
+                    "keyword": "Từ khóa",
+                    "createdTime": "Thời gian tạo",
+                    "status": "Trạng thái",
+                    "allStatus": "-- Tất cả trạng thái --",
+                    "assignForUser": "Gán cho người dùng",
+                    "share": "Chia sẻ",
+                    "shareFor": "Chia sẻ cho",
+                    "active": "Hoạt động",
+                    "brand": "Nhãn hàng",
+                    "inactive": "Không hoạt động",
+                    "createUser": "Người tạo",
+                    "email": "Email",
+                    "createdBy": "Tạo bởi",
+                    "detail": "Chi tiết",
+                    "all": "Tất cả",
+                    "statusActive": "Hoạt động",
+                    "expireDate": "Ngày hết hạn",
+                    "statusProcessing": "Đang xử lý",
+                    "statusProcessed": "Đã xử lý",
+                    "pageViews": "Pageviews",
+                    "tooltipPageViewPc": "Pageviews PC",
+                    "tooltipPageViewMobile": "Pageviews Mobile",
+                    "moreKeyword": "(Xem thêm {{ number }} từ khóa)",
+                    "name": "Tên audience",
+                    "domain": "Domain",
+                    "urlsBlackList": "Url Black List",
+                    "topic": "Chủ đề",
+                    "uploadFaild": "Upload thất bại",
+                    "uploadSuccess": "Upload thành công",
+                    "importKeyTooltip": "Tải tệp .xlsx,.xls,.txt để nhập dữ liệu",
+                    "excelFile": "Xuất file excel (.xlsx)",
+                    "textFile": "Xuất file text (.txt)",
+                    "exportDataFromFile": "Xuất dữ liệu ra file",
+                    "importDataFromFile": "Nhập dữ liệu bằng file",
+                    "modifyDataFromFile": "Cập nhật dữ liệu",
+                    "audienceNotFound": "Không tìm thấy thông tin tệp hoặc bạn không có quyền truy cập!",
+                    "nameAudience": "Tên tệp",
+                    "totalNumberUrl": "Tổng số URLs",
+                    "numberUrl": "Số URLs",
+                    "pageView": "Pageviews",
+                    "pageViewPc": "Pageviews PC",
+                    "pageViewMobile": "Pageviews mobile",
+                    "pageViewTotal": "Pageviews total",
+                    "totalPageView": "Total pageviews",
+                    "totalPageViewPc": "Total pageviews PC",
+                    "totalPageViewMobile": "Total pageviews mobile",
+                    "totalPageViewTotal": "Total pageviews total",
+                    "criteria": "Criteria",
+                    "result": "Thống kê ước lượng",
+                    "modifiedTime": "Chỉnh sửa gần nhất",
+                    "urls": "URLs",
+                    "NA": "N/A",
+                    "no": "Không có",
+                    "cleanData": "Xóa dữ liệu",
+                    "searchBrand": "Nhập từ khóa để tìm kiếm nhãn hàng...",
+                    "searchAudience": "Nhập từ khóa để tìm kiếm audience...",
+                    "searchUser": "Nhập từ khóa để tìm kiếm user...",
+                    "uploadFile": "Tải lên tệp",
+                    "exportFile": "Tải dữ liệu",
+                    "purpose": "Mục đích",
+                    "infoField": "Thông tin",
+                    "maxFileSizeTitle": "Dung lượng tối đa là 10MB",
+                    "add": "Thêm",
+                    "remove": "Xóa",
+                    "txtFile": ".txt",
+                    "xlsxFile": ".xlsx",
+                    "confirmCancel": "Bạn có chắc chắn muốn hủy bỏ tệp '{{name}}' này?",
+                    "confirmCancelMulti": "Bạn có chắc chắn muốn hủy bỏ những tệp này?",
+                    "confirmUnassign": "Bạn có chắc chắn muốn xóa quyền truy cập tệp của tài khoản này!",
+                    "noteSaveAudience": "* Lưu ý: Phải có ít nhất một trong những giá trị của keyword, domain, url blacklist hoặc topic tồn tại!",
+                    "status0": "Không hoạt động",
+                    "status1": "Hoạt động",
+                    "status2": "Đang xử lý",
+                    "status3": "Đã xử lý",
+                    "categoryKeyword1": "Chính trị",
+                    "categoryKeyword2": "Tình dục",
+                    "categoryKeyword3": "Bạo lực",
+                    "categoryKeyword4": "Khác",
+                    "categoryKeyword": "Danh mục từ khóa:",
+                    "noteKeyword": "Chủ đề gợi ý"
+                },
+                "validator": {
+                    "nameIsRequired": "Tên audience là bắt buộc!",
+                    "nameMinLength": "Tên audience tối thiểu là 2 kí tự!",
+                    "nameMaxLength": "Tên audience tối đa là 255 kí tự!",
+                    "domainIsRequired": "Domain là bắt buộc!",
+                    "domainValidate": "Domain chưa đúng định dạng!",
+                    "urlsBlackListValidate": "Url Black List chưa đúng định dạng!",
+                    "brandRequireValidate": "Nhãn hàng không được để trống!",
+                    "inputValidate": "Chỉ được nhập chữ cái và số!",
+                    "brandMaxLength": "Độ dài tối đa của nhãn hàng là 800 kí tự!",
+                    "valueMinLength": "Nhập tối thiểu 2 kí tự",
+                    "wrongFormatFile": "File chưa đúng định dạng!",
+                    "maxFileSizeTitle": "Dung lượng tối đa là 10MB",
+                    "reachMax": {
+                        "keywords": "Bạn chỉ được nhập tối đa {{max}} từ khóa.",
+                        "domains": "Bạn chỉ được nhập tối đa {{max}} domain.",
+                        "urlsBlackList": "Bạn chỉ được nhập tối đa {{max}} URL chặn."
+                    }
+                },
+                "placeholder": {
+                    "enterName":"Nhập tên Audience...",
+                    "selectBrand":"-- Chọn nhãn hàng --",
+                    "enterDomains": "Nhập Domain...",
+                    "enterKeywords": "Nhập tên từ khóa...",
+                    "enterUrlsBlackList": "Nhập danh sách url...",
+                    "enterTopics": "Chọn chủ đề..."
+                },
+                "notify": {
+                    "createAudienceSuccess": "Tạo audience thành công!",
+                    "createAudienceFailed": "Tạo audience thất bại!",
+                    "updateAudienceSuccess": "Cập nhật audience thành công!",
+                    "updateAudienceFailed": "Cập nhật audience thất bại!",
+                    "cancelAudienceSuccess": "Hủy bỏ tệp thành công!",
+                    "cancelAudienceFailed": "Hủy bỏ tệp thất bại!"
+                },
+                "shareDialog": {
+                    "title": "Chia sẻ tệp",
+                    "noElements": "Bạn phải chọn ít nhất 1 tài khoản.",
+                    "usernameLabel": "Danh sách tài khoản",
+                    "peopleAccess": "Những người có quyền truy cập",
+                    "owner": "Chủ sở hữu",
+                    "removeAccess": "Xoá quyền truy cập",
+                    "apply": "Áp dụng",
+                    "usersPlace": "Nhập đầy đủ tên tài khoản bạn muốn chia sẻ và ấn enter",
+                    "audienceSearchUser": "Nhập tài khoản bạn muốn chia sẻ và ấn enter",
+                    "userAlready": "Người dùng đã tồn tại trong danh sách",
+                    "userNotFound": "Người dùng không tồn tại!"
+                },
+                "title": "Audiences"
+            },
+            "analytics": {
+                "common": {
+                    "title": "Analytics"
+                }
+            },
+            "assignAudience": {
+                "id": "Audience ID",
+                "name": "Tên",
+                "info": "Thông tin",
+                "userId": "User ID",
+                "userShare": "Người dùng được chia sẻ",
+                "placeholder": "Tìm kiếm theo từ khóa, ID audience hoặc user ID...",
+                "removeAudience": "Xóa chia sẻ",
+                "manage": "Quản lý assign audience",
+                "assignManage": "Assign manage",
+                "titleAssign": "Chia sẻ audience cho user",
+                "users": "Người dùng",
+                "detail": "Chi tiết audience",
+                "selectUser": "--- Chọn Users ---",
+                "audiences": "Audiences",
+                "createdDate": "Thời gian được chia sẻ",
+                "selectAudiences": "--- Chọn Audiences ---",
+                "noElements": "No elements"
+            },
+            "zone": {
+                "common": {
+                    "createZone": "Tạo zone",
+                    "info": "Thông tin",
+                    "id": "Audience ID",
+                    "detail": "Chi tiết",
+                    "createdDate": "Thời gian tạo",
+                    "searchAudience": "Nhập từ khóa để tìm kiếm Audience...",
+                    "uploadFile": "Tải lên tệp",
+                    "userCreate": "Người tạo",
+                    "createdBy": "Tạo bởi",
+                    "status": "Trạng thái",
+                    "selectAllStatus": "-- Tất cả trạng thái --",
+                    "confirmDelete": "Bạn có chắc chắn muốn xóa zone với audience name '{{name}}'!",
+                    "noteSaveZone": "* Lưu ý: Phải có ít nhất một trong những giá trị của zone id, adslot id hoặc domains tồn tại!\n"
+                },
+                "status1": "Hoạt động",
+                "status0": "Không hoạt động",
+                "create": "Tạo zone mapping",
+                "edit": "Sửa zone mapping",
+                "manage": "Quản lý zone mapping",
+                "zoneIds": "Zone ID",
+                "adslotIds": "Adslot ID",
+                "domains": "Domains",
+                "audience": "Audience",
+                "activeTime": "Thời gian hoạt động",
+                "expiredTime": "Thời gian hết hạn",
+                "placeholder": {
+                    "filterZone": "Tìm kiếm theo tên Audience...",
+                    "selectAudience":"-- Chọn Audience --",
+                    "enterDomains": "Nhập danh sách Domains...",
+                    "enterZoneIds": "Nhập danh sách Zone ID...",
+                    "enterAdslotIds": "Nhập danh sách Adslot ID..."
+                },
+                "notify": {
+                    "noAudience": "Không tìm thấy audience",
+                    "deleteZoneSuccess": "Xóa zone thành công!",
+                    "deleteZoneFailed": "Xóa zone thất bại!",
+                    "createZoneSuccess": "Tạo zone thành công!",
+                    "createZoneFailed": "Tạo zone thất bại!",
+                    "updateZoneSuccess": "Cập nhật zone thành công!",
+                    "updateZoneFailed": "Cập nhật zone thất bại!"
+                },
+                "validator": {
+                    "adslotIdsValidate": "Adslot ID chưa đúng định dạng!",
+                    "zoneIdsValidate": "Zone ID chưa đúng định dạng!",
+                    "domainsValidate": "Domain chưa đúng định dạng!",
+                    "valueMinLength": "Nhập tối thiểu 1 kí tự!",
+                    "wrongFormatFile": "File chưa đúng định dạng!",
+                    "maxFileSizeTitle": "Dung lượng tối đa là 10MB!",
+                    "notDataFormatFile": "File cần có data hợp lệ!",
+                    "existAudience": "Audience này đã được mapping zone, vui lòng kiểm tra lại!",
+                    "reachMax": {
+                        "zoneIds": "Bạn chỉ được nhập tối đa {{max}} Zone Id.",
+                        "domains": "Bạn chỉ được nhập tối đa {{max}} Domains.",
+                        "adslotIds": "Bạn chỉ được nhập tối đa {{max}} Adslot Id."
+                    }
+                }
+            },
+            "banner": {
+                "common": {
+                    "getBanner": "Lấy dữ liệu banner",
+                    "url": "URL",
+                    "bannerInfo": "Thông tin banner",
+                    "audience": "Audience",
+                    "selectAudience": "-- Chọn tệp audience --",
+                    "enterUrlPlaceHolder": "Nhập URL",
+                    "example": "Ví dụ",
+                    "banner": "Banner",
+                    "name": "Tên",
+                    "keyword": "Từ khóa",
+                    "value": "Giá trị",
+                    "checkKeyword": "Kiểm tra từ khóa",
+                    "total": "Tổng số",
+                    "bannerIds": "Danh sách banner ID",
+                    "validatedErrors": {
+                        "urlRequired": "URL không được để trống!",
+                        "urlPattern": "URL không đúng định dạng!"
+                    }
+                }
+            },
+            "url": {
+                "common": {
+                    "getUrl": "Lấy dữ liệu URL",
+                    "domain": "Domain",
+                    "urlInfo": "Danh sách URL",
+                    "audience": "Audience",
+                    "enterDomainPlaceHolder": "Nhâp domain vd: kenh14.vn",
+                    "enterCategoryPlaceHolder": "Nhập danh mục vd: star",
+                    "validatedErrors": {
+                        "domainRequired": "Domain không được để trống!",
+                        "domainPattern": "Domain không đúng định dạng!",
+                        "categoryRequired": "Danh mục không được để trống!",
+                        "categoryMinLength": "Danh mục tối thiểu là 2 kí tự!",
+                        "categoryMaxLength": "Danh mục tối đa là 255 kí tự!"
+                    }
+                }
+            },
+            "topic": {
+                "common": {
+                    "analysisResults": "Kết quả phân tích",
+                    "classifyTextTopic": "Phân loại chủ đề",
+                    "getTopic": "Lấy dữ liệu chủ đề",
+                    "url": "URL",
+                    "topicInfo": "Thông tin chủ đề",
+                    "enterUrlPlaceHolder": "Nhập URL",
+                    "example": "Ví dụ",
+                    "source": "Nguồn",
+                    "high": "Cao",
+                    "medium": "Trung bình",
+                    "low": "Thấp",
+                    "validatedErrors": {
+                        "urlRequired": "URL không được để trống!",
+                        "urlPattern": "URL không đúng định dạng!"
+                    },
+                    "adult": "Người lớn",
+                    "crime": "Tội ác",
+                    "dead": "Tử vong",
+                    "diseases": "Bệnh tật",
+                    "impolite": "Ngôn ngữ thô tục",
+                    "war": "Chiến tranh",
+                    "racist": "Phân biệt chủng tộc",
+                    "stimulant": "Chất kích thích",
+                    "terrorism": "Khủng bố",
+                    "violence": "Bạo lực",
+                    "disaster": "Thảm họa",
+                    "politics": "Chính trị",
+                    "military": "Quân sự",
+                    "sex": "Giới tính",
+                    "illegal": "Bất hợp pháp",
+                    "other": "Khác"
+                }
+            }
+        }
+    }
+}

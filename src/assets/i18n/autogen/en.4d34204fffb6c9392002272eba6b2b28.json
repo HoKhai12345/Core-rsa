@@ -1,0 +1,1074 @@
+{
+    "common": {
+        "name": "Brand safety service tool",
+        "domain": "brandsafety.service.vn",
+        "home": "Home",
+        "loading": "Loading data...",
+        "support": "Support",
+        "docs": "Guide document",
+        "dataNotFound": "No data to display in this mode.",
+        "placeholder": "Keyword...",
+        "confirm": "Confirm",
+        "confirmMessage": "Are you sure you want to perform this action!",
+        "sequence": "#",
+        "viewAll": "View all",
+        "viewDetail": "View detail",
+        "clickToEdit": "Click to edit information",
+        "noResult": "No Result!",
+        "websApps": "Webs, Apps",
+        "columnList": "The column list displays",
+        "noData": "No data",
+        "admicroTool": "Admicro Tool",
+        "frontEndAdtech": " - Frontend Adtech",
+        "export": "EXPORT",
+        "male": "Male",
+        "female": "Female",
+        "languages": {
+            "vi": "Vietnamese",
+            "en": "English"
+        },
+        "search": {
+            "button": "Search",
+            "placeHolder": "Enter keywords to search...",
+            "keyword": "Keyword",
+            "searchAllWithKeyword": "Searching for objects with keywords \"<strong>{{ keyword }}</strong>\"",
+            "searchHeader": "Enter name, ID audience to search..."
+        },
+        "button": {
+            "search": "Search",
+            "delete": "Delete",
+            "cancel": "Cancel",
+            "edit": "Edit",
+            "detail": "Detail",
+            "ok": "OK",
+            "save": "Save",
+            "returnToDashboard": "Return to Dashboard",
+            "downloadExcel": "Download file excel",
+            "report": "Report",
+            "send": "Send",
+            "viewAll": "View all",
+            "disable": "Disable",
+            "register": "Register",
+            "update": "Update",
+            "create": "Create",
+            "createKeyword": "Create keyword",
+            "createZone": "Create zone",
+            "info": "Information",
+            "export": "Export",
+            "analytic": "Analytic",
+            "assign": "Assign",
+            "share": "Share",
+            "close": "Close",
+            "history": "History",
+            "copy": "Copy",
+            "subscribe": "Subscribe",
+            "clear": "Clear filter",
+            "settings": "Settings",
+            "getData": "Get data"
+        },
+        "notify": {
+            "success": {
+                "title": "Notification",
+                "message": "Data was updated!",
+                "messageAccessDeny": "Access denied, please check again!"
+            },
+            "error": {
+                "title": "Warning",
+                "message": "An error occurred while processing data!",
+                "chooseFail": "The location was not selected because it did not have the same number of shares"
+            },
+            "createSuccess": {
+                "title": "Notification",
+                "message": "Data was created!"
+            },
+            "updateSuccess": {
+                "title": "Notification",
+                "message": "Information was updated!"
+            },
+            "deleteSuccess": {
+                "title": "Notification",
+                "message": "Information was deleted!"
+            },
+            "copy": {
+                "title": "Notification",
+                "message": "Data was copied!"
+            }
+        },
+        "paginator": {
+            "itemsPerPageLabel": "Display",
+            "nextPage": "Next page",
+            "previousPage": "Previous page",
+            "firstPage": "First page",
+            "lastPage": "Last page",
+            "ofLabel": "of",
+            "pageNumber": "Page number",
+            "perPages": "/"
+        },
+        "datePicker": {
+            "applyLabel": "Apply",
+            "cancelLabel": "Cancel",
+            "customRangeLabel": "Custom Range",
+            "today": "Today",
+            "yesterday": "Yesterday",
+            "7daysAgo": "7 days ago",
+            "30daysAgo": "30 days ago",
+            "thisMonth": "This month",
+            "lastMonth": "Last month",
+            "threeMonth": "Three months",
+            "days": {
+                "monday": "Mon",
+                "tuesday": "Tue",
+                "wednesday": "Wed",
+                "thursday": "Thu",
+                "friday": "Fri",
+                "saturday": "Sat",
+                "sunday": "Sun"
+            },
+            "months": {
+                "january": "January",
+                "february": "February",
+                "march": "March",
+                "april": "April",
+                "may": "May",
+                "june": "June",
+                "july": "July",
+                "august": "August",
+                "september": "September",
+                "october": "October",
+                "november": "November",
+                "december": "December"
+            }
+        },
+        "dualListBox": {
+            "addBtn": ">",
+            "addAllBtn": ">>",
+            "removeBtn": "<",
+            "removeAllBtn": "<<"
+        },
+        "validator": {
+            "notHtmlTag": "The input must not contain any HTML tags!",
+            "excessSpace": "The input must not contain excess space character!"
+        },
+        "table": {
+            "settingColumnDescription": "You can turn on/off to display data fields or move to change positions between information fields"
+        },
+        "listApp": {
+            "title": "List Apps",
+            "contentInsight": {
+                "name": "Content Insight",
+                "description": "Nền tảng quản lý dữ liệu, phân tích nội dung nhằm nhắm mục tiêu hiệu quả cho các chiến dịch quảng cáo."
+            },
+            "brandsafety": {
+                "name": "Brandsafety",
+                "description": "Nền tảng quản lý dữ liệu, giúp phân tích nội dung để nhắm, loại bỏ mục tiêu trong chiến dịch quảng cáo."
+            },
+            "dmp": {
+                "name": "Data management platform",
+                "description": "Nền tảng thu thập và quản lý dữ liệu, phân khúc đối tượng và nhắm mục tiêu trong các chiến dịch quảng cáo."
+            },
+            "inventoryTrading": {
+                "name": "Inventory-trading",
+                "description": "Nền tảng báo cáo, thống kê dữ liệu, booking, quản lý inventory cho hệ thống Ads của Admicro."
+            }
+        }
+    },
+    "breadcrumbs": {
+        "home": "Home",
+        "admin": "Administration"
+    },
+    "sideBar": {
+        "home": "Home",
+        "admin": "Administration",
+        "users": "Users",
+        "apps": "App manage",
+        "roles": "Roles",
+        "routes": "Routes",
+        "permissions": "Permissions",
+        "showHideSidebar": "Show / Hide",
+        "logAction": "Action Logs",
+        "adminTool": "Admin BS",
+        "keywords": "Keyword manage",
+        "brandSafety": {
+            "keyword": {
+                "name": "Keyword"
+            },
+            "audience": {
+                "name": "Audiences"
+            },
+            "segment": {
+                "title": "Segments",
+                "manage": "Manage",
+                "listBanner": "Get List Banner"
+            },
+            "zoneMapping": "Zone mapping",
+            "analytics": "Analytics",
+            "assignManage": "Assign Manage",
+            "assignBannerManage": "Assign Banner Manage",
+            "assignAudienceManage": "Assign Audience Manage",
+            "getBanner": "Get Banner",
+            "getUrl": "Get Url",
+            "getTopic": "Get Topic"
+        }
+    },
+    "modules": {
+        "admin": {
+            "common": {
+                "name": "System Administration",
+                "featureFlag": "Feature Enabled"
+            },
+            "role": {
+                "common": {
+                    "notSet": "--- Not Allowed Access ---",
+                    "title": "Roles",
+                    "id": "Id",
+                    "name": "Role Name",
+                    "description": "Description",
+                    "roleName": "Role name...",
+                    "roleDescription": "Description...",
+                    "createRole": "Create Role",
+                    "createNewRole": "Create New Role",
+                    "roleInfo": "Role Information",
+                    "status": "Status",
+                    "status0": "Inactive",
+                    "status1": "Active",
+                    "permission": "Permission",
+                    "permissionLocked": "Permission Locked",
+                    "permissionLocked0": "Unlocked",
+                    "permissionLocked1": "Locked",
+                    "nameExists": "Role already exists",
+                    "switchUser": "Switch Account"
+                },
+                "breadcrumbs": {
+                    "name": "Role",
+                    "search": "Role Management",
+                    "searchDescription": "View and edit information of roles in the system"
+                },
+                "validatedErrors": {
+                    "nameExist": "Name already exists in the system!",
+                    "required": "Role name cannot be empty!",
+                    "maxLength": "Role name exceeds character limit!",
+                    "minLength": "Role name does not meet minimum length requirement!"
+                }
+            },
+            "user": {
+                "common": {
+                    "selectAllRole": "-- All Roles --",
+                    "selectAllStatus": "-- All Status --",
+                    "title": "Users",
+                    "id": "ID",
+                    "username": "Username",
+                    "email": "Email",
+                    "source_limit": "Source Limit",
+                    "fullName": "Full Name",
+                    "role": "Role",
+                    "status": "Status",
+                    "status-1": "Disabled",
+                    "status0": "Inactive",
+                    "status1": "Active",
+                    "newPassword": "New Password",
+                    "newPasswordConfirm": "Confirm New Password",
+                    "createUser": "Create User",
+                    "createNewUser": "Create User",
+                    "userInfo": "User Information",
+                    "generatePassword": "Generate",
+                    "roleName": "Role Name",
+                    "allow": "Allow",
+                    "allow1": "Allow",
+                    "name": "Name",
+                    "action": "Action",
+                    "allStatus": "-- All Status --",
+                    "allRoles": "-- All Roles --",
+                    "search": "Search",
+                    "noData": "No data to display in this mode",
+                    "google2faSecret": "Google Authenticator Secret",
+                    "firstName": "First name",
+                    "lastName": "Last name",
+                    "apps": "Apps",
+                    "selectApps": "Select Apps",
+                    "selectAllApps": "All Apps",
+                    "password": "Password",
+                    "confirmPassword": "Confirm password",
+                    "app": "Apps",
+                    "phone": "Phone",
+                    "telegramId": "Telegram ID",
+                    "searchKeywordPlaceholder": "Enter username, user ID or email...",
+                    "userGroup": "User group for app",
+                    "userGroupPlaceHolder": "Select user group for app",
+                    "createdTime": "Created time",
+                    "userId": "User ID",
+                    "noteInfo": "Open telegram, search bot @brandsafety_bot or click <a href='{{ url }}' target='_blank'>Here</a> get Telegram ID"
+                },
+                "validatedErrors": {
+                    "passwordRequired": "Password cannot be empty!",
+                    "passwordMinLength": "Minimum password length is 6 characters!",
+                    "passwordMatch": "Password do not match!",
+                    "emailRequired": "Email cannot be empty!",
+                    "emailInvalid": "Email is invalid!",
+                    "firstNameRequired": "First name cannot be empty!",
+                    "lastNameRequired": "Last name cannot be empty!",
+                    "roleRequired": "Role cannot be empty!",
+                    "firstNameMinLength": "First name min length is 2 characters!",
+                    "firstNameMaxLength": "First name max length is 50 characters!",
+                    "lastNameMinLength": "Last name min length is 2 characters!",
+                    "lastNameMaxLength": "Last name max length is 50 characters!",
+                    "domainsRequired": "Apps cannot be empty!",
+                    "phoneInvalid": "Phone is invalid!",
+                    "currentPassword": {
+                        "required": "Current password is required!"
+                    },
+                    "newPassword": {
+                        "required": "New password is required!",
+                        "pattern": "Password must be between 6 and 30 characters, contain least 1 number, 1 uppercase letter, 1 special character!"
+                    },
+                    "confirmPassword": {
+                        "required": "Confirm password is required!",
+                        "notMatch": "Password not match!"
+                    }
+                },
+                "breadcrumbs": {
+                    "name": "Members",
+                    "search": "Member Management",
+                    "searchDescription": "View and edit information of members in the system",
+                    "description": "View list of member information in the system."
+                },
+                "notify": {
+                    "createUserSuccess": "User was created",
+                    "createUserFailed": "Failed to create user",
+                    "accountExist": "Account is exist",
+                    "error": "An error occurred while processing data!"
+                }
+            },
+            "route": {
+                "common": {
+                    "title": "Routes",
+                    "name": "Name",
+                    "groupName": "Group",
+                    "route": "Route",
+                    "uri": "URI",
+                    "method": "Method",
+                    "package": "Package",
+                    "controller": "Controller",
+                    "middleware": "Middleware",
+                    "allow": "Allow",
+                    "sync": "Sync",
+                    "namePlaceHolder": "Enter route name",
+                    "routePlaceHolder": "Enter route",
+                    "groupNamePlaceHolder": "Enter group name (alphabet character)"
+                },
+                "breadcrumbs": {
+                    "name": "Route",
+                    "search": "Route Management",
+                    "searchDescription": "View information of routes in the system"
+                }
+            },
+            "permission": {
+                "common": {
+                    "userInfo": "User Information",
+                    "roleInfo": "Role Information",
+                    "allRoutes": "All Routes",
+                    "assignToUser": "Assign permission to member \"{{ username }}\"",
+                    "assignToRole": "Assign permission to role \"{{ roleName }}\"",
+                    "allowRoutes": "Allowed Routes",
+                    "denyRoutes": "Denied Routes",
+                    "extra": "Additional Permissions"
+                }
+            },
+            "actionLog": {
+                "common": {
+                    "userInfo": "User Info",
+                    "name": "Action logs",
+                    "namePlaceHolder": "The action logs records the actions involving user data manipulation.",
+                    "breadcrumb": "Action Logs",
+                    "userName": "User Name",
+                    "action": "Action",
+                    "module": "Module",
+                    "account": "Account",
+                    "route": "Route",
+                    "body": "Body",
+                    "oldBody": "Old body",
+                    "param": "Params",
+                    "fullName": "Full Name",
+                    "originalUser": "Original user",
+                    "ip": "IP",
+                    "device": "Device",
+                    "email": "Email",
+                    "time": "Time",
+                    "detail": "Detail",
+                    "noData": "Data not found",
+                    "userId": "User ID",
+                    "copyCode": "Copy code",
+                    "copyCodeSuccess": "Copy code successfully",
+                    "allAction": "-- All Action --",
+                    "allModule": "-- All Module --",
+                    "allApp": "-- All Apps --",
+                    "app": "App - Web",
+                    "deviceMobile": "Access from mobile",
+                    "deviceDesktop": "Access from desktop",
+                    "searchKeywordPlaceholder": "Enter username or email...",
+                    "exportData": {
+                        "index": "STT",
+                        "fullName": "Full name",
+                        "fileTitle": "USER ACTION LOG DATA",
+                        "fileName": "USER-ACTION-LOG-DATA",
+                        "sendingTime": "Sending time",
+                        "titleSheet": "User action log data",
+                        "fileExcel": "Excel (.xlsx)",
+                        "fileJson": "File (.json)",
+                        "system": "System",
+                        "time": "Time",
+                        "total": "Total",
+                        "account": "Account",
+                        "email": "Email",
+                        "ip": "IP",
+                        "device": "Device",
+                        "route": "Route",
+                        "module": "Module",
+                        "action": "Action",
+                        "originalUser": "Original user",
+                        "bodyRequest": "Body request",
+                        "oldBodyRequest": "Old body request",
+                        "timeTitle": "Time"
+                    }
+                },
+                "breadcrumbs": {
+                    "search": "Record user action",
+                    "description": "The action logs records the actions involving user data manipulation.",
+                    "detail": "Action Log Detail"
+                }
+            }
+        },
+        "auth": {
+            "common": {
+                "username": "User name",
+                "email": "Email",
+                "emailLogin": "Email login",
+                "password": "Password",
+                "remember": "Remember me",
+                "forgotPassword": "Forgot Password?",
+                "orSignInWith": "or Sign in with",
+                "orSignInWithOtherAccount": "or Sign in with another account",
+                "dontHaveAccount": "Don't have an account?",
+                "termCondition": "By clicking \"Sign In\", you confirm that you have read our Terms & Conditions and Cookie Policy.",
+                "buttons": {
+                    "signIn": "Sign In",
+                    "signUp": "Sign Up",
+                    "logout": "Logout",
+                    "backToUserOriginal": "Back to your account"
+                },
+                "message": {
+                    "error": {
+                        "unknown": "There was an error processing the data. Please try again!",
+                        "wrongEmailOrPassword": "Incorrect username or password!",
+                        "wrongOTP": "Incorrect two-step verification code!",
+                        "wrongOrInvalidEmail": "Unknown error or email is not organizational email!",
+                        "wrongUserNameOrPassword": "Wrong username or password!",
+                        "notPermission": "Access permissions are not enabled, please contact Admin!"
+                    }
+                }
+            },
+            "login": {
+                "title": "Login",
+                "loginToAccount": "Login to your account",
+                "enterCredential": "Enter your login information below",
+                "emailPlaceHolder": "Enter your email address",
+                "passwordPlaceHolder": "•••••••••••",
+                "userNamePlaceHolder": "Enter your user name"
+            },
+            "otp": {
+                "title": "Two-Step Verification",
+                "inputPlaceHolder1": "Enter Verification Code digit 1",
+                "inputPlaceHolder2": "Enter Verification Code digit 2",
+                "inputPlaceHolder3": "Enter Verification Code digit 3",
+                "inputPlaceHolder4": "Enter Verification Code digit 4",
+                "inputPlaceHolder5": "Enter Verification Code digit 5",
+                "inputPlaceHolder6": "Enter Verification Code digit 6"
+            },
+            "google": {
+                "common": {
+                    "loading": "Loading data..."
+                },
+                "callback": {
+                    "description": "Please do not close the window and wait for a moment!",
+                    "closeWindow": "Close Window"
+                }
+            }
+        },
+        "error": {
+            "common": {
+                "title": "Oops, an error occurred",
+                "titlePermission": "Sorry, you are not authorized to use this system.",
+                "notePermission": "Please contact Admin or technician to check, thank you!"
+            },
+            "403": {
+                "title": "Your access may be forbidden or the content is not found"
+            },
+            "404": {
+                "title": "Your access may be forbidden or the content is not found"
+            },
+            "500": {
+                "title": "Your access may be forbidden or the content is not found"
+            }
+        },
+        "user": {
+            "common": {
+                "profile": "Profile",
+                "userId": "User ID",
+                "username": "Username",
+                "email": "Email",
+                "mobile": "mobile",
+                "telegramId": "Telegram ID",
+                "changePassword": "Change password",
+                "currentPassword": "Current password",
+                "newPassword": "New password",
+                "confirmPassword": "Confirm password",
+                "guideDoc": "Guide document",
+                "here": "Here."
+            },
+            "validatedErrors": {
+                "currentPasswordNotCorrect": "Current password is incorrect!",
+                "confirmPasswordNotMatch": "Confirm password not match!",
+                "currentPassword": {
+                    "required": "Current password is required!"
+                },
+                "newPassword": {
+                    "required": "New password is required!",
+                    "pattern": "Password must be between 6 and 30 characters, contain least 1 number, 1 uppercase letter, 1 special character!"
+                },
+                "confirmPassword": {
+                    "required": "Confirm password is required!",
+                    "notMatch": "Password not match!"
+                }
+            }
+        },
+        "page": {
+            "policy": {
+                "title": "Privacy Policy"
+            }
+        },
+        "brandSafety": {
+            "common": {
+                "statusActive": "Active",
+                "statusDisabled": "Disable",
+                "statusInactive": "Inactive",
+                "action": "Action",
+                "allStatus": "-- All status --",
+                "home": "Home",
+                "zoneMapping": "Zone mapping",
+                "audience": "Audiences",
+                "segment": "Segments",
+                "analytics": "Analytics",
+                "listBanner": "List banner",
+                "assignManage": "Assign manage",
+                "assignBannerManage": "Assign banner manage",
+                "assignBanner": "Assign banner",
+                "downloadKeyword": "Download keyword",
+                "downloadData": "Download data",
+                "welcome": "Welcome to Brandsafety Service Tool",
+                "statsWelcome": "Content Insight is a software platform used to create and manage data sets. Brand safety service allows for the analysis of content-related factors. Used to target specific targets in Admicro's advertising campaigns.",
+                "selectTypeTime": "--- Select type time ---",
+                "day": "Day",
+                "week": "Week",
+                "month": "Month",
+                "detail": "Detail",
+                "keyword": "Keyword",
+                "segmentDetail": "Segment detail",
+                "userNotExist": "Users doesn't exist in the sso users list!",
+                "userNotActivated": "User has not been activated!",
+                "userIsBlocked": "User is blocked!",
+                "getBanner": "Get Banner",
+                "getUrl": "Get Url",
+                "getTopic": "Get Topic"
+            },
+            "admin": {
+                "listUser": "Manage user",
+                "listApp": "Manage app",
+                "keyword": {
+                    "confirmDelete": "Are you sure you want to delete the keyword '{{name}}'!",
+                    "categoryOther": "Other",
+                    "categoryViloence": "Viloence",
+                    "categorySexual": "Sexual",
+                    "categoryPolictic": "Polictic",
+                    "categoryAll": "-- All category --",
+                    "update": "Update keyword",
+                    "create": "Create keyword",
+                    "manage": "Keyword manage",
+                    "name": "Keyword",
+                    "category": "Category",
+                    "remove": "Remove",
+                    "add": "Add",
+                    "validator": {
+                        "nameIsRequired": "Keyword is required!",
+                        "nameMaxLength": "Keyword must be at most 255 characters!",
+                        "nameMinLength": "Keyword min length is 2 characters!"
+                    },
+                    "createKeyword": "Create keyword",
+                    "placeholder": {
+                        "keywordUpdate": "Enter keyword...",
+                        "filterKeyword": "Filter keyword...",
+                        "keyword": "Enter keyword..."
+                    },
+                    "notify": {
+                        "createKeywordSuccess": "Create keyword successfully!",
+                        "createKeywordFailed": "Create keyword failed!",
+                        "updateKeywordSuccess": "Update keyword successfully!",
+                        "updateKeywordFailed": "Update keyword failed!",
+                        "deleteKeywordSuccess": "Delete keyword successfully!",
+                        "deleteKeywordFailed": "Delete keyword failed!"
+                    }
+                },
+                "user": {
+                    "selectAllRole": "-- All Roles --",
+                    "selectAllStatus": "-- All Status --",
+                    "title": "Users",
+                    "id": "Id",
+                    "userName": "User Name",
+                    "email": "Email",
+                    "source_limit": "Source Limit",
+                    "fullName": "Full Name",
+                    "role": "Role",
+                    "status": "Status",
+                    "status-1": "Disabled",
+                    "status0": "Inactive",
+                    "status1": "Active",
+                    "status-2": "Not logged in yet",
+                    "newPassword": "New Password",
+                    "newPasswordConfirm": "Confirm New Password",
+                    "createUser": "Create User",
+                    "updateUser": "Update User",
+                    "createNewUser": "Create New User",
+                    "userInfo": "User Information",
+                    "generatePassword": "Generate Password",
+                    "roleName": "Role Name",
+                    "userGroup": "User group for app",
+                    "userGroupPlaceHolder": "Select user group for app",
+                    "allow": "Allow",
+                    "allow1": "Allow",
+                    "name": "Name",
+                    "action": "Action",
+                    "allStatus": "-- All Status --",
+                    "allRoles": "-- All Roles --",
+                    "search": "Search",
+                    "noData": "No data to display in this mode",
+                    "google2faSecret": "Google Authenticator Secret",
+                    "firstName": "First name",
+                    "lastName": "Last name",
+                    "apps": "Apps",
+                    "selectApps": "Choose Apps",
+                    "selectAllApps": "All Apps",
+                    "password": "Password",
+                    "confirmPassword": "Confirm password",
+                    "phone": "Phone",
+                    "telegramId": "Telegram ID",
+                    "searchKeywordPlaceholder": "Enter username, user ID or email...",
+                    "createdTime": "Created time",
+                    "userId": "User ID",
+                    "edit": "Edit",
+                    "infoRole": "Role description information",
+                    "validatedErrors": {
+                        "passwordRequired": "Password cannot be empty!",
+                        "passwordMinLength": "Minimum password length is 6 characters!",
+                        "passwordMatch": "Password do not match!",
+                        "emailRequired": "Email cannot be empty!",
+                        "emailInvalid": "Email is invalid!",
+                        "userNameRequired": "Username cannot be empty!",
+                        "roleRequired": "Role cannot be empty!",
+                        "userNameMinLength": "Minimum username length is 2 characters!",
+                        "userNameMaxLength": "Maximum username length is 50 characters!",
+                        "domainsRequired": "Apps cannot be empty!",
+                        "phoneInvalid": "Phone is invalid!",
+                        "emailExist": "Email does not exist on the system!",
+                        "currentPassword": {
+                            "required": "The current password cannot be empty!"
+                        },
+                        "newPassword": {
+                            "required": "The new password cannot be empty!",
+                            "pattern": "Password must be from 6 - 30 characters, contain at least 1 number, 1 capital letter, 1 special character!"
+                        },
+                        "confirmPassword": {
+                            "required": "Confirm password cannot be empty!",
+                            "notMatch": "Passwords do not match!"
+                        },
+                        "telegramIdInvalid": "Telegram ID are only allowed to contain numbers!"
+                    },
+                    "breadcrumbs": {
+                        "name": "Member",
+                        "search": "Member management",
+                        "searchDescription": "View list and edit member information in the system",
+                        "description": "View list of member information in the system.",
+                        "roleDescription": "View a list of permission group information in the system."
+                    },
+                    "notify": {
+                        "createUserSuccess": "New user created successfully!",
+                        "createUserFailed": "Creating a new user failed!",
+                        "updateUserSuccess": "User updated successfully!",
+                        "updateUserFailed": "User updated failed!",
+                        "accountExist": "Account already exists!",
+                        "error": "An error occurred during data processing!"
+                    }
+                },
+                "app": {
+                    "common": {
+                        "edit": "Edit",
+                        "remove": "Delete",
+                        "appName": "App name",
+                        "appUsername": "Contact name",
+                        "appKey": "App Key",
+                        "domain": "Domain",
+                        "apiPermissions": "Permissions api",
+                        "appPassword": "Password",
+                        "createApp": "Create app",
+                        "updateApp": "Update app",
+                        "status": "Status",
+                        "active": "Active",
+                        "inactive": "Inactive",
+                        "createKey": "Gen key",
+                        "createdTime": "Created time",
+                        "appId": "App ID",
+                        "noData": "No data available in this mode.",
+                        "search": "Enter keyword"
+                    },
+                    "breadcrumbs": {
+                        "name": "App",
+                        "search": "App management",
+                        "searchDescription": "This is a list of app information used to authenticate information when using data query apis provided to product teams"
+                    },
+                    "placeholder": {
+                        "enterName": "Enter app name",
+                        "enterKey": "Gen key",
+                        "enterUsername": "Enter username",
+                        "enterTitle": "Enter title",
+                        "enterPassword": "Enter password",
+                        "enterDomain": "Enter domain",
+                        "enterDescription": "Enter description",
+                        "enterValue": "Enter value",
+                        "selectValue": "-- Select value --",
+                        "selectProduct": "-- Select product --",
+                        "selectMiniumMatch": "-- Minimum match --",
+                        "product": "Enter product"
+                    },
+                    "validator": {
+                        "nameIsRequired": "App name is required!",
+                        "nameMinLength": "App name must be at least 2 characters!",
+                        "nameMaxLength": "App name must be at most 255 characters!",
+                        "usernameIsRequired": "Username is required!",
+                        "usernameMinLength": "Username must be at least 2 characters!",
+                        "usernameMaxLength": "Username must be at most 255 characters!",
+                        "passwordIsRequired": "Password is required!",
+                        "passwordValidate": "Password must be at least 8 characters long and include uppercase, lowercase, number, and special character!",
+                        "passwordMaxLength": "Password must be at most 255 characters!",
+                        "domainIsRequired": "Domain is required!",
+                        "domainValidate": "Domain format is invalid!",
+                        "keyIsRequired": "Key is required!"
+                    },
+                    "notify": {
+                        "createAppSuccess": "App created successfully!",
+                        "createAppFailed": "App creation failed!",
+                        "updateAppSuccess": "App updated successfully!",
+                        "updateAppFailed": "App update failed!"
+                    }
+                }
+            },
+            "audience": {
+                "common": {
+                    "searchPlaceholder": "Enter name, ID, or brand to search...",
+                    "manageAudiences": "Manage audiences",
+                    "createAudience": "Create audience",
+                    "updateAudience": "Edit audience",
+                    "editAudience": "Edit file '{{name}}'",
+                    "copyAudience": "Copy file '{{name}}'",
+                    "audienceList": "Audience list",
+                    "info": "Information",
+                    "id": "ID",
+                    "username": "Username",
+                    "keyword": "Keyword",
+                    "createdTime": "Created time",
+                    "status": "Status",
+                    "allStatus": "-- All statuses --",
+                    "assignForUser": "Assign to user",
+                    "share": "Share",
+                    "shareFor": "Share with",
+                    "active": "Active",
+                    "brand": "Brand",
+                    "inactive": "Inactive",
+                    "createUser": "Creator",
+                    "email": "Email",
+                    "createdBy": "Created by",
+                    "detail": "Details",
+                    "all": "All",
+                    "statusActive": "Active",
+                    "expireDate": "Expiration date",
+                    "statusProcessing": "Processing",
+                    "statusProcessed": "Processed",
+                    "pageViews": "Pageviews",
+                    "tooltipPageViewPc": "PC pageviews",
+                    "tooltipPageViewMobile": "Mobile pageviews",
+                    "moreKeyword": "(See more {{ number }} keywords)",
+                    "name": "Audience name",
+                    "domain": "Domain",
+                    "urlsBlackList": "URL Blacklist",
+                    "topic": "Topic",
+                    "uploadFaild": "Upload failed",
+                    "uploadSuccess": "Upload successful",
+                    "importKeyTooltip": "Upload .xlsx, .xls, .txt files to import data",
+                    "excelFile": "Export excel file (.xlsx)",
+                    "textFile": "Export text file (.txt)",
+                    "exportDataFromFile": "Export data to file",
+                    "importDataFromFile": "Import data from file",
+                    "modifyDataFromFile": "Update data",
+                    "audienceNotFound": "Audience not found or you do not have permission!",
+                    "nameAudience": "File name",
+                    "totalNumberUrl": "Total URLs",
+                    "numberUrl": "Number of URLs",
+                    "pageView": "Pageviews",
+                    "pageViewPc": "Pageviews PC",
+                    "pageViewMobile": "Pageviews mobile",
+                    "pageViewTotal": "Total pageviews",
+                    "totalPageView": "Total pageviews",
+                    "totalPageViewPc": "Total pageviews PC",
+                    "totalPageViewMobile": "Total pageviews mobile",
+                    "totalPageViewTotal": "Total pageviews total",
+                    "criteria": "Criteria",
+                    "result": "Estimated statistics",
+                    "modifiedTime": "Last modified",
+                    "urls": "URLs",
+                    "NA": "N/A",
+                    "no": "None",
+                    "cleanData": "Clear data",
+                    "searchBrand": "Enter keyword to search brand...",
+                    "searchAudience": "Enter keyword to search audience...",
+                    "searchUser": "Enter keyword to search user...",
+                    "uploadFile": "Upload file",
+                    "exportFile": "Download data",
+                    "purpose": "Purpose",
+                    "infoField": "Information",
+                    "maxFileSizeTitle": "Maximum file size is 10MB",
+                    "add": "Add",
+                    "remove": "Remove",
+                    "txtFile": ".txt",
+                    "xlsxFile": ".xlsx",
+                    "confirmCancel": "Are you sure you want to cancel file '{{name}}'?",
+                    "confirmCancelMulti": "Are you sure you want to cancel these files?",
+                    "confirmUnassign": "Are you sure you want to remove this user's access to the file?",
+                    "noteSaveAudience": "* Note: At least one of keyword, domain, url blacklist or topic must be present!",
+                    "status0": "Inactive",
+                    "status1": "Active",
+                    "status2": "Processing",
+                    "status3": "Processed",
+                    "categoryKeyword1": "Politics",
+                    "categoryKeyword2": "Sexual",
+                    "categoryKeyword3": "Violence",
+                    "categoryKeyword4": "Others",
+                    "categoryKeyword": "Keyword categories:",
+                    "noteKeyword": "Suggested topic"
+                },
+                "validator": {
+                    "nameIsRequired": "Audience name is required!",
+                    "nameMinLength": "Audience name must be at least 2 characters!",
+                    "nameMaxLength": "Audience name must be at most 255 characters!",
+                    "domainIsRequired": "Domain is required!",
+                    "domainValidate": "Invalid domain format!",
+                    "urlsBlackListValidate": "Invalid URL Blacklist format!",
+                    "brandRequireValidate": "Brand cannot be empty!",
+                    "inputValidate": "Only letters and numbers are allowed!",
+                    "brandMaxLength": "Brand name must be at most 800 characters!",
+                    "valueMinLength": "Enter at least 2 characters",
+                    "wrongFormatFile": "Invalid file format!",
+                    "maxFileSizeTitle": "Maximum file size is 10MB",
+                    "reachMax": {
+                    "keywords": "You can enter up to {{max}} keywords only.",
+                    "domains": "You can enter up to {{max}} domains only.",
+                    "urlsBlackList": "You can enter up to {{max}} blocked URLs only."
+                    }
+                },
+                "placeholder": {
+                    "enterName": "Enter audience name...",
+                    "selectBrand": "-- Select brand --",
+                    "enterDomains": "Enter domains...",
+                    "enterKeywords": "Enter keywords...",
+                    "enterUrlsBlackList": "Enter URL blacklist...",
+                    "enterTopics": "Select topics..."
+                },
+                "notify": {
+                    "createAudienceSuccess": "Audience created successfully!",
+                    "createAudienceFailed": "Audience creation failed!",
+                    "updateAudienceSuccess": "Audience updated successfully!",
+                    "updateAudienceFailed": "Audience update failed!",
+                    "cancelAudienceSuccess": "File canceled successfully!",
+                    "cancelAudienceFailed": "File cancellation failed!"
+                },
+                "shareDialog": {
+                    "title": "Share file",
+                    "noElements": "You must select at least one account.",
+                    "usernameLabel": "Account list",
+                    "peopleAccess": "Users with access",
+                    "owner": "Owner",
+                    "removeAccess": "Remove access",
+                    "apply": "Apply",
+                    "usersPlace": "Enter the full username you want to share with and press enter",
+                    "audienceSearchUser": "Enter the username you want to share with and press enter",
+                    "userAlready": "User already exists in the list",
+                    "userNotFound": "User not found!"
+                },
+                "title": "Audiences"
+            },
+            "analytics": {
+                "common": {
+                    "title": "Analytics"
+                }
+            },
+            "assignAudience": {
+                "id": "Audience ID",
+                "name": "Name",
+                "info": "Information",
+                "userId": "User ID",
+                "userShare": "User share",
+                "placeholder": "Search by keyword, audience ID or user ID...",
+                "statusActive": "Active",
+                "removeAudience": "Remove audience",
+                "manage": "Assign audience manage",
+                "titleAssign": "Share audience to user",
+                "users": "Users",
+                "detail": "Detail audience",
+                "selectUser": "--- Select Users ---",
+                "audiences": "Audiences",
+                "createdDate": "Shared date",
+                "selectAudiences": "--- Select Audiences ---",
+                "noElements": "No elements"
+            },
+            "zone": {
+                "common": {
+                    "createZone": "Create zone",
+                    "info": "Info",
+                    "id": "Audience ID",
+                    "detail": "Detail",
+                    "createdDate": "Created date",
+                    "searchAudience": "Enter keywords to search for Audience......",
+                    "uploadFile": "Upload file",
+                    "userCreate": "User create",
+                    "createdBy": "Created by",
+                    "status": "Status",
+                    "selectAllStatus": "-- All Status --",
+                    "confirmDelete": "Are you sure you want to delete the zone with audience name '{{name}}'!",
+                    "noteSaveZone": "* Note: At least one of the values for zone id, adslot id or domains must exist!\n"
+                },
+                "status1": "Active",
+                "status0": "DeActive",
+                "manage": "Zone manager",
+                "placeholder": {
+                    "filterZone": "Filter zone...",
+                    "selectAudience":"-- Select Audience --",
+                    "enterDomains": "Enter Domains List...",
+                    "enterZoneIds": "Enter list Zone ID...",
+                    "enterAdslotIds": "Enter list Adslot ID..."
+                },
+                "zoneIds": "Zone ids",
+                "adslotIds": "Adslot ids",
+                "domains": "Domains",
+                "create": "Create zone mapping",
+                "edit": "Edit zone mapping",
+                "audience": "Audience",
+                "activeTime": "Active time",
+                "expiredTime": "Expired time",
+                "notify": {
+                    "deleteZoneSuccess": "Delete zone successfully!",
+                    "deleteZoneFailed": "Delete zone failed!",
+                    "noAudience": "Audience not found",
+                    "createZoneSuccess": "Create zone successfully!",
+                    "createZoneFailed": "Create zone failed!",
+                    "updateZoneSuccess": "Update zone successfully!",
+                    "updateZoneFailed": "Update zone failed!"
+                },
+                "validator": {
+                    "adslotIdsValidate": "Adslot ID is not in correct format!",
+                    "zoneIdsValidate": "Zone ID is not in correct format!",
+                    "domainsValidate": "Domain is not in correct format!",
+                    "valueMinLength": "Enter at least 1 character!",
+                    "wrongFormatFile": "File is not in correct format!",
+                    "maxFileSizeTitle": "Maximum size is 10MB!",
+                    "notDataFormatFile": "File must have valid data!",
+                    "existAudience": "This audience has been zone mapped, please check again!",
+                    "reachMax": {
+                        "zoneIds": "You can only enter a maximum of {{max}} Zone Id.",
+                        "domains": "You can only enter a maximum of {{max}} Domains.",
+                        "adslotIds": "You can only enter a maximum of {{max}} Adslot Id."
+                    }
+                }
+            },
+            "banner": {
+                "common": {
+                    "getBanner": "Get Banner",
+                    "getUrl": "Get Url",
+                    "url": "URL",
+                    "bannerInfo": "Banner Info",
+                    "audience": "Audience",
+                    "selectAudience": "-- Select audience --",
+                    "enterUrlPlaceHolder": "Enter URL",
+                    "example": "Example",
+                    "banner": "Banner",
+                    "name": "Name",
+                    "keyword": "Keyword",
+                    "value": "Value",
+                    "checkKeyword": "Check keyword",
+                    "total": "Total",
+                    "bannerIds": "Banner IDs",
+                    "validatedErrors": {
+                        "urlRequired": "URL is required!",
+                        "urlPattern": "URL format is incorrect!"
+                    }
+                }
+            },
+            "url": {
+                "common": {
+                    "getUrl": "Fetch URL Data",
+                    "domain": "Domain",
+                    "urlInfo": "URL List",
+                    "audience": "Audience",
+                    "enterDomainPlaceHolder": "Enter domain e.g: kenh14.vn",
+                    "enterCategoryPlaceHolder": "Enter category e.g: star",
+                    "validatedErrors": {
+                        "domainRequired": "Domain is required!",
+                        "domainPattern": "Domain format is invalid!",
+                        "categoryRequired": "Category is required!",
+                        "categoryMinLength": "Category must be at least 2 characters!",
+                        "categoryMaxLength": "Category must not exceed 255 characters!"
+                    }
+                }
+            },
+            "topic": {
+                "common": {
+                    "analysisResults": "Analysis results",
+                    "classifyTextTopic": "Classify text topic",
+                    "getTopic": "Get Topic",
+                    "url": "URL",
+                    "topicInfo": "Topic Info",
+                    "enterUrlPlaceHolder": "Enter URL",
+                    "example": "Example",
+                    "source": "Source",
+                    "high": "High",
+                    "medium": "Medium",
+                    "low": "Low",
+                    "validatedErrors": {
+                        "urlRequired": "URL is required!",
+                        "urlPattern": "URL format is incorrect!"
+                    },
+                    "adult": "Adult",
+                    "crime": "Crime",
+                    "dead": "Dead",
+                    "diseases": "Diseases",
+                    "impolite": "Impolite",
+                    "war": "War",
+                    "racist": "Racist",
+                    "stimulant": "Stimulant",
+                    "terrorism": "Terrorism",
+                    "violence": "Violence",
+                    "disaster": "Disaster",
+                    "politics": "Politics",
+                    "military": "Military",
+                    "sex": "Sex",
+                    "illegal": "Illegal",
+                    "other": "Other"
+                }
+            }
+        }
+    }
+}
