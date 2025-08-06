@@ -7,7 +7,7 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 import { SiteLoaderComponent } from './shared/components/site-loader/site-loader.component';
 import {StoreModule} from "@ngrx/store";
-
+import { loadingReducer } from './store/shared/loading/loading.reducer';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -27,7 +27,9 @@ export function appInitializerFactory(translate: TranslateService) {
   imports: [
     BrowserModule,
     HttpClientModule,
-    StoreModule.forRoot({}),
+    StoreModule.forRoot({
+      loading: loadingReducer
+    }),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
