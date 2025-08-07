@@ -19,6 +19,8 @@ import {AuthModule} from "./pages/auth/auth.module";
 import {RouterModule} from "@angular/router";
 import {NzLayoutModule} from "ng-zorro-antd/layout";
 import { AppRoutingModule } from './app-routing.module';
+import { HeaderComponent } from './layouts/header/header.component';
+import { SvgIconComponent } from './shared/components/svg-icon/svg-icon.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -37,6 +39,8 @@ export function appInitializerFactory(translate: TranslateService) {
     SiteToastComponent,
     AuthLayoutComponent,
     MainLayoutComponent,
+    HeaderComponent,
+    SvgIconComponent
   ],
   imports: [
     BrowserModule,
