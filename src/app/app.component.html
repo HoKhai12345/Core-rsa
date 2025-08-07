@@ -1,1 +1,3 @@
 <app-site-loader *ngIf="showLoading | async"></app-site-loader>
+<app-site-toast *ngIf="(showToast | async)?.enabled" ></app-site-toast>
+<router-outlet></router-outlet>

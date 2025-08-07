@@ -1,35 +1,21 @@
-import { TranslateService } from "@ngx-translate/core"
-import { on } from "events"
-import * as toastAction from "./toast.action"
-import { createReducer } from "@ngrx/store"
+import * as ToastAction from "./toast.action"
+import {createReducer, on} from "@ngrx/store"
+
+// 1. Khai báo interface trước
 export interface ToastState {
-    enabled: boolean,
-    message: string
+  enabled: boolean;
+  message: string;
 }
 
-export class ToastComponent {
-    constructor(
-        private translate: TranslateService
-    ) {
-
-    }
-}
-
+// 2. Gán kiểu rõ ràng cho initialState
 export const initialState: ToastState = {
-    enabled: false,
-    message: ''
-}
+  enabled: false,
+  message: ''
+};
 
-export const toastReducer = createReducer(
-    initialState,
-    on(toastAction.enabledToast, (state, action) => ({
-      ...state,
-      enabled: true,
-      message: action.message
-    })),
-    on(toastAction.disabledToast, state => ({
-      ...state,
-      enabled: false,
-      message: ''
-    }))
-  );
+// 3. Viết lại reducer
+export const toastReducer = createReducer<ToastState>(
+  initialState,
+  on(ToastAction.enabledToast, (state: ToastState): ToastState => ({ ...state, enabled: true, message: 'Bật Toast' })),
+  on(ToastAction.disabledToast, (state: ToastState): ToastState => ({ ...state, enabled: false, message: 'Tắt Toast' }))
+);

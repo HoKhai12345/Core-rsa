@@ -1,15 +1,6 @@
-import { createAction, props } from "@ngrx/store";
-import { TranslateService } from "@ngx-translate/core";
+import { createAction } from "@ngrx/store";
 
-export class ToastActionComponent {
-    constructor(
-        private translate: TranslateService
-    ) {
-
-    }
-}
 export const enabledToast = createAction(
-    '[Toast] Enabled',
-    props<{ message: string }>()
-  );
+    '[Toast] Enabled');
 export const disabledToast = createAction('[Toast] Disabled');
+
