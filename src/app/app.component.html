@@ -1,3 +1,3 @@
-<app-site-loader *ngIf="loadingService.loading$ | async"></app-site-loader>
+<app-site-loader *ngIf="loadingService.isSelectLoading | async"></app-site-loader>
 <app-site-toast *ngIf="(showToast | async)?.enabled" ></app-site-toast>
 <router-outlet></router-outlet>

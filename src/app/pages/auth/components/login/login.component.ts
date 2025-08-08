@@ -5,6 +5,7 @@ import {Router} from "@angular/router";
 import {ToastService} from "../../../../services/toast.service";
 import {TranslateService} from "@ngx-translate/core";
 import {LoadingService} from "../../../../services/loading.service";
+import {AuthenticationService} from "../../services/authentication.service";
 
 @Component({
   selector: 'app-login',
@@ -18,18 +19,22 @@ export class LoginComponent implements OnInit {
     private toastService: ToastService,
     private translate: TranslateService,
     private router: Router,
-    private loadingService: LoadingService
+    private loadingService: LoadingService,
+    private authenticationService: AuthenticationService
   ) { }
 
   ngOnInit(): void {}
 
   login() {
-    this.loadingService.show();
-    setTimeout(() => {
-      this.toastService.success(this.translate.instant('common.alert.loginSuccess'), 'Success');
-      this.router.navigate(['/dashboard'], {});
-      this.loadingService.hide()
-    }, 2000)
+    const data = {
+      "username": "hoquangkhai",
+      "password": "123456"
+    }
+    this.authenticationService.login(data).then((result) => {
+        if (result) {
+          this.router.navigate(['/dashboard'], {});
+        }
+    })
   }
 
 }

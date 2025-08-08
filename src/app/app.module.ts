@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import {TranslateLoader, TranslateModule, TranslateService} from "@ngx-translate/core";
-import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from "@angular/common/http";
 import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 import { SiteLoaderComponent } from './shared/components/site-loader/site-loader.component';
 import {StoreModule} from "@ngrx/store";
@@ -24,6 +24,7 @@ import { SvgIconComponent } from './shared/components/svg-icon/svg-icon.componen
 import {HeaderDropdownComponent} from "./layouts/header/header-dropdown/header-dropdown.component";
 import {SideBarComponent} from "./layouts/side-bar/side-bar.component";
 import {FooterComponent} from "./layouts/footer/footer.component";
+import {LoadingInterceptor} from "./interceptor/loading.interceptor";
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -76,7 +77,10 @@ export function appInitializerFactory(translate: TranslateService) {
     HeaderDropdownComponent
   ],
   providers: [{
-    provide: APP_INITIALIZER,
+    provide: [
+      APP_INITIALIZER,
+      { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true }
+    ],
     useFactory: appInitializerFactory,
     deps: [TranslateService],
     multi: true,
