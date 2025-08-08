@@ -6,17 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
+  activeDropdown: null | "chat" | "notification" | 'setupUser' | 'setting' = null;
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  toggleDropdown(type: 'chat' | 'notification' | 'setupUser' | 'setting') {
+    this.activeDropdown = this.activeDropdown === type ? null : type;
   }
 
-  toggleTheme() {
-    const html = document.documentElement;
-    const current = html.getAttribute('data-theme');
-    const next = current === 'dark' ? 'light' : 'dark';
-    html.setAttribute('data-theme', next!);
-  }
 
 }

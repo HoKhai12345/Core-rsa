@@ -21,6 +21,9 @@ import {NzLayoutModule} from "ng-zorro-antd/layout";
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './layouts/header/header.component';
 import { SvgIconComponent } from './shared/components/svg-icon/svg-icon.component';
+import {HeaderDropdownComponent} from "./layouts/header/header-dropdown/header-dropdown.component";
+import {SideBarComponent} from "./layouts/side-bar/side-bar.component";
+import {FooterComponent} from "./layouts/footer/footer.component";
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -40,7 +43,10 @@ export function appInitializerFactory(translate: TranslateService) {
     AuthLayoutComponent,
     MainLayoutComponent,
     HeaderComponent,
-    SvgIconComponent
+    SvgIconComponent,
+    SideBarComponent,
+    FooterComponent,
+    HeaderDropdownComponent
   ],
   imports: [
     BrowserModule,
@@ -66,7 +72,8 @@ export function appInitializerFactory(translate: TranslateService) {
   ],
   exports: [
     AuthLayoutComponent,
-    MainLayoutComponent
+    MainLayoutComponent,
+    HeaderDropdownComponent
   ],
   providers: [{
     provide: APP_INITIALIZER,

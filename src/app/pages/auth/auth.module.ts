@@ -3,6 +3,7 @@ import {LoginComponent} from "./components/login/login.component";
 import {CommonModule} from "@angular/common";
 import {FormsModule} from "@angular/forms";
 import {RouterModule} from "@angular/router";
+import {TranslateModule} from "@ngx-translate/core";
 
 @NgModule({
   declarations: [LoginComponent],
@@ -10,8 +11,9 @@ import {RouterModule} from "@angular/router";
     CommonModule,
     FormsModule,
     RouterModule.forChild([
-      { path: '', component: LoginComponent }
-    ])
+      {path: '', component: LoginComponent}
+    ]),
+    TranslateModule
   ]
 
 })

@@ -1,0 +1,8 @@
+.info-setup-user:hover {
+}
+
+.info-setup-user {
+  background-color: whitesmoke;
+  border-bottom: 1px solid gray;
+  border-radius: 10px;
+}

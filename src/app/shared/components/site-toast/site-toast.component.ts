@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {NzNotificationService} from "ng-zorro-antd/notification";
-import {ToastService} from "../../../services/toast.service";
 
 @Component({
   selector: 'app-site-toast',

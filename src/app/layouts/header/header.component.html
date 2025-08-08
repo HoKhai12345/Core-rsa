@@ -1,13 +1,43 @@
-<div class="navbar bg-base-100 shadow-md">
-  <div class="flex-1">
-    <a class="btn btn-ghost text-xl">{{ 'common.title' | translate}}</a>
+
+<!-- header.component.html -->
+<header class="w-full bg-gray-900 text-white flex justify-end item-center px-4 py-2 gap-2">
+
+  <div>
+    <label for="my-drawer" class="btn btn-square btn-ghost">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+           viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </label>
   </div>
-  <div class="flex-none">
-    <ul class="menu menu-horizontal px-1 hidden md:flex">
-      <li><a><app-svg-icon name="home" class="font-size-small" type="solid"></app-svg-icon>Home</a></li>
-      <li><a><app-svg-icon name="user" class="font-size-small" type="outline"></app-svg-icon>About</a></li>
-      <li><a>Contact</a></li>
-    </ul>
+  <button class="w-10 h-10 rounded-full bg-gray-700 hover:bg-gray-600 flex items-center justify-center" (click)="toggleDropdown('setting')" [ngClass]="activeDropdown === 'setting' ? 'active' : ''">
+    <app-svg-icon name="cog" class="w-6 h-6"></app-svg-icon>
+  </button>
+  <div class="relative group">
+    <!-- Trigger -->
+    <button (click)="toggleDropdown('chat')" [ngClass]="activeDropdown === 'chat' ? 'active' : ''" class="w-10 h-10 rounded-full bg-gray-700 hover:bg-gray-600 flex items-center padding-left-9">
+      <app-svg-icon name="chat-bubble-left" class="w-6 h-6"></app-svg-icon>
+    </button>
+    <span
+      class="absolute -top-1 -right-1 bg-red-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
+      5
+    </span>
+    <!-- Dropdown -->
   </div>
-</div>
-<app-svg-icon name="home" class="font-size-small" type="solid"></app-svg-icon>
+  <div class="relative">
+    <button (click)="toggleDropdown('notification')" [ngClass]="activeDropdown === 'notification' ? 'active' : ''" class="w-10 h-10 rounded-full bg-gray-700 hover:bg-gray-600 flex items-center padding-left-9">
+      <app-svg-icon name="bell" class="w-6 h-6"></app-svg-icon>
+    </button>
+    <span
+      class="absolute -top-1 -right-1 bg-red-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
+      2
+    </span>
+  </div>
+  <!-- Avatar -->
+  <img src="https://i.pravatar.cc/40" (click)="toggleDropdown('setupUser')" [ngClass]="activeDropdown === 'setupUser' ? 'active' : ''"  class="w-10 h-10 rounded-full border border-white cursor-pointer" alt="Avatar"/>
+</header>
+<app-header-dropdown   *ngIf="activeDropdown"
+                       [type]="activeDropdown"
+                       (close)="activeDropdown = null"
+></app-header-dropdown>

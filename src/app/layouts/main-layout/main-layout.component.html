@@ -1,12 +1,9 @@
-<nz-layout>
-  <nz-sider nzCollapsible>
-    Sidebar ở đây (menu, logo...)
-  </nz-sider>
-  <nz-layout>
-    <app-header></app-header>
-    <nz-content>
+<ng-container>
+  <app-side-bar></app-side-bar>
+  <ng-container>
+    <ng-container>
       <router-outlet></router-outlet>
-    </nz-content>
-    <nz-footer>© 2025 My App</nz-footer>
-  </nz-layout>
-</nz-layout>
+    </ng-container>
+    <app-footer></app-footer>
+  </ng-container>
+</ng-container>

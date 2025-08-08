@@ -1,6 +1,34 @@
 {
   "common": {
     "title": "Core Angular",
-    "loading": "Loading data..."
+    "loading": "Loading data...",
+    "login": "Login",
+    "email": "Email",
+    "password": "Password",
+    "forgotPassword": "Forgot Password",
+    "header": {
+      "tooltip": {
+        "setupUser": "Setup user",
+        "setting": "Setting",
+        "message": "Message",
+        "notification": "Notification"
+      },
+      "setupUser": "Setup user",
+      "setting": "Setting",
+      "message": "Message",
+      "notification": "Notification",
+      "infoUser": "View detail user",
+      "signOut": "SignOut"
+    },
+    "sideBar": {
+      "booking": "Booking",
+      "bookingLocation": "Booking location",
+      "myBooking": "My booking"
+    },
+    "alert": {
+      "loginSuccess": "Login success",
+      "loginFailed": "Login failed",
+      "signUp": "Sign up"
+    }
   }
 }
