@@ -47,3 +47,49 @@ svg {
   bottom: 0;
 }
 
+a.bread-crumb-disable {
+  pointer-events: none; /* Ngăn click */
+  color: #999; /* Màu xám */
+  text-decoration: none; /* Bỏ gạch dưới */
+  opacity: 0.6; /* Làm mờ */
+  cursor: default; /* Con trỏ bình thường */
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* khoảng cách giữa các item */
+  padding: 8px 16px;
+  background-color: #f9fafb; /* nền xám nhạt */
+  border: 1px solid #e5e7eb; /* viền mảnh, màu nhẹ */
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.breadcrumbs a {
+  color: #2563eb; /* xanh nhạt đẹp */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumbs a.disabled {
+  pointer-events: none;
+  color: #9ca3af; /* xám nhạt */
+  opacity: 0.6;
+  cursor: default;
+}
+
+.breadcrumbs .separator {
+  color: #6b7280; /* xám separator */
+}
+
+.content-site {
+  background: #f9fafb;
+  min-height: calc(100vh - 64px - 70px - 8px); /* 8px ~ 0.5rem */
+  margin-bottom: 0.5rem;
+}
+

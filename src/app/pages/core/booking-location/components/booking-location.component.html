@@ -1,0 +1,28 @@
+<div class="main-booking-location">
+  <div class="breadcrumbs">
+    <app-bread-crumbs [listBreadCrumbs]="breadcrumbs">
+    </app-bread-crumbs>
+  </div>
+  <!-- name of each tab group should be unique -->
+  <div class="content-site">
+    <div class="tabs tabs-lift mt-2">
+      <label class="tab">
+        <input type="radio" name="my_tabs_4" />
+        <app-svg-icon name="map">
+        </app-svg-icon>
+        <a class="mx-2"><strong>Vị trí</strong></a>
+      </label>
+      <div class="tab-content bg-base-100 border-base-300 p-6">
+        <div class="filter-node">
+          <input
+            class="input input-bordered"
+            ngbDatepicker
+            #d="ngbDatepicker"
+            (click)="d.toggle()"
+            [(ngModel)]="selectedDate"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

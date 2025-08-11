@@ -25,6 +25,10 @@ import {HeaderDropdownComponent} from "./layouts/header/header-dropdown/header-d
 import {SideBarComponent} from "./layouts/side-bar/side-bar.component";
 import {FooterComponent} from "./layouts/footer/footer.component";
 import {LoadingInterceptor} from "./interceptor/loading.interceptor";
+import {BookingLocationComponent} from "./pages/core/booking-location/components/booking-location.component";
+import {BreadCrumbsComponent} from "./shared/components/bread-crumbs/bread-crumbs.component";
+import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
+import {FormsModule} from "@angular/forms";
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -47,6 +51,8 @@ export function appInitializerFactory(translate: TranslateService) {
     SvgIconComponent,
     SideBarComponent,
     FooterComponent,
+    BookingLocationComponent,
+    BreadCrumbsComponent,
     HeaderDropdownComponent
   ],
   imports: [
@@ -59,6 +65,7 @@ export function appInitializerFactory(translate: TranslateService) {
     CoreModule,
     RouterModule,
     NzLayoutModule,
+    NgbModule,
     StoreModule.forRoot({
       loading: loadingReducer,
       toast: toastReducer
@@ -69,7 +76,8 @@ export function appInitializerFactory(translate: TranslateService) {
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+    FormsModule
   ],
   exports: [
     AuthLayoutComponent,
@@ -77,14 +85,12 @@ export function appInitializerFactory(translate: TranslateService) {
     HeaderDropdownComponent
   ],
   providers: [{
-    provide: [
-      APP_INITIALIZER,
-      { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true }
-    ],
+    provide: APP_INITIALIZER,
     useFactory: appInitializerFactory,
     deps: [TranslateService],
     multi: true,
-  }],
+  }, { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
