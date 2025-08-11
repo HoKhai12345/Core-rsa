@@ -25,7 +25,7 @@
           ➡️
         </div>
         <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
-          <li>
+          <li (click)="redirect('booking-location')">
             <div class="flex gap-4">
               <div class="w-1/4">
                 <app-svg-icon name="calendar-date-range" class="w-6 h-6"></app-svg-icon>
@@ -36,7 +36,7 @@
             </div>
           </li>
           <li>
-          <li>
+          <li (click)="redirect('my-booking')">
             <div class="flex gap-4">
               <div class="w-1/4">
                 <app-svg-icon name="calendar-days" class="w-6 h-6"></app-svg-icon>

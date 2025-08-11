@@ -29,6 +29,10 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {AuthEffects} from "./store/shared/auth/auth.effects";
 import {EffectsModule} from "@ngrx/effects";
 
+import {BookingLocationComponent} from "./pages/core/booking-location/components/booking-location.component";
+import {BreadCrumbsComponent} from "./shared/components/bread-crumbs/bread-crumbs.component";
+import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
+import {FormsModule} from "@angular/forms";
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -51,6 +55,8 @@ export function appInitializerFactory(translate: TranslateService) {
     SvgIconComponent,
     SideBarComponent,
     FooterComponent,
+    BookingLocationComponent,
+    BreadCrumbsComponent,
     HeaderDropdownComponent
   ],
   imports: [
@@ -64,6 +70,7 @@ export function appInitializerFactory(translate: TranslateService) {
     RouterModule,
     NzLayoutModule,
     ReactiveFormsModule,
+    NgbModule,
     EffectsModule.forRoot([AuthEffects]),
     StoreModule.forRoot({
       loading: loadingReducer,
@@ -75,7 +82,8 @@ export function appInitializerFactory(translate: TranslateService) {
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+    FormsModule
   ],
   exports: [
     AuthLayoutComponent,

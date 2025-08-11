@@ -1,0 +1,11 @@
+<div class="breadcrumbs text-sm">
+  <ul>
+    <li *ngFor="let item of listBreadCrumbs; let i = index; let last = last">
+      <a [routerLink]="!last ? item.url : ''" [ngClass]="i == (listBreadCrumbs.length - 1) ? 'bread-crumb-disable' : ''">
+        <app-svg-icon class="w-6 h-6" name="{{ item.nameIcon }}">
+        </app-svg-icon>
+        {{ item.label }}
+      </a>
+    </li>
+  </ul>
+</div>

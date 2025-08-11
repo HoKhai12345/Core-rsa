@@ -3,6 +3,7 @@ import {CommonModule} from "@angular/common";
 import {FormsModule} from "@angular/forms";
 import {RouterModule} from "@angular/router";
 import {DashboardComponent} from "./dashboard/components/dashboard.component";
+import {BookingLocationComponent} from "./booking-location/components/booking-location.component";
 
 @NgModule({
   declarations: [DashboardComponent],
@@ -10,7 +11,8 @@ import {DashboardComponent} from "./dashboard/components/dashboard.component";
     CommonModule,
     FormsModule,
     RouterModule.forChild([
-      { path: '', component: DashboardComponent }
+      { path: '', component: DashboardComponent },
+      { path: 'booking-location', component: BookingLocationComponent }
     ])
   ]
 
