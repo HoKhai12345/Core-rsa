@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {Store} from "@ngrx/store";
-import {startLoading, stopLoading} from "../../../../store/shared/loading/loading.action";
 import {Router} from "@angular/router";
 import {ToastService} from "../../../../services/toast.service";
-import {TranslateService} from "@ngx-translate/core";
-import {LoadingService} from "../../../../services/loading.service";
 import {AuthenticationService} from "../../services/authentication.service";
-
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import * as AuthActions from "../../../../store/shared/auth/auth.action";
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -14,27 +12,47 @@ import {AuthenticationService} from "../../services/authentication.service";
 })
 export class LoginComponent implements OnInit {
 
+  myForm!: FormGroup;
   constructor(
-    private readonly store: Store,
-    private toastService: ToastService,
-    private translate: TranslateService,
     private router: Router,
-    private loadingService: LoadingService,
-    private authenticationService: AuthenticationService
-  ) { }
+    private toastService: ToastService,
+    private authenticationService: AuthenticationService,
+    private fb: FormBuilder,
+    private store: Store,
+  ) {
+    this.createFormLogin();
+  }
 
   ngOnInit(): void {}
 
-  login() {
-    const data = {
-      "username": "hoquangkhai",
-      "password": "123456"
-    }
-    this.authenticationService.login(data).then((result) => {
-        if (result) {
-          this.router.navigate(['/dashboard'], {});
-        }
+  createFormLogin(): void {
+    this.myForm = this.fb.group({
+      username: ['hoquangkhai', [Validators.required, Validators.minLength(3)]],
+      password: ['123456', [Validators.required, Validators.minLength(3)]],
     })
+  }
+
+  get username() {
+    return this.myForm.get('username');
+  }
+
+  get password() {
+    return this.myForm.get('password');
+  }
+
+  login() {
+    const data = this.myForm.value;
+    console.log("data", data);
+    this.store.dispatch(AuthActions.login(this.myForm.value));
+    //
+    // this.authenticationService.login(data).then((result) => {
+    //     if (result) {
+    //       this.toastService.success("Đăng nhập thành công", 'Thông báo đăng nhập');
+    //       this.router.navigate(['/dashboard'], {});
+    //     } else {
+    //       this.toastService.error("Đăng nhập thất bại", 'Thông báo đăng nhập');
+    //     }
+    // })
   }
 
 }

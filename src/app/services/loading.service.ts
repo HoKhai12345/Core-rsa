@@ -6,7 +6,7 @@ import {startLoading, stopLoading} from "../store/shared/loading/loading.action"
 
 @Injectable({ providedIn: 'root' })
 export class LoadingService {
-  isSelectLoading: Observable<boolean> = this.store.select(selectIsLoading);
+  isSelectLoading: Observable<boolean> = this.store.select(selectIsLoading) || null;
   constructor(
     private readonly store: Store,
   ) {}

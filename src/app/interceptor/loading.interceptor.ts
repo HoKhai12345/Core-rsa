@@ -14,9 +14,7 @@ export class LoadingInterceptor implements HttpInterceptor {
     if (this.requests.length === 0) {
       this.loadingService.show()
     }
-
     this.requests.push(req)
-
     return next.handle(req).pipe(
       finalize(() => {
         this.requests = this.requests.filter(r => r !== req);

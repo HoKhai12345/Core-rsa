@@ -1,18 +1,23 @@
 <h2 class="text-2xl font-bold text-center mb-6">{{ 'common.login' | translate }}</h2>
 
-<form>
+<form [formGroup]="myForm" (ngSubmit)="login()">
   <!-- Email -->
-  <div class="form-control mb-4">
-    <input type="email" placeholder="{{ 'common.email' | translate }}" class="input input-bordered w-full" />
+  <div class="form-control mb-3">
+    <input type="text" formControlName="username" placeholder="{{ 'common.email' | translate }}" class="input input-bordered w-full" />
   </div>
-
+  <div *ngIf="username?.touched && username?.invalid" class="error mb-2">
+    <small *ngIf="username?.errors?.['required']">Username is required</small>
+    <small *ngIf="username?.errors?.['minlength']">Username must be at least 3 characters</small>
+  </div>
   <!-- Mật khẩu -->
-  <div class="form-control mb-6">
-    <input type="password" placeholder="{{ 'common.password' | translate }}" class="input input-bordered w-full" />
+  <div class="form-control mb-3">
+    <input type="password" formControlName="password" placeholder="{{ 'common.password' | translate }}" class="input input-bordered w-full" />
   </div>
-
+  <div *ngIf="password?.touched && password?.invalid" class="error mb-2">
+    <small *ngIf="password?.errors?.['required']">Password is required</small>
+  </div>
   <!-- Nút đăng nhập -->
-  <button type="submit" (click)="login()" class="btn btn-primary w-full">{{ 'common.login' | translate }}</button>
+  <button type="submit" class="btn btn-primary w-full mt-2">{{ 'common.login' | translate }}</button>
 
   <!-- Quên mật khẩu -->
   <div class="text-center mt-4">
