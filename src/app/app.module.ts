@@ -31,8 +31,10 @@ import {EffectsModule} from "@ngrx/effects";
 
 import {BookingLocationComponent} from "./pages/core/booking-location/components/booking-location.component";
 import {BreadCrumbsComponent} from "./shared/components/bread-crumbs/bread-crumbs.component";
-import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import {FormsModule} from "@angular/forms";
+import {StoreDevtoolsModule} from "@ngrx/store-devtools";
+import {environment} from "../environments/environment";
+import {authReducer} from "./store/shared/auth/auth.reducer";
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -70,12 +72,16 @@ export function appInitializerFactory(translate: TranslateService) {
     RouterModule,
     NzLayoutModule,
     ReactiveFormsModule,
-    NgbModule,
-    EffectsModule.forRoot([AuthEffects]),
     StoreModule.forRoot({
+      auth: authReducer,
       loading: loadingReducer,
       toast: toastReducer
     }),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+      logOnly: environment.production
+    }),
+    EffectsModule.forRoot([AuthEffects]),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -96,9 +102,11 @@ export function appInitializerFactory(translate: TranslateService) {
       useFactory: appInitializerFactory,
       deps: [TranslateService],
       multi: true,
-    }, {
+    },
+    {
       provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true
-    }],
+    }
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

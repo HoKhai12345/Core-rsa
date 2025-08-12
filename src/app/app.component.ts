@@ -23,6 +23,9 @@ export class AppComponent implements OnInit, AfterViewInit {
     private readonly store: Store,
   ) {
     this.title = this.translate.instant('common.title');
+    this.store.subscribe(state => {
+      console.log('Current state:', state);
+    });
   }
 
   ngOnInit(): void {}

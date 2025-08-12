@@ -6,11 +6,11 @@ export const login = createAction(
 )
 
 export const loginSuccess = createAction(
-  'Auth Login',
+  'Auth Login Success',
   props<{ user: any; token: string }>()
 )
 
 export const loginFailed = createAction(
-  'Auth Login',
+  'Auth Login Failed',
   props<{ error: any }>()
 )

@@ -14,16 +14,15 @@ export class LoginComponent implements OnInit {
 
   myForm!: FormGroup;
   constructor(
-    private router: Router,
-    private toastService: ToastService,
-    private authenticationService: AuthenticationService,
     private fb: FormBuilder,
     private store: Store,
   ) {
     this.createFormLogin();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log("vào lại cpn");
+  }
 
   createFormLogin(): void {
     this.myForm = this.fb.group({
@@ -44,15 +43,6 @@ export class LoginComponent implements OnInit {
     const data = this.myForm.value;
     console.log("data", data);
     this.store.dispatch(AuthActions.login(this.myForm.value));
-    //
-    // this.authenticationService.login(data).then((result) => {
-    //     if (result) {
-    //       this.toastService.success("Đăng nhập thành công", 'Thông báo đăng nhập');
-    //       this.router.navigate(['/dashboard'], {});
-    //     } else {
-    //       this.toastService.error("Đăng nhập thất bại", 'Thông báo đăng nhập');
-    //     }
-    // })
   }
 
 }

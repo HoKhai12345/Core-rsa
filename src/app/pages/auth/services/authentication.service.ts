@@ -17,9 +17,8 @@ export class AuthenticationService {
   login(data: { username: string, password: string }): Promise<any> {
     const path = this.apiService.paths.auth.login;
     return this.httpService.post(path, data, {}).then((result: any) => {
-      console.log("result", result);
       if (result.status === 1) {
-        return result.data
+        return result
       } else {
         throw new Error(result.message);
         return null;

@@ -15,15 +15,23 @@ export const initialState: AuthState = {
 
 export const authReducer = createReducer(
   initialState,
-  on(AuthActions.loginSuccess, (state, { user, token }) => ({
-    ...state,
-    user,
-    token,
-    isAuthenticated: true,
-  })),
-  on(AuthActions.loginFailed, state => ({
+  on(AuthActions.loginSuccess, (state, { user, token }) => {
+      console.log('Success:', (state as any).type, state);
+      return ({
+        ...state,
+        user,
+        token,
+        isAuthenticated: true,
+      })
+  }
+  ),
+  on(AuthActions.loginFailed, (state, action) => {
+    console.log('Reducer loginFailed triggered with action:', (action as any).type, action);
+  return ({
     ...state,
     user: null,
     token: null,
     isAuthenticated: false,
-  })));
+  })
+})
+)
