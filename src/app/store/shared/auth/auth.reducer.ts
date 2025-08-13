@@ -16,7 +16,6 @@ export const initialState: AuthState = {
 export const authReducer = createReducer(
   initialState,
   on(AuthActions.loginSuccess, (state, { user, token }) => {
-      console.log('Success:', (state as any).type, state);
       return ({
         ...state,
         user,

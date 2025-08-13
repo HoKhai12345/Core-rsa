@@ -1,34 +1,55 @@
-import { Injectable } from '@angular/core';
-import { Actions, createEffect, ofType } from '@ngrx/effects';
+import {Injectable} from '@angular/core';
+import {Actions, createEffect, ofType} from '@ngrx/effects';
 import * as AuthActions from './auth.action';
 import {catchError, from, map, mergeMap, of, switchMap, tap} from 'rxjs';
 import {AuthenticationService} from "../../../pages/auth/services/authentication.service";
 import {HttpErrorResponse} from "@angular/common/http";
+import {LocalStorageService} from "../../../services/local-storage.service";
+import {Router} from "@angular/router";
 
 @Injectable()
 export class AuthEffects {
   login$ = createEffect(() =>
     this.actions$.pipe(
       ofType(AuthActions.login),
-      tap(action =>   console.log('Reducer login success, type=', (action as any).type, action)),
-      switchMap(({ username, password }: { username: string, password: string}) =>
+      tap(action => console.log('Reducer login, type=', (action as any).type, action)),
+      switchMap(({username, password}: { username: string, password: string }) =>
         from(this.authService.login({username, password})).pipe(
           map(res => {
-            return AuthActions.loginSuccess({ user: res.data.user, token: res.data.accessToken })
+            return AuthActions.loginSuccess({user: res.data.user, token: res.data.accessToken})
           }),
-          // catchError((error: HttpErrorResponse) => {
-          //     console.log("error", error);
-          //     return of(AuthActions.loginFailed({ error: error.message }))
-          // }
-          // )
+          tap(() => {
+            this.router.navigate(['/dashboard']);
+          }),
+          catchError((error: HttpErrorResponse) => {
+              console.log("error", error);
+              return of(AuthActions.loginFailed({error: error.message}))
+            }
+          )
         )
       )
-    ), { dispatch: false }
+    )
+    // ,{dispatch: false}
   );
+
   constructor(
     private actions$: Actions,
-    private authService: AuthenticationService
-  ) {}
+    private authService: AuthenticationService,
+    private localStorage: LocalStorageService,
+    private router: Router
+  ) {
+  }
+
+  saveAuthData$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(AuthActions.loginSuccess),
+      tap(({ user, token }) => {
+      this.localStorage.set('current_user', JSON.stringify(user));
+      this.localStorage.set('token', token);
+      })
+    ),
+    { dispatch: false } // Đặt dispatch là false vì effect này không cần dispatch action mới
+  )
 
   // /** LOGOUT */
   // logout$ = createEffect(

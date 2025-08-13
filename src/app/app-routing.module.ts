@@ -2,6 +2,7 @@ import {RouterModule, Routes} from "@angular/router";
 import {MainLayoutComponent} from "./layouts/main-layout/main-layout.component";
 import {AuthLayoutComponent} from "./layouts/auth-layout/auth-layout.component";
 import {NgModule} from "@angular/core";
+import {AuthGuards} from "./guards/auth.guards";
 
 export const routes: Routes = [
   {
@@ -10,6 +11,7 @@ export const routes: Routes = [
     children: [
       {
         path: '',
+        canActivate: [AuthGuards],
         loadChildren: () => import('./pages/core/core.module').then(m => m.CoreModule)
       }
     ]

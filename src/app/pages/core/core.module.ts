@@ -4,6 +4,7 @@ import {FormsModule} from "@angular/forms";
 import {RouterModule} from "@angular/router";
 import {DashboardComponent} from "./dashboard/components/dashboard.component";
 import {BookingLocationComponent} from "./booking-location/components/booking-location.component";
+import {AuthGuards} from "../../guards/auth.guards";
 
 @NgModule({
   declarations: [DashboardComponent],
@@ -11,7 +12,7 @@ import {BookingLocationComponent} from "./booking-location/components/booking-lo
     CommonModule,
     FormsModule,
     RouterModule.forChild([
-      { path: '', component: DashboardComponent },
+      { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuards] },
       { path: 'booking-location', component: BookingLocationComponent }
     ])
   ]
