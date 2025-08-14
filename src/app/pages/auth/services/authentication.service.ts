@@ -1,16 +1,18 @@
 import {Injectable} from "@angular/core";
 import {HttpService} from "../../../services/http.service";
 import {LoadingService} from "../../../services/loading.service";
-import {Observable} from "rxjs";
+import {BehaviorSubject, Observable} from "rxjs";
 import {LocalStorageService} from "../../../services/local-storage.service";
 import {Store} from "@ngrx/store";
 import * as AuthActions from "../../../store/shared/auth/auth.action"
+import {UserModel} from "../../../models/user.model";
+import {BaseComponent} from "../../../components/base/base.component";
 
 @Injectable({providedIn: 'root'})
 
-export class AuthenticationService {
+export class AuthenticationService{
   apiService = this.httpService.apiServer;
-
+  private currentUserSubject: BehaviorSubject<UserModel> | undefined;
 
   constructor(
     private httpService: HttpService,

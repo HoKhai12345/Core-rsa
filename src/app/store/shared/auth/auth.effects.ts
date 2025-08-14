@@ -16,6 +16,7 @@ export class AuthEffects {
       switchMap(({username, password}: { username: string, password: string }) =>
         from(this.authService.login({username, password})).pipe(
           map(res => {
+            console.log("res", res);
             return AuthActions.loginSuccess({user: res.data.user, token: res.data.accessToken})
           }),
           tap(() => {

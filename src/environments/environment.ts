@@ -8,6 +8,9 @@ export const environment = {
     paths: {
       auth: {
         login: 'login',
+      },
+      admin: {
+        role: 'roles/index'
       }
     }
   }

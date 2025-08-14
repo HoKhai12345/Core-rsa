@@ -35,6 +35,7 @@ import {authReducer} from "./store/shared/auth/auth.reducer";
 import {NotFoundComponent} from "./components/not-found/not-found.component";
 import {BaseComponent} from "./components/base/base.component";
 import { NgSelectModule } from '@ng-select/ng-select';
+import {AuthInterceptor} from "./interceptor/auth.interceptor";
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -109,7 +110,8 @@ export function appInitializerFactory(translate: TranslateService) {
     },
     {
       provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true
-    }
+    },
+    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}
     ],
   bootstrap: [AppComponent]
 })

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {BreadCrumbs} from "../../../../../models/bread-crumbs.model";
+import {RoleService} from "../services/role.service";
+import {RoleModel} from "../../../../../models/role.model";
 
 @Component({
   selector: 'app-roles',
@@ -18,11 +20,22 @@ export class RolesComponent implements OnInit {
   selectedStatusId: number | null = null;
   breadcrumbs: BreadCrumbs[] = [
     { label: 'Home', nameIcon: 'home', url: 'core/admin/dashboard' },
-    { label: 'Roles', nameIcon: 'setup', url: 'core/admin/roles' },
+    { label: 'Roles', nameIcon: 'adjustments-horizontal', url: 'core/admin/roles' },
   ]
-  constructor() { }
+  listRole: RoleModel[] = [];
+  constructor(
+    private roleService: RoleService
+  ) { }
 
   ngOnInit(): void {
+    this.getListRole();
+  }
+
+  getListRole() {
+    this.roleService.index({}).then((result: any) => {
+      console.log("result", result);
+      this.listRole = result.roles;
+    })
   }
 
 }

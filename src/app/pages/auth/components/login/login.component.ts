@@ -6,7 +6,7 @@ import {BaseComponent} from "../../../../components/base/base.component";
 import {AppState} from "../../../../store/app.state";
 import {Router} from "@angular/router";
 @Component({
-  selector: 'app-base',
+  selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
