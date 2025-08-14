@@ -8,6 +8,6 @@ module.exports = {
   },
   plugins: [require("daisyui")],
   daisyui: {
-    themes: ["light", "dark", "cupcake"], // tuỳ chỉnh theo ý bạn
+    themes: ["light", "dark", "cupcake"],
   },
 }

@@ -9,7 +9,7 @@ import {BreadCrumbs} from "../../../../models/bread-crumbs.model";
 export class BookingLocationComponent implements OnInit {
   selectedDate = '';
   breadcrumbs: BreadCrumbs[] = [
-    { label: 'Home', nameIcon: 'home', url: '/' },
+    { label: 'Home', nameIcon: 'home', url: '/dashboard' },
     { label: 'Booking location', nameIcon: 'calculator', url: '/booking-location' }
   ]
   constructor() { }

@@ -9,7 +9,6 @@ import {map, take} from "rxjs";
 export class AuthGuards implements CanActivate {
   constructor(
     private router: Router,
-    private localStorage: LocalStorageService,
     private store: Store,
   ) {}
 
@@ -21,7 +20,7 @@ export class AuthGuards implements CanActivate {
         if (auth.isAuthenticated && auth.token) {
             return true
         }
-        return this.router.createUrlTree(['/login'], {
+        return this.router.createUrlTree(['auth/login'], {
           queryParams: { returnUrl: state.url }
         });
       })

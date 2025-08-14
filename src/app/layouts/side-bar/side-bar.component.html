@@ -6,10 +6,10 @@
   </div>
   <div class="drawer-side">
     <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
-    <ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4">
+    <ul class="menu bg-base-200 text-base-content min-h-full sm:w-80 w-2/4 p-4">
       <!-- Sidebar content here -->
       <li>
-        <div class="flex gap-4 p-2 info-setup-user height-80" (click)="redirect('dashboard')">
+        <div class="flex gap-4 p-2 info-setup-user height-80" (click)="redirect('core/dashboard')">
           <div class="avatar w-1/4">
             <img src="https://i.pravatar.cc/40"/>
           </div>
@@ -18,15 +18,21 @@
           </div>
         </div>
       </li>
-      <li class="dropdown dropdown-right">
+      <li class="" (click)="redirect('core/dashboard')">
+        <div tabindex="0" role="button" class="btn m-1 w-full" [routerLink]="['/core/dashboard']" routerLinkActive="active">
+          <app-svg-icon name="home" class="w-6 h-6"></app-svg-icon>
+          <b class="font-size-middle">{{ 'common.sideBar.home' | translate }}</b>
+        </div>
+      </li>
+      <li class="dropdown sm:dropdown-right dropdown-bottom">
         <div tabindex="0" role="button" class="btn m-1 w-full">
           <app-svg-icon name="calendar" class="w-6 h-6"></app-svg-icon>
           <b class="font-size-middle">{{ 'common.sideBar.booking' | translate }}</b>
           ➡️
         </div>
-        <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
-          <li (click)="redirect('booking-location')">
-            <div class="flex gap-4">
+        <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-1 sm:w-full w-52 p-2 shadow-sm">
+          <li (click)="redirect('core/booking-location')">
+            <div class="flex gap-4"  [routerLink]="['/core/booking-location']" routerLinkActive="active">
               <div class="w-1/4">
                 <app-svg-icon name="calendar-date-range" class="w-6 h-6"></app-svg-icon>
               </div>
@@ -36,8 +42,8 @@
             </div>
           </li>
           <li>
-          <li (click)="redirect('my-booking')">
-            <div class="flex gap-4">
+          <li (click)="redirect('core/my-booking')">
+            <div class="flex gap-4" [routerLink]="['/core/my-booking']" routerLinkActive="active">
               <div class="w-1/4">
                 <app-svg-icon name="calendar-days" class="w-6 h-6"></app-svg-icon>
               </div>
@@ -48,6 +54,16 @@
           <li>
         </ul>
       </li>
+      <li class="" (click)="redirect('core/dashboard')">
+        <strong>Admin</strong>
+      </li>
+      <li class="" (click)="redirect('core/admin/roles')">
+      <div tabindex="0" role="button" class="btn m-1 w-full"  [routerLink]="['/core/admin/roles']" routerLinkActive="active">
+        <app-svg-icon name="rectangle-group" class="w-6 h-6"></app-svg-icon>
+        <b class="font-size-middle">{{ 'common.sideBar.roles' | translate }}</b>
+      </div>
+      </li>
     </ul>
   </div>
+
 </div>

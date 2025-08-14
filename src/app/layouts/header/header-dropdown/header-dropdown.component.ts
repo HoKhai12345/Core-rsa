@@ -4,6 +4,7 @@ import {startLoading, stopLoading} from "../../../store/shared/loading/loading.a
 import {Store} from "@ngrx/store";
 import {ToastService} from "../../../services/toast.service";
 import {Router} from "@angular/router";
+import {logout} from "../../../store/shared/auth/auth.action";
 
 @Component({
   selector: 'app-header-dropdown',
@@ -25,11 +26,8 @@ export class HeaderDropdownComponent implements OnInit {
 
   logOut() {
     this.store.dispatch(startLoading())
-    setTimeout(() => {
-      this.toastService.warning(this.translate.instant('common.alert.signUp'), 'Success');
-      this.router.navigate(['/login'], {});
-      this.store.dispatch(stopLoading())
-    }, 2000)
+    this.store.dispatch(logout())
+    this.store.dispatch(stopLoading())
   }
 
 }

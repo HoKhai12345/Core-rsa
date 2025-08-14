@@ -3,10 +3,11 @@ import {MainLayoutComponent} from "./layouts/main-layout/main-layout.component";
 import {AuthLayoutComponent} from "./layouts/auth-layout/auth-layout.component";
 import {NgModule} from "@angular/core";
 import {AuthGuards} from "./guards/auth.guards";
+import {NotFoundComponent} from "./components/not-found/not-found.component";
 
 export const routes: Routes = [
   {
-    path: '',
+    path: 'core',
     component: MainLayoutComponent,
     children: [
       {
@@ -17,7 +18,7 @@ export const routes: Routes = [
     ]
   },
   {
-    path: '',
+    path: 'auth',
     component: AuthLayoutComponent,
     children: [
       {
@@ -26,7 +27,18 @@ export const routes: Routes = [
       }
     ]
   },
-  { path: '**', redirectTo: '' }
+
+  {
+    path: '',
+    redirectTo: '/core/dashboard',
+    pathMatch: 'full'
+  },
+
+  {
+    path: 'error-404',
+    component: NotFoundComponent,
+  },
+  { path: '**', redirectTo: 'error-404' }
 ]
 
 @NgModule({

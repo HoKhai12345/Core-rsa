@@ -19,7 +19,7 @@ export class AuthEffects {
             return AuthActions.loginSuccess({user: res.data.user, token: res.data.accessToken})
           }),
           tap(() => {
-            this.router.navigate(['/dashboard']);
+            this.router.navigate(['core/dashboard']);
           }),
           catchError((error: HttpErrorResponse) => {
               console.log("error", error);
@@ -51,20 +51,21 @@ export class AuthEffects {
     { dispatch: false } // Đặt dispatch là false vì effect này không cần dispatch action mới
   )
 
-  // /** LOGOUT */
-  // logout$ = createEffect(
-  //   () =>
-  //     this.actions$.pipe(
-  //       ofType(AuthActions.logout),
-  //       tap(() => {
-  //         localStorage.removeItem('token');
-  //         localStorage.removeItem('user');
-  //       })
-  //     ),
-  //   { dispatch: false }
-  // );
-  //
-  // /** INIT AUTH STATE KHI F5 */
+  /** LOGOUT */
+  logout$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(AuthActions.logout),
+        tap(() => {
+          this.localStorage.delete('token');
+          this.localStorage.delete('current_user');
+          this.router.navigate(['/auth/login']);
+        })
+      ),
+    { dispatch: false }
+  );
+
+  /** INIT AUTH STATE KHI F5 */
   // initAuth$ = createEffect(() =>
   //   this.actions$.pipe(
   //     ofType(AuthActions.initAuth), // action này mình sẽ dispatch ở APP_INITIALIZER

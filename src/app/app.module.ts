@@ -20,7 +20,6 @@ import {RouterModule} from "@angular/router";
 import {NzLayoutModule} from "ng-zorro-antd/layout";
 import {AppRoutingModule} from './app-routing.module';
 import {HeaderComponent} from './layouts/header/header.component';
-import {SvgIconComponent} from './shared/components/svg-icon/svg-icon.component';
 import {HeaderDropdownComponent} from "./layouts/header/header-dropdown/header-dropdown.component";
 import {SideBarComponent} from "./layouts/side-bar/side-bar.component";
 import {FooterComponent} from "./layouts/footer/footer.component";
@@ -28,13 +27,15 @@ import {LoadingInterceptor} from "./interceptor/loading.interceptor";
 import {ReactiveFormsModule} from "@angular/forms";
 import {AuthEffects} from "./store/shared/auth/auth.effects";
 import {EffectsModule} from "@ngrx/effects";
-
-import {BookingLocationComponent} from "./pages/core/booking-location/components/booking-location.component";
-import {BreadCrumbsComponent} from "./shared/components/bread-crumbs/bread-crumbs.component";
+import {SharedModule} from "./shared/shared.module";
 import {FormsModule} from "@angular/forms";
 import {StoreDevtoolsModule} from "@ngrx/store-devtools";
 import {environment} from "../environments/environment";
 import {authReducer} from "./store/shared/auth/auth.reducer";
+import {NotFoundComponent} from "./components/not-found/not-found.component";
+import {BaseComponent} from "./components/base/base.component";
+import { NgSelectModule } from '@ng-select/ng-select';
+
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -54,12 +55,11 @@ export function appInitializerFactory(translate: TranslateService) {
     AuthLayoutComponent,
     MainLayoutComponent,
     HeaderComponent,
-    SvgIconComponent,
     SideBarComponent,
     FooterComponent,
-    BookingLocationComponent,
-    BreadCrumbsComponent,
-    HeaderDropdownComponent
+    HeaderDropdownComponent,
+    NotFoundComponent,
+    BaseComponent
   ],
   imports: [
     BrowserModule,
@@ -69,9 +69,12 @@ export function appInitializerFactory(translate: TranslateService) {
     AppRoutingModule,
     AuthModule,
     CoreModule,
+    SharedModule,
     RouterModule,
     NzLayoutModule,
     ReactiveFormsModule,
+    FormsModule, // Cần cho ngModel
+    NgSelectModule,// Thư viện ng-select
     StoreModule.forRoot({
       auth: authReducer,
       loading: loadingReducer,
@@ -94,7 +97,8 @@ export function appInitializerFactory(translate: TranslateService) {
   exports: [
     AuthLayoutComponent,
     MainLayoutComponent,
-    HeaderDropdownComponent
+    HeaderDropdownComponent,
+    BaseComponent
   ],
   providers: [
     {

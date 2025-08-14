@@ -5,6 +5,10 @@ export const login = createAction(
   props<{username: string, password: string }>()
 )
 
+export const logout = createAction(
+  'Auth Logout',
+)
+
 export const loginSuccess = createAction(
   'Auth Login Success',
   props<{ user: any; token: string }>()

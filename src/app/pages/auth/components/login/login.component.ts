@@ -1,27 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import {Store} from "@ngrx/store";
-import {Router} from "@angular/router";
-import {ToastService} from "../../../../services/toast.service";
-import {AuthenticationService} from "../../services/authentication.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import * as AuthActions from "../../../../store/shared/auth/auth.action";
+import {BaseComponent} from "../../../../components/base/base.component";
+import {AppState} from "../../../../store/app.state";
+import {Router} from "@angular/router";
 @Component({
-  selector: 'app-login',
+  selector: 'app-base',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
-
+export class LoginComponent extends BaseComponent implements OnInit {
   myForm!: FormGroup;
   constructor(
     private fb: FormBuilder,
-    private store: Store,
+    public override store: Store<AppState>,
+    private router: Router
   ) {
+    super(store);
     this.createFormLogin();
+
   }
 
-  ngOnInit(): void {
-    console.log("vào lại cpn");
+  override ngOnInit(): void {
+    if (this.currentUser) {
+      this.router.navigate(['/core/dashboard']);
+    }
   }
 
   createFormLogin(): void {
@@ -41,7 +45,6 @@ export class LoginComponent implements OnInit {
 
   login() {
     const data = this.myForm.value;
-    console.log("data", data);
     this.store.dispatch(AuthActions.login(this.myForm.value));
   }
 

@@ -1,4 +1,4 @@
-<div class="absolute right-0 drop-down-header w-64 bg-white text-black shadow-lg rounded-lg z-50 p-2">
+<div class="absolute right-0 drop-down-header w-2/4 sm:w-64 bg-white text-black shadow-lg rounded-lg z-50 p-2">
   <ng-container [ngSwitch]="type">
     <div *ngSwitchCase="'chat'">
       <p class="text-sm font-semibold mb-2">{{ 'common.header.message' | translate }}</p>
@@ -32,8 +32,4 @@
       </div>
     </div>
   </ng-container>
-<!--  <ul>-->
-<!--    <li class="py-1 border-b">Thông báo 1</li>-->
-<!--    <li class="py-1 border-b">Thông báo 2</li>-->
-<!--  </ul>-->
 </div>

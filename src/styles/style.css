@@ -11,17 +11,17 @@ svg {
 }
 
 .active {
-  background: white;
-  color: black;
+  background: black;
+  color: white;
 }
 
 .padding-left-9 {
   padding-left: 9px !important;
 }
 
-.drop-down-header {
-  width: 20%;
-}
+/*.drop-down-header {*/
+/*  width: 20%;*/
+/*}*/
 
 .avatar img {
   border-radius: 100%;
@@ -97,3 +97,89 @@ a.bread-crumb-disable {
   margin-bottom: 0.5rem;
 }
 
+.emoji-404{
+
+  position: relative;
+  animation: mymove 2.5s infinite;
+}
+
+.table-tr-custom {
+  .text-select-content {
+    background: #2563eb;
+    color: whitesmoke
+  }
+  input .check-box-all-custom {
+    background: white
+  }
+}
+
+
+.border-select-custom {
+  border: 1px solid #2563eb;
+}
+
+.ring-custom {
+  background: #2563eb;
+}
+
+table .table-tr-custom {
+  background: black;
+  color: white;
+}
+
+@keyframes mymove {
+  33%   {top: 0px;}
+  66%  {top: 20px;}
+  100%  {top: 0px}
+
+}
+
+
+
+/* Vùng chứa chính của select */
+.ng-select-container {
+  @apply bg-base-100 text-base-content border-base-300;
+  @apply rounded-box border;
+  @apply w-full min-h-12 h-12;
+  @apply flex items-center px-4;
+  @apply transition-all duration-200;
+}
+
+/* Kiểu dáng khi select được focus */
+.ng-select.ng-select-focused .ng-select-container {
+  @apply border-select-custom ring ring-primary ring-opacity-50;
+  @apply outline-none;
+}
+
+/* Ẩn placeholder khi đã chọn */
+.ng-select.ng-select-selected .ng-placeholder {
+  @apply hidden;
+}
+
+/* Màu chữ của placeholder */
+.ng-select .ng-placeholder {
+  @apply text-base-content opacity-70;
+}
+
+/* Dropdown panel, làm nó giống một card */
+.ng-dropdown-panel {
+  @apply bg-base-200 border-base-300 text-base-content;
+  @apply rounded-box border;
+  @apply mt-2 shadow-xl;
+  @apply transition-all duration-200;
+}
+
+/* Các item trong dropdown */
+.ng-option {
+  @apply p-3 cursor-pointer;
+}
+
+/* Item khi hover */
+.ng-option:hover {
+  @apply bg-primary text-select-content;
+}
+
+/* Item đã được chọn */
+.ng-option.ng-option-selected {
+  @apply bg-primary text-select-content font-semibold;
+}

@@ -22,6 +22,8 @@
     },
     "sideBar": {
       "booking": "Booking",
+      "home": "Home",
+      "roles": "Manage roles",
       "bookingLocation": "Booking location",
       "myBooking": "My booking"
     },

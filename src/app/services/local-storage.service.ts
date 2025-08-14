@@ -8,7 +8,7 @@ export class LocalStorageService {
 
   userKey = 'current_user';
   tokenKey = 'token';
-  protected prefix = environment.appPrefix
+  prefix = environment.appPrefix
 
   public getKeyName(key: string) {
     console.log("`${this.prefix}_${key}`", `${this.prefix}_${key}`);
@@ -32,7 +32,7 @@ export class LocalStorageService {
   }
 
   public getToken(){
-    return localStorage.removeItem(this.getKeyName(this.tokenKey));
+    return localStorage.getItem(this.getKeyName(this.tokenKey));
   }
 
   public getCurrentUser() {

@@ -32,5 +32,14 @@ export const authReducer = createReducer(
     token: null,
     isAuthenticated: false,
   })
-})
+}),
+  on(AuthActions.logout, (state, action) => {
+    console.log('Reducer Logout triggered with action:', (action as any).type, action);
+    return ({
+      ...state,
+      user: null,
+      token: null,
+      isAuthenticated: false,
+    })
+  })
 )
