@@ -2,40 +2,144 @@ import { Component, OnInit } from '@angular/core';
 import {BreadCrumbs} from "../../../../../models/bread-crumbs.model";
 import {RoleService} from "../services/role.service";
 import {RoleModel} from "../../../../../models/role.model";
+import {CorePaginationConfig} from "../../../../../models/pagination.model";
 
+interface Filter {
+    page: number,
+    limit: number,
+    name: string | undefined;
+    status: number | undefined
+}
 @Component({
   selector: 'app-roles',
   templateUrl: './roles.component.html',
   styleUrls: ['./roles.component.css']
 })
 export class RolesComponent implements OnInit {
-  // Mảng dữ liệu cho ô select
   statuses: any[] = [
     { id: 1, name: 'Đang xử lý' },
     { id: 2, name: 'Đã hoàn thành' },
     { id: 3, name: 'Đã hủy' }
   ];
 
-  // Biến để lưu giá trị trạng thái đã chọn
-  selectedStatusId: number | null = null;
   breadcrumbs: BreadCrumbs[] = [
     { label: 'Home', nameIcon: 'home', url: 'core/admin/dashboard' },
     { label: 'Roles', nameIcon: 'adjustments-horizontal', url: 'core/admin/roles' },
   ]
   listRole: RoleModel[] = [];
+  listItemPerPage: number[] = [10, 20, 30];
+  filter: Filter = {
+    page: 1,
+    limit: 10,
+    name: '',
+    status: undefined
+  }
+
+  activeDropdown: number | null = null;
+  config: CorePaginationConfig = {
+    totalItems: 0,
+    itemsPerPage: 10,
+    currentPage: 1,
+    maxPages: 5,
+    showFirstLast: true,
+    showPageNumbers: true,
+    showItemsPerPage: true,
+    showTotal: true
+  };
   constructor(
     private roleService: RoleService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.getListRole();
+
+    document.addEventListener('click', (event) => {
+      const target = event.target as HTMLElement;
+      if (!target.closest('.action-dropdown')) {
+        this.activeDropdown = null;
+      }
+    });
   }
 
   getListRole() {
-    this.roleService.index({}).then((result: any) => {
+    const queries: {
+      offset: number;
+      limit: number;
+      name?: string;
+      status?: number;
+    } = {
+      offset: (this.filter.page - 1) * this.filter.limit,
+      limit: this.filter.limit,
+    };
+    if (this.filter.name !== '') {
+      queries.name = this.filter.name
+    }
+
+    if (this.filter.status) {
+      queries.status = this.filter.status
+    }
+    this.roleService.index(queries).then((result: any) => {
       console.log("result", result);
       this.listRole = result.roles;
+      this.config.totalItems = result.total;
     })
   }
 
+  pageChange(page: number) {
+      this.filter.page = page;
+      this.getListRole();
+  }
+
+  itemsPerPageChange(limit: number) {
+    this.filter.limit = limit;
+    this.getListRole();
+  }
+
+  // Action dropdown methods
+  toggleActionDropdown(roleId: number, event?: Event) {
+    if (event) {
+      event.stopPropagation();
+    }
+
+    if (this.activeDropdown === roleId) {
+      this.activeDropdown = null;
+    } else {
+      this.activeDropdown = roleId;
+      // Tính toán vị trí cho dropdown
+      this.positionDropdown(event);
+    }
+  }
+
+  positionDropdown(event: Event | undefined) {
+    if (!event) return;
+
+    const target = event.target as HTMLElement;
+    const rect = target.getBoundingClientRect();
+
+    // Tìm dropdown element
+    setTimeout(() => {
+      const dropdown = document.querySelector('.action-dropdown-menu') as HTMLElement;
+      if (dropdown) {
+        // Đặt vị trí chính xác
+        dropdown.style.left = (rect.right - dropdown.offsetWidth) + 'px';
+        dropdown.style.top = (rect.top - dropdown.offsetHeight - 8) + 'px';
+      }
+    }, 0);
+  }
+
+  closeAllDropdowns() {
+    this.activeDropdown = null;
+  }
+
+  editRole(role: RoleModel) {
+    console.log('Edit role:', role);
+    // TODO: Implement edit functionality
+    this.closeAllDropdowns();
+  }
+
+  deleteRole(role: RoleModel) {
+    console.log('Delete role:', role);
+    // TODO: Implement delete functionality
+    this.closeAllDropdowns();
+  }
 }

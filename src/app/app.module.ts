@@ -60,7 +60,7 @@ export function appInitializerFactory(translate: TranslateService) {
     FooterComponent,
     HeaderDropdownComponent,
     NotFoundComponent,
-    BaseComponent
+    BaseComponent,
   ],
   imports: [
     BrowserModule,
@@ -99,7 +99,8 @@ export function appInitializerFactory(translate: TranslateService) {
     AuthLayoutComponent,
     MainLayoutComponent,
     HeaderDropdownComponent,
-    BaseComponent
+    BaseComponent,
+    HeaderComponent
   ],
   providers: [
     {

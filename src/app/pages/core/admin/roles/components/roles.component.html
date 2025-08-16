@@ -3,39 +3,79 @@
     <app-bread-crumbs [listBreadCrumbs]="breadcrumbs">
     </app-bread-crumbs>
   </div>
-  <div class="gap-4 flex">
-    <!-- name of each tab group should be unique -->
+  <div class="gap-4 flex mt-2">
     <div class="card bg-base-100 sm:w-full shadow-sm">
-      <div class="card-body">
-        <div class="overflow-x-auto">
-          <table class="table table-tr-custom">
-            <thead>
-            <tr class="table-tr-custom">
-              <th>
-                <label>
-                  <input type="checkbox" class="checkbox"/>
-                </label>
-              </th>
-              <th>ID</th>
-              <th>Name</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr *ngFor="let role of listRole">
-              <th>
-                <label>
-                  <input type="checkbox" class="checkbox check-box-all-custom"/>
-                </label>
-              </th>
+      <div class="overflow-x-auto">
+        <table class="table table-tr-custom custom-table">
+          <thead>
+          <tr class="table-tr-custom">
+            <th class="checkbox-column">
+              <label>
+                <input type="checkbox" class="checkbox"/>
+              </label>
+            </th>
+            <th class="id-column">ID</th>
+            <th class="name-column">Name</th>
+            <th class="action-column">Action</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let role of listRole" class="table-row">
+            <th class="checkbox-column">
+              <label>
+                <input type="checkbox" class="checkbox check-box-all-custom"/>
+              </label>
+            </th>
+            <td class="id-column">
+              {{ role.id }}
+            </td>
+            <td class="name-column">{{ role.name }}</td>
+            <td class="action-column">
 
-              <td>
-                {{ role.id }}
-              </td>
-              <td>{{ role.name }}</td>
-            </tr>
-            </tbody>
-          </table>
-        </div>
+              <div class="dropdown dropdown-left">
+                <div tabindex="0" role="button" class="btn m-1">
+                  <button
+                    class="action-btn"
+                    (click)="toggleActionDropdown(role.id, $event)"
+                    type="button"
+                    [class.active]="activeDropdown === role.id"
+                    title="Actions">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path>
+                    </svg>
+                  </button>
+                </div>
+                <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
+                  <li>
+                    <div
+                         class="action-dropdown-menu"
+                         (click)="$event.stopPropagation()">
+                      <div class="action-item edit-action" (click)="editRole(role)">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                        </svg>
+                        <span>Edit</span>
+                      </div>
+                      <div class="action-item delete-action" (click)="deleteRole(role)">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                        </svg>
+                        <span>Delete</span>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+        <app-core-pagination
+          [config]="config"
+          [listItemPerPage]="listItemPerPage"
+          (pageChange)="pageChange($event)"
+          (itemsPerPageChange)="itemsPerPageChange($event)"
+        ></app-core-pagination>
       </div>
     </div>
   </div>

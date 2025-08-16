@@ -13,7 +13,10 @@ export class RoleService {
 
   }
 
-  index(options = {}): Promise<any> {
+  index(params = {}): Promise<any> {
+    const options = {
+      params: params
+    }
     const path = this.apiService.paths.admin.role;
     return this.httpService.get(path, options).then((result: any) => {
       if (result.status === 1) {

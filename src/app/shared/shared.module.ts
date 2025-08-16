@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { SvgIconComponent } from './components/svg-icon/svg-icon.component';
 import { BreadCrumbsComponent } from './components/bread-crumbs/bread-crumbs.component';
+import { CorePaginationComponent } from './components/pagination/pagination.component';
 
 @NgModule({
   declarations: [
     SvgIconComponent,
-    BreadCrumbsComponent
+    BreadCrumbsComponent,
+    CorePaginationComponent
   ],
   imports: [
     CommonModule,
@@ -15,7 +17,8 @@ import { BreadCrumbsComponent } from './components/bread-crumbs/bread-crumbs.com
   ],
   exports: [
     SvgIconComponent,
-    BreadCrumbsComponent
+    BreadCrumbsComponent,
+    CorePaginationComponent
   ]
 })
 export class SharedModule { }

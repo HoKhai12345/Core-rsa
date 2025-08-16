@@ -1,0 +1,103 @@
+<div class="pagination-container">
+  <!-- Hiển thị thông tin tổng quan -->
+  <div *ngIf="config.showTotal" class="pagination-info">
+    <span class="text-sm text-gray-600">
+      Hiển thị {{ startIndex }}-{{ endIndex }} trong tổng số {{ config.totalItems }} mục
+    </span>
+  </div>
+
+  <!-- Controls chính -->
+  <div class="pagination-controls">
+    <!-- Nút First và Previous -->
+    <div *ngIf="config.showFirstLast" class="pagination-nav">
+      <button
+        class="pagination-btn pagination-btn-nav"
+        [disabled]="isFirstPage()"
+        (click)="goToFirst()"
+        title="Trang đầu">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7"></path>
+        </svg>
+      </button>
+
+      <button
+        class="pagination-btn pagination-btn-nav"
+        [disabled]="!hasPreviousPage()"
+        (click)="goToPrevious()"
+        title="Trang trước">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Số trang -->
+    <div *ngIf="config.showPageNumbers" class="pagination-pages">
+      <button
+        *ngFor="let page of visiblePages"
+        class="pagination-btn pagination-btn-page"
+        [class.active]="page === config.currentPage"
+        (click)="goToPage(page)">
+        {{ page }}
+      </button>
+      <button
+      *ngIf="visiblePages[config.maxPages ? (config.maxPages - 1) : 0] < totalPages" class="pagination-btn pagination-btn-page"
+      (click)="goToPage(config.currentPage + 1)">
+        ...
+      </button>
+    </div>
+
+    <!-- Nút Next và Last -->
+    <div *ngIf="config.showFirstLast" class="pagination-nav">
+      <button
+        class="pagination-btn pagination-btn-nav"
+        [disabled]="!hasNextPage()"
+        (click)="goToNext()"
+        title="Trang tiếp">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </button>
+
+      <button
+        class="pagination-btn pagination-btn-nav"
+        [disabled]="isLastPage()"
+        (click)="goToLast()"
+        title="Trang cuối">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M6 5l7 7-7 7"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Dropdown items per page -->
+  <div *ngIf="config.showItemsPerPage" class="pagination-items-per-page">
+    <span class="text-sm text-gray-600 mr-2">Mục mỗi trang:</span>
+    <div class="relative">
+      <button
+        class="pagination-dropdown-btn"
+        (click)="toggleDropdown()"
+        type="button">
+        <span>{{ config.itemsPerPage }}</span>
+        <svg class="w-4 h-4 ml-2 transition-transform duration-200"
+             [class.rotate-180]="isDropdownOpen"
+             fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </button>
+
+      <div *ngIf="isDropdownOpen"
+           class="pagination-dropdown-menu pagination-dropdown-menu-up"
+           (click)="$event.stopPropagation()">
+        <div *ngFor="let value of listItemPerPage"
+             class="pagination-dropdown-item"
+             (click)="setItemsPerPage(value)">
+          {{ value }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<pre>{{ visiblePages | json }}</pre>

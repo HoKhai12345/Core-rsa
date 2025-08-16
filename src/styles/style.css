@@ -138,52 +138,24 @@ table .table-tr-custom {
 
 }
 
+/*Pagination*/
+.pagination-items-per-page .relative {
+  position: relative;
+}
+/* Menu dropdown */
+.pagination-dropdown-menu {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  z-index: 10;
+  transform: translateY(-8px);
+}
+/* /Pagination*/
 
-
-/*!* Vùng chứa chính của select *!*/
-/*.ng-select-container {*/
-/*  @apply bg-base-100 text-base-content border-base-300;*/
-/*  @apply rounded-box border;*/
-/*  @apply w-full min-h-12 h-12;*/
-/*  @apply flex items-center px-4;*/
-/*  @apply transition-all duration-200;*/
-/*}*/
-
-/*!* Kiểu dáng khi select được focus *!*/
-/*.ng-select.ng-select-focused .ng-select-container {*/
-/*  @apply border-select-custom ring ring-primary ring-opacity-50;*/
-/*  @apply outline-none;*/
-/*}*/
-
-/*!* Ẩn placeholder khi đã chọn *!*/
-/*.ng-select.ng-select-selected .ng-placeholder {*/
-/*  @apply hidden;*/
-/*}*/
-
-/*!* Màu chữ của placeholder *!*/
-/*.ng-select .ng-placeholder {*/
-/*  @apply text-base-content opacity-70;*/
-/*}*/
-
-/*!* Dropdown panel, làm nó giống một card *!*/
-/*.ng-dropdown-panel {*/
-/*  @apply bg-base-200 border-base-300 text-base-content;*/
-/*  @apply rounded-box border;*/
-/*  @apply mt-2 shadow-xl;*/
-/*  @apply transition-all duration-200;*/
-/*}*/
-
-/*!* Các item trong dropdown *!*/
-/*.ng-option {*/
-/*  @apply p-3 cursor-pointer;*/
-/*}*/
-
-/*!* Item khi hover *!*/
-/*.ng-option:hover {*/
-/*  @apply bg-primary text-select-content;*/
-/*}*/
-
-/*!* Item đã được chọn *!*/
-/*.ng-option.ng-option-selected {*/
-/*  @apply bg-primary text-select-content font-semibold;*/
-/*}*/
+.dropdown-content {
+  z-index: 10
+}
