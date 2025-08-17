@@ -17,7 +17,7 @@
     <small *ngIf="password?.errors?.['required']">Password is required</small>
   </div>
   <!-- Nút đăng nhập -->
-  <button type="submit" (click)="login()" class="btn btn-primary w-full mt-2">{{ 'common.login' | translate }}</button>
+  <button type="submit" (click)="login()" [disabled]="myForm.invalid" class="btn btn-primary w-full mt-2">{{ 'common.login' | translate }}</button>
 
   <!-- Quên mật khẩu -->
   <div class="text-center mt-4">

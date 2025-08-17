@@ -1,264 +1,251 @@
-/* Custom table styling */
-.custom-table {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-}
-
-/* Checkbox column */
-.checkbox-column {
-  width: 50px;
-  text-align: center;
-  padding: 12px 8px;
-}
-
-/* ID column */
-.id-column {
-  width: 80px;
-  text-align: center;
-  padding: 12px 16px;
-  font-weight: 600;
-  font-size: 14px;
-  color: #374151;
-}
-
-/* Name column */
-.name-column {
-  width: auto;
-  min-width: 200px;
-  padding: 12px 20px;
-  font-weight: 500;
-  font-size: 15px;
-  color: #1f2937;
-}
-
-/* Action column */
-.action-column {
-  width: 80px;
-  text-align: center;
-  padding: 12px 8px;
-  position: relative;
-  z-index: 100;
-  overflow: visible;
-}
-
-/* Header styling */
-.custom-table thead th {
-  background-color: #1f2937;
-  color: white;
-  font-weight: 600;
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  border: none;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-
-/* Row styling */
-.custom-table tbody tr {
-  transition: all 0.2s ease;
-  border-bottom: 1px solid #e5e7eb;
-}
-
-.custom-table tbody tr:hover {
-  background-color: #f9fafb;
-  transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Checkbox styling */
-.checkbox {
-  width: 18px;
-  height: 18px;
-  border: 2px solid #d1d5db;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.checkbox:hover {
-  border-color: #3b82f6;
-  transform: scale(1.1);
-}
-
-.checkbox:checked {
-  background-color: #3b82f6;
-  border-color: #3b82f6;
-}
-
-/* Action dropdown styling */
-.action-dropdown {
-  position: relative;
-  display: inline-block;
-  z-index: 1000;
-  overflow: visible;
-}
-
-.action-btn {
-  background: none;
-  border: none;
-  color: #6b7280;
-  cursor: pointer;
-  padding: 8px;
-  border-radius: 6px;
-  transition: all 0.2s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.action-btn:hover {
-  background-color: #f3f4f6;
-  color: #374151;
-  transform: scale(1.05);
-}
-
-.action-btn.active {
-  background-color: #3b82f6;
-  color: white;
-  transform: scale(1.05);
-}
-
-.action-btn svg {
-  width: 20px;
-  height: 20px;
-}
-
-/* Dropdown menu */
-.action-dropdown-menu {
-  position: fixed;
-  background-color: white;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  box-shadow: 0 -10px 25px -5px rgba(0, 0, 0, 0.1), 0 -4px 6px -2px rgba(0, 0, 0, 0.05);
-  z-index: 99999;
-  min-width: 140px;
-  animation: fadeInUp 0.2s ease-out;
-  /* Đảm bảo dropdown luôn hiển thị trên cùng */
-  pointer-events: auto;
-  visibility: visible;
-  opacity: 1;
-  /* Đảm bảo dropdown không bị cắt */
-  max-height: 200px;
-  overflow: hidden;
-}
-
-/* Action items */
-.action-item {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  padding: 12px 16px;
-  border: none;
-  background: none;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: 500;
-  color: #374151;
-  transition: background-color 0.2s ease;
-  text-align: left;
-}
-
-.action-item:hover {
-  background-color: #f9fafb;
-}
-
-.action-item:first-child {
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-}
-
-.action-item:last-child {
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
-}
-
-.action-item svg {
-  margin-right: 12px;
-  width: 18px;
-  height: 18px;
-}
-
-.edit-action {
-  color: #059669;
-}
-
-.edit-action:hover {
-  background-color: #ecfdf5;
-}
-
-.delete-action {
-  color: #dc2626;
-}
-
-.delete-action:hover {
-  background-color: #fef2f2;
-}
-
-/* Animation */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
+.main-admin-roles {
+  /* Custom table styling */
+  .custom-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    position: static;
+    z-index: auto;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
-/* Responsive design */
-@media (max-width: 768px) {
+  /* Checkbox column */
   .checkbox-column {
-    width: 40px;
-    padding: 8px 4px;
+    width: 50px;
+    text-align: center;
+    padding: 12px 8px;
   }
-  
+
+  /* ID column */
   .id-column {
-    width: 60px;
-    padding: 8px 8px;
-    font-size: 13px;
-  }
-  
-  .name-column {
-    min-width: 120px;
-    padding: 8px 12px;
+    width: 80px;
+    text-align: center;
+    padding: 12px 16px;
+    font-weight: 600;
     font-size: 14px;
+    color: #374151;
   }
-  
+
+  /* Name column */
+  .name-column {
+    width: auto;
+    min-width: 200px;
+    padding: 12px 20px;
+    font-weight: 500;
+    font-size: 15px;
+    color: #1f2937;
+  }
+
+  .status-column {
+    width: 120px;
+    text-align: center;
+    padding: 12px 8px;
+  }
+
+  /* Action column */
   .action-column {
-    width: 60px;
-    padding: 8px 4px;
+    width: 80px;
+    text-align: center;
+    padding: 12px 8px;
   }
-  
+
+  /* Header styling */
+  .custom-table thead th {
+    background-color: #1f2937;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: none;
+    position: static;
+    z-index: auto;
+  }
+
+  /* Row styling */
+  .custom-table tbody tr {
+    transition: all 0.2s ease;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .custom-table tbody tr:hover {
+    background-color: #f9fafb;
+  }
+
+  /* Checkbox styling */
+  .checkbox {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #d1d5db;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .checkbox:hover {
+    border-color: #3b82f6;
+  }
+
+  .checkbox:checked {
+    background-color: #3b82f6;
+    border-color: #3b82f6;
+  }
+
+  /* Action dropdown styling */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .action-btn {
+    background: none;
+    border: none;
+    color: #6b7280;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .action-btn:hover {
+    background-color: #f3f4f6;
+    color: #374151;
+  }
+
+  .action-btn.active {
+    background-color: #3b82f6;
+    color: white;
+  }
+
+  .action-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Dropdown menu */
   .action-dropdown-menu {
-    min-width: 120px;
-    right: -10px;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    min-width: 140px;
+    z-index: 1000;
+    margin-top: 4px;
   }
-  
+
+  /* Action items */
   .action-item {
-    padding: 10px 12px;
-    font-size: 13px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 12px 16px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+    transition: background-color 0.2s ease;
+    text-align: left;
   }
-  
+
+  .action-item:hover {
+    background-color: #f9fafb;
+  }
+
+  .action-item:first-child {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+
+  .action-item:last-child {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+
   .action-item svg {
-    width: 16px;
-    height: 16px;
-    margin-right: 8px;
+    margin-right: 12px;
+    width: 18px;
+    height: 18px;
   }
-}
 
-/* Table container - đảm bảo có đủ không gian */
-.overflow-x-auto {
-  position: relative;
-  z-index: 1;
-}
+  .edit-action {
+    color: #059669;
+  }
 
-/* Card container - đảm bảo không che dropdown */
-.card {
-  position: relative;
-  z-index: 1;
-  overflow: visible;
+  .edit-action:hover {
+    background-color: #ecfdf5;
+  }
+
+  .delete-action {
+    color: #dc2626;
+  }
+
+  .delete-action:hover {
+    background-color: #fef2f2;
+  }
+
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .checkbox-column {
+      width: 40px;
+      padding: 8px 4px;
+    }
+
+    .id-column {
+      width: 60px;
+      padding: 8px 8px;
+      font-size: 13px;
+    }
+
+    .name-column {
+      min-width: 120px;
+      padding: 8px 12px;
+      font-size: 14px;
+    }
+
+    .status-column {
+      min-width: 120px;
+      padding: 8px 12px;
+      font-size: 14px;
+    }
+
+    .action-column {
+      width: 60px;
+      padding: 8px 4px;
+    }
+
+    .action-dropdown-menu {
+      min-width: 120px;
+      right: 0;
+    }
+
+    .action-item {
+      padding: 10px 12px;
+      font-size: 13px;
+    }
+
+    .action-item svg {
+      width: 16px;
+      height: 16px;
+      margin-right: 8px;
+    }
+  }
+
+  /* Table container */
+  .overflow-x-auto {
+    position: static;
+    z-index: auto;
+  }
+
+  /* Card container */
+  .card {
+    position: static;
+    z-index: auto;
+  }
 }

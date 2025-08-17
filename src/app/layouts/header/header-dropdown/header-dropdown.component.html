@@ -12,10 +12,10 @@
     <div *ngSwitchCase="'setupUser'" class="w-100">
       <div class="flex gap-4 p-2 info-setup-user">
         <div class="avatar w-1/4">
-          <img src="https://i.pravatar.cc/40"/>
+          <img src="assets/image/avatar-default.webp"/>
         </div>
-        <div class="title-name w-3/4 flex items-center font-size-large">
-          <b class="ms-2">Alex</b>
+        <div *ngIf="currentUser$ | async as user" class="title-name w-3/4 flex items-center font-size-large">
+          <b class="ms-2">{{ user.name }}</b>
         </div>
       </div>
       <div class="pt-2 flex">

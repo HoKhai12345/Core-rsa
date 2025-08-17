@@ -1,6 +1,6 @@
 
 <!-- header.component.html -->
-<header class="w-full bg-gray-900 text-white flex justify-end item-center px-4 py-2 gap-2">
+<header class="w-full bg-gray-900 text-white flex justify-end item-center h-16 header-box px-4 py-2 gap-2">
 
   <div>
     <label for="my-drawer" class="btn btn-square btn-ghost">
@@ -35,7 +35,7 @@
     </span>
   </div>
   <!-- Avatar -->
-  <img src="https://i.pravatar.cc/40" (click)="toggleDropdown('setupUser')" [ngClass]="activeDropdown === 'setupUser' ? 'active' : ''"  class="w-10 h-10 rounded-full border border-white cursor-pointer" alt="Avatar"/>
+  <img src="assets/image/avatar-default.webp" (click)="toggleDropdown('setupUser')" [ngClass]="activeDropdown === 'setupUser' ? 'active' : ''"  class="w-10 h-10 rounded-full border border-white cursor-pointer" alt="Avatar"/>
 </header>
 <app-header-dropdown   *ngIf="activeDropdown"
                        [type]="activeDropdown"

@@ -54,7 +54,6 @@ export class CorePaginationComponent implements OnInit {
 
   generateVisiblePages(): void {
     this.visiblePages = [];
-    console.log("totalPages", this.totalPages);
     const maxPages = this.config.maxPages || 5;
 
     if (this.totalPages <= maxPages) {

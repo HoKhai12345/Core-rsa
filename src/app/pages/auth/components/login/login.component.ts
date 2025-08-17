@@ -5,6 +5,9 @@ import * as AuthActions from "../../../../store/shared/auth/auth.action";
 import {BaseComponent} from "../../../../components/base/base.component";
 import {AppState} from "../../../../store/app.state";
 import {Router} from "@angular/router";
+import {ToastService} from "../../../../services/toast.service";
+import {startLoading, stopLoading} from "../../../../store/shared/loading/loading.action";
+import {logout} from "../../../../store/shared/auth/auth.action";
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -15,7 +18,8 @@ export class LoginComponent extends BaseComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     public override store: Store<AppState>,
-    private router: Router
+    private router: Router,
+    public toastService: ToastService
   ) {
     super(store);
     this.createFormLogin();
@@ -44,7 +48,6 @@ export class LoginComponent extends BaseComponent implements OnInit {
   }
 
   login() {
-    const data = this.myForm.value;
     this.store.dispatch(AuthActions.login(this.myForm.value));
   }
 

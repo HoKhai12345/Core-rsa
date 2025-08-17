@@ -5,6 +5,7 @@ import {Store} from "@ngrx/store";
 import {ToastState} from "./store/shared/toast/toast.reducer";
 import {LoadingService} from "./services/loading.service";
 import {AuthenticationService} from "./pages/auth/services/authentication.service";
+import {selectIsLoading} from "./store/shared/loading/loading.selector";
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,8 @@ import {AuthenticationService} from "./pages/auth/services/authentication.servic
 })
 export class AppComponent implements OnInit, AfterViewInit {
   title: string;
-  showLoading: Observable<boolean> = this.loadingService.isSelectLoading;
+  loading: boolean = false;
+  showLoading: Observable<boolean> = this.store.select(selectIsLoading);
   showToast!: Observable<ToastState>
 
   constructor(
@@ -23,6 +25,14 @@ export class AppComponent implements OnInit, AfterViewInit {
     private authService: AuthenticationService
   ) {
     this.title = this.translate.instant('common.title');
+
+    this.showLoading.subscribe(loading => {
+/*
+      this.loading = loading;
+      console.log('Loading state changed:====', loading);
+*/
+    });
+
     this.store.subscribe(state => {
       console.log('Current state:', state);
     });

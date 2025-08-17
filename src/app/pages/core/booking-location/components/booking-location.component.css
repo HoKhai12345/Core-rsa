@@ -1,0 +1,9 @@
+/* Simple CSS helpers so we don't need TS for layout math */
+.calendar-header { display: grid; grid-template-columns: 200px repeat(14, minmax(80px, 1fr)); }
+.calendar-row { display: grid; grid-template-columns: 200px repeat(14, minmax(80px, 1fr)); }
+.booking { grid-column: var(--start) / span var(--span); }
+.today-shade { background: linear-gradient(90deg, transparent 0, transparent calc(50% - 0.5px), rgba(0,0,0,0.04) calc(50% - 0.5px), rgba(0,0,0,0.04) 100% ); }
+.day-cell { height: 56px; }
+.zebra:nth-child(odd) .day-cell { background-color: rgba(0,0,0,0.02); }
+.sticky-col { position: sticky; left: 0; z-index: 10; }
+

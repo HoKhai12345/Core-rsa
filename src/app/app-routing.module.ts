@@ -4,16 +4,32 @@ import {AuthLayoutComponent} from "./layouts/auth-layout/auth-layout.component";
 import {NgModule} from "@angular/core";
 import {AuthGuards} from "./guards/auth.guards";
 import {NotFoundComponent} from "./components/not-found/not-found.component";
+import {ForbiddenComponent} from "./components/forbidden/forbidden.component";
+import {RoleGuards} from "./guards/role.guards";
 
 export const routes: Routes = [
   {
     path: 'core',
     component: MainLayoutComponent,
+    canActivate: [AuthGuards],
     children: [
       {
+        path: 'dashboard',
+        loadChildren: () => import('./pages/core/dashboard/dahboard.module').then(m => m.DashboardModule)
+      },
+      {
+        path: 'admin/roles',
+        canActivate: [RoleGuards],
+        loadChildren: () => import('./pages/core/admin/roles/role.modules').then(m => m.RolesModule)
+      },
+      {
+        path: 'booking-location',
+        loadChildren: () => import('./pages/core/booking-location/booking-location.module').then(m => m.BookingLocationModule)
+      },
+      {
         path: '',
-        canActivate: [AuthGuards],
-        loadChildren: () => import('./pages/core/core.module').then(m => m.CoreModule)
+        redirectTo: 'dashboard',
+        pathMatch: 'full'
       }
     ]
   },
@@ -32,6 +48,11 @@ export const routes: Routes = [
     path: '',
     redirectTo: '/core/dashboard',
     pathMatch: 'full'
+  },
+
+  {
+    path: 'error-403',
+    component: ForbiddenComponent,
   },
 
   {

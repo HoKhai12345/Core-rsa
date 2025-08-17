@@ -39,7 +39,6 @@ export class AuthenticationService{
   restoreAuth() {
     const user = this.localStorageService.getCurrentUser();
     const token = this.localStorageService.getToken();
-    console.log("token", token);
     if (user && token) {
       this.store.dispatch(AuthActions.loginSuccess({ user, token }));
     }

@@ -10,7 +10,6 @@ export class AuthInterceptor implements HttpInterceptor {
   constructor(private store: Store) {}
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    // Chỗ này lấy user từ store
     return this.store.select(AuthSelectors.selectToken).pipe(
       take(1),
       mergeMap(token => {

@@ -93,7 +93,7 @@ a.bread-crumb-disable {
 
 .content-site {
   background: #f9fafb;
-  min-height: calc(100vh - 64px - 70px - 8px); /* 8px ~ 0.5rem */
+  min-height: calc(100vh - 64px - 70px - 80px); /* 8px ~ 0.5rem */
   margin-bottom: 0.5rem;
 }
 

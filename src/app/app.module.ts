@@ -14,7 +14,6 @@ import {NzNotificationModule} from "ng-zorro-antd/notification";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {AuthLayoutComponent} from './layouts/auth-layout/auth-layout.component';
 import {MainLayoutComponent} from './layouts/main-layout/main-layout.component';
-import {CoreModule} from "./pages/core/core.module";
 import {AuthModule} from "./pages/auth/auth.module";
 import {RouterModule} from "@angular/router";
 import {NzLayoutModule} from "ng-zorro-antd/layout";
@@ -36,6 +35,7 @@ import {NotFoundComponent} from "./components/not-found/not-found.component";
 import {BaseComponent} from "./components/base/base.component";
 import { NgSelectModule } from '@ng-select/ng-select';
 import {AuthInterceptor} from "./interceptor/auth.interceptor";
+import {ForbiddenComponent} from "./components/forbidden/forbidden.component";
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -60,7 +60,8 @@ export function appInitializerFactory(translate: TranslateService) {
     FooterComponent,
     HeaderDropdownComponent,
     NotFoundComponent,
-    BaseComponent,
+    ForbiddenComponent,
+    BaseComponent
   ],
   imports: [
     BrowserModule,
@@ -69,13 +70,12 @@ export function appInitializerFactory(translate: TranslateService) {
     BrowserAnimationsModule,
     AppRoutingModule,
     AuthModule,
-    CoreModule,
     SharedModule,
     RouterModule,
     NzLayoutModule,
     ReactiveFormsModule,
-    FormsModule, // Cần cho ngModel
-    NgSelectModule,// Thư viện ng-select
+    FormsModule,
+    NgSelectModule,
     StoreModule.forRoot({
       auth: authReducer,
       loading: loadingReducer,
@@ -92,8 +92,7 @@ export function appInitializerFactory(translate: TranslateService) {
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    }),
-    FormsModule
+    })
   ],
   exports: [
     AuthLayoutComponent,
@@ -116,5 +115,4 @@ export function appInitializerFactory(translate: TranslateService) {
     ],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule { }

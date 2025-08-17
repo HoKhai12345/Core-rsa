@@ -11,7 +11,6 @@ export class LocalStorageService {
   prefix = environment.appPrefix
 
   public getKeyName(key: string) {
-    console.log("`${this.prefix}_${key}`", `${this.prefix}_${key}`);
     return `${this.prefix}_${key}`;
   }
 

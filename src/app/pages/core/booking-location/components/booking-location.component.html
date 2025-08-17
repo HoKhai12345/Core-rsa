@@ -14,6 +14,167 @@
       </label>
       <div class="tab-content bg-base-100 border-base-300 p-6">
         <div class="filter-node">
+          <!-- Toolbar / Filters -->
+          <div class="navbar bg-base-100 shadow-sm rounded-box mb-4 px-4">
+            <div class="flex-1">
+              <span class="text-xl font-semibold">Booking Calendar</span>
+            </div>
+            <div class="flex gap-2 items-center">
+              <div class="form-control">
+                <label class="label"><span class="label-text">Range</span></label>
+                <select class="select select-bordered select-sm w-32">
+                  <option>7 days</option>
+                  <option selected>14 days</option>
+                  <option>30 days</option>
+                </select>
+              </div>
+              <div class="form-control">
+                <label class="label"><span class="label-text">Start date</span></label>
+                <input type="date" class="input input-bordered input-sm" />
+              </div>
+              <div class="form-control">
+                <label class="label"><span class="label-text">Campaign</span></label>
+                <select class="select select-bordered select-sm w-44">
+                  <option selected>All campaigns</option>
+                  <option>Summer Sale</option>
+                  <option>Back To School</option>
+                </select>
+              </div>
+              <div class="form-control">
+                <label class="label"><span class="label-text">Company</span></label>
+                <select class="select select-bordered select-sm w-44">
+                  <option selected>All companies</option>
+                  <option>ABC Corp</option>
+                  <option>XYZ Ltd</option>
+                </select>
+              </div>
+              <button class="btn btn-primary btn-sm">+ New booking</button>
+            </div>
+          </div>
+
+          <!-- Legend -->
+          <div class="flex flex-wrap gap-3 items-center mb-3">
+            <div class="badge badge-warning badge-outline">Pending</div>
+            <div class="badge badge-primary">Approved</div>
+            <div class="badge badge-success">Running</div>
+            <div class="badge">Completed</div>
+            <div class="badge badge-error">Rejected</div>
+          </div>
+
+          <!-- Calendar Card -->
+          <div class="card bg-base-100 shadow-sm overflow-x-auto">
+            <div class="card-body p-0">
+
+              <!-- Date header -->
+              <div class="calendar-header border-b border-base-300 text-xs font-medium sticky top-0 bg-base-100 z-20">
+                <div class="sticky-col px-3 py-3">&nbsp;</div>
+                <!-- 14 columns for dates (mock) -->
+                <div class="px-3 py-3 text-center">MON<br><span class="font-semibold">01</span></div>
+                <div class="px-3 py-3 text-center">TUE<br><span class="font-semibold">02</span></div>
+                <div class="px-3 py-3 text-center">WED<br><span class="font-semibold">03</span></div>
+                <div class="px-3 py-3 text-center">THU<br><span class="font-semibold">04</span></div>
+                <div class="px-3 py-3 text-center">FRI<br><span class="font-semibold">05</span></div>
+                <div class="px-3 py-3 text-center">SAT<br><span class="font-semibold">06</span></div>
+                <div class="px-3 py-3 text-center">SUN<br><span class="font-semibold">07</span></div>
+                <div class="px-3 py-3 text-center">MON<br><span class="font-semibold">08</span></div>
+                <div class="px-3 py-3 text-center">TUE<br><span class="font-semibold">09</span></div>
+                <div class="px-3 py-3 text-center">WED<br><span class="font-semibold">10</span></div>
+                <div class="px-3 py-3 text-center">THU<br><span class="font-semibold">11</span></div>
+                <div class="px-3 py-3 text-center">FRI<br><span class="font-semibold">12</span></div>
+                <div class="px-3 py-3 text-center">SAT<br><span class="font-semibold">13</span></div>
+                <div class="px-3 py-3 text-center">SUN<br><span class="font-semibold">14</span></div>
+              </div>
+              <!-- Group: Homepage -->
+              <div class="collapse collapse-arrow border-b border-base-300">
+                <input type="checkbox" checked />
+                <div class="collapse-title sticky top-[56px] z-10 bg-base-100 font-semibold">Homepage</div>
+                <div class="collapse-content p-0">
+                  <!-- Row: Top -->
+                  <div class="calendar-row zebra border-b border-base-200">
+                    <div class="sticky-col bg-base-100 border-r border-base-300 px-3 flex items-center">Top</div>
+                    <!-- day cells -->
+                    <div class="day-cell border-r border-base-200"></div>
+                    <div class="day-cell border-r border-base-200"></div>
+                    <div class="day-cell border-r border-base-200"></div>
+                    <div class="day-cell border-r border-base-200"></div>
+                    <div class="day-cell border-r border-base-200"></div>
+                    <div class="day-cell border-r border-base-200"></div>
+                    <div class="day-cell border-r border-base-200"></div>
+                    <div class="day-cell border-r border-base-200"></div>
+                    <div class="day-cell border-r border-base-200"></div>
+                    <div class="day-cell border-r border-base-200"></div>
+                    <div class="day-cell border-r border-base-200"></div>
+                    <div class="day-cell border-r border-base-200"></div>
+                    <div class="day-cell border-r border-base-200"></div>
+                    <div class="day-cell"></div>
+                    <!-- Booking bars (use --start: column index (2..15); --span: number of days) -->
+                    <div class="booking badge badge-primary h-8 rounded-md place-self-center cursor-pointer flex items-center gap-2 px-3" style="--start: 2; --span: 4" title="Summer Sale · Approved">
+                        <span class="i-lucide-search"></span>
+                        <span>Summer Sale</span>
+                      </div>
+                    <div class="booking badge badge-success h-8 rounded-md place-self-center cursor-pointer flex items-center gap-2 px-3" style="--start: 9; --span: 5" title="Brand A · Running">
+                      <span>Brand A</span>
+                    </div>
+                  </div>
+
+                  <!-- Row: Sidebar Right -->
+                  <div class="calendar-row zebra border-b border-base-200">
+                    <div class="sticky-col bg-base-100 border-r border-base-300 px-3 flex items-center">Sidebar Right</div>
+                    <!-- day cells -->
+                    <div class="day-cell border-r border-base-200"></div>
+                    <div class="day-cell border-r border-base-200"></div>
+                    <div class="day-cell border-r border-base-200"></div>
+                    <div class="day-cell border-r border-base-200"></div>
+                    <div class="day-cell border-r border-base-200"></div>
+                    <div class="day-cell border-r border-base-200"></div>
+                    <div class="day-cell border-r border-base-200"></div>
+                    <div class="day-cell border-r border-base-200"></div>
+                    <div class="day-cell border-r border-base-200"></div>
+                    <div class="day-cell border-r border-base-200"></div>
+                    <div class="day-cell border-r border-base-200"></div>
+                    <div class="day-cell border-r border-base-200"></div>
+                    <div class="day-cell border-r border-base-200"></div>
+                    <div class="day-cell"></div>
+                    <!-- Bookings -->
+                    <div class="booking badge badge-warning h-8 rounded-md place-self-center cursor-pointer flex items-center gap-2 px-3" style="--start: 4; --span: 6" title="Flash Deal · Pending">
+                      <span>Flash Deal</span>
+                    </div>
+                  </div>
+
+                  <!-- Row: Footer -->
+                  <div class="calendar-row zebra border-b border-base-200">
+                    <div class="sticky-col bg-base-100 border-r border-base-300 px-3 flex items-center">Footer</div>
+                    <!-- day cells -->
+                    <div class="day-cell border-r border-base-200"></div>
+                    <div class="day-cell border-r border-base-200"></div>
+                    <div class="day-cell border-r border-base-200"></div>
+                    <div class="day-cell border-r border-base-200"></div>
+                    <div class="day-cell border-r border-base-200"></div>
+                    <div class="day-cell border-r border-base-200"></div>
+                    <div class="day-cell border-r border-base-200"></div>
+                    <div class="day-cell border-r border-base-200"></div>
+                    <div class="day-cell border-r border-base-200"></div>
+                    <div class="day-cell border-r border-base-200"></div>
+                    <div class="day-cell border-r border-base-200"></div>
+                    <div class="day-cell border-r border-base-200"></div>
+                    <div class="day-cell border-r border-base-200"></div>
+                    <div class="day-cell"></div>
+                    <!-- Bookings -->
+                    <div class="booking badge h-8 rounded-md place-self-center cursor-pointer flex items-center gap-2 px-3" style="--start: 7; --span: 3" title="ABC Corp · Completed">
+                      <span>ABC Corp</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Notes for integration (optional to keep in template as comments):
+          - Replace static dates with an *ngFor over an array of 14 days.
+          - For each location (group/row) use *ngFor to render rows.
+          - For each booking compute --start (2..15) and --span (# of days) and bind via [ngStyle].
+          - Use status to swap badge color classes.
+          -->
         </div>
       </div>
     </div>

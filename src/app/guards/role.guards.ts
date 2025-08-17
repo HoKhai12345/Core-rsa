@@ -1,12 +1,11 @@
 import {Injectable} from "@angular/core";
 import {ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree} from "@angular/router";
-import {LocalStorageService} from "../services/local-storage.service";
 import {selectAuthState} from "../store/shared/auth/auth.selectors";
 import {Store} from "@ngrx/store";
 import {map, take} from "rxjs";
 
 @Injectable({providedIn: 'root'})
-export class AuthGuards implements CanActivate {
+export class RoleGuards implements CanActivate {
   constructor(
     private router: Router,
     private store: Store,
@@ -18,7 +17,10 @@ export class AuthGuards implements CanActivate {
       take(1),
       map(auth => {
         if (auth.isAuthenticated && auth.token) {
-          return true
+          if (auth.user.role.id === 1) {
+              return true
+          }
+          return this.router.navigate(['error-403'])
         }
         return this.router.createUrlTree(['auth/login'], {
           queryParams: { returnUrl: state.url }

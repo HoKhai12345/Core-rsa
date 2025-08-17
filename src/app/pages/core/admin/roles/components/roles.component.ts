@@ -3,6 +3,7 @@ import {BreadCrumbs} from "../../../../../models/bread-crumbs.model";
 import {RoleService} from "../services/role.service";
 import {RoleModel} from "../../../../../models/role.model";
 import {CorePaginationConfig} from "../../../../../models/pagination.model";
+import {TranslateService} from "@ngx-translate/core";
 
 interface Filter {
     page: number,
@@ -47,7 +48,8 @@ export class RolesComponent implements OnInit {
     showTotal: true
   };
   constructor(
-    private roleService: RoleService
+    private roleService: RoleService,
+    private translate: TranslateService
   ) {}
 
   ngOnInit(): void {
@@ -79,9 +81,9 @@ export class RolesComponent implements OnInit {
       queries.status = this.filter.status
     }
     this.roleService.index(queries).then((result: any) => {
-      console.log("result", result);
       this.listRole = result.roles;
       this.config.totalItems = result.total;
+      this.config = { ...this.config };
     })
   }
 

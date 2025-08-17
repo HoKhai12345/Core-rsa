@@ -11,10 +11,10 @@
       <li>
         <div class="flex gap-4 p-2 info-setup-user height-80" (click)="redirect('core/dashboard')">
           <div class="avatar w-1/4">
-            <img src="https://i.pravatar.cc/40"/>
+            <img src="assets/image/avatar-default.webp"/>
           </div>
-          <div class="title-name w-3/4 flex items-center font-size-large">
-            <b class="ms-2">Alex</b>
+          <div class="title-name w-3/4 flex items-center font-size-large" *ngIf="currentUser$ | async as user">
+            <b class="ms-2">{{ user.name }}</b>
           </div>
         </div>
       </li>
@@ -41,7 +41,6 @@
               </div>
             </div>
           </li>
-          <li>
           <li (click)="redirect('core/my-booking')">
             <div class="flex gap-4" [routerLink]="['/core/my-booking']" routerLinkActive="active">
               <div class="w-1/4">
@@ -51,19 +50,20 @@
                 <b class="font-size-middle w-3/4">{{ 'common.sideBar.myBooking' | translate }}</b>
               </div>
             </div>
-          <li>
+          </li>
         </ul>
       </li>
-      <li class="" (click)="redirect('core/dashboard')">
-        <strong>Admin</strong>
-      </li>
-      <li class="" (click)="redirect('core/admin/roles')">
-      <div tabindex="0" role="button" class="btn m-1 w-full"  [routerLink]="['/core/admin/roles']" routerLinkActive="active">
-        <app-svg-icon name="rectangle-group" class="w-6 h-6"></app-svg-icon>
-        <b class="font-size-middle">{{ 'common.sideBar.roles' | translate }}</b>
-      </div>
-      </li>
+      <ng-container *ngIf="(currentUser$ | async)?.role?.id == globalConfig.roles.admin">
+        <li class="" (click)="redirect('core/dashboard')">
+          <strong>Admin</strong>
+        </li>
+        <li class="" (click)="redirect('core/admin/roles')">
+          <div tabindex="0" role="button" class="btn m-1 w-full"  [routerLink]="['/core/admin/roles']" routerLinkActive="active">
+            <app-svg-icon name="rectangle-group" class="w-6 h-6"></app-svg-icon>
+            <b class="font-size-middle">{{ 'common.sideBar.roles' | translate }}</b>
+          </div>
+        </li>
+      </ng-container>
     </ul>
   </div>
-
 </div>

@@ -1,7 +1,10 @@
-<div class="main-dashboard">
+<div class="main-admin-roles">
   <div class="breadcrumbs">
     <app-bread-crumbs [listBreadCrumbs]="breadcrumbs">
     </app-bread-crumbs>
+  </div>
+  <div class="m-2 font-size-large">
+    <strong>{{ 'common.core.admin.roles.manageRole' | translate }}</strong>
   </div>
   <div class="gap-4 flex mt-2">
     <div class="card bg-base-100 sm:w-full shadow-sm">
@@ -14,9 +17,10 @@
                 <input type="checkbox" class="checkbox"/>
               </label>
             </th>
-            <th class="id-column">ID</th>
-            <th class="name-column">Name</th>
-            <th class="action-column">Action</th>
+            <th class="id-column">{{ 'common.core.admin.roles.id' | translate }}</th>
+            <th class="name-column text-center">{{ 'common.core.admin.roles.name' | translate }}</th>
+            <th class="status-column">{{ 'common.core.admin.roles.status' | translate }}</th>
+            <th class="action-column"></th>
           </tr>
           </thead>
           <tbody>
@@ -29,11 +33,14 @@
             <td class="id-column">
               {{ role.id }}
             </td>
-            <td class="name-column">{{ role.name }}</td>
+            <td class="name-column text-center">{{ role.name }}</td>
+            <td class="status-column text-center">
+              <div appStatusRolesDirective [status]="role.status"></div>
+            </td>
             <td class="action-column">
 
               <div class="dropdown dropdown-left">
-                <div tabindex="0" role="button" class="btn m-1">
+                <div tabindex="0" role="button" class="m-1">
                   <button
                     class="action-btn"
                     (click)="toggleActionDropdown(role.id, $event)"
@@ -51,16 +58,13 @@
                          class="action-dropdown-menu"
                          (click)="$event.stopPropagation()">
                       <div class="action-item edit-action" (click)="editRole(role)">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
-                        </svg>
-                        <span>Edit</span>
+                        <app-svg-icon name="pencil-square">
+                        </app-svg-icon>
+                        <span>{{ 'common.core.admin.roles.edit' | translate }}</span>
                       </div>
                       <div class="action-item delete-action" (click)="deleteRole(role)">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
-                        </svg>
-                        <span>Delete</span>
+                        <app-svg-icon name="trash"></app-svg-icon>
+                        <span>{{ 'common.core.admin.roles.delete' | translate }}</span>
                       </div>
                     </div>
                   </li>

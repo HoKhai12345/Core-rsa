@@ -87,17 +87,11 @@
         </svg>
       </button>
 
-      <div *ngIf="isDropdownOpen"
-           class="pagination-dropdown-menu pagination-dropdown-menu-up"
-           (click)="$event.stopPropagation()">
-        <div *ngFor="let value of listItemPerPage"
-             class="pagination-dropdown-item"
-             (click)="setItemsPerPage(value)">
+      <div *ngIf="isDropdownOpen" class="pagination-dropdown-menu pagination-dropdown-menu-up" (click)="$event.stopPropagation()">
+        <div *ngFor="let value of listItemPerPage" class="pagination-dropdown-item" (click)="setItemsPerPage(value)">
           {{ value }}
         </div>
       </div>
     </div>
   </div>
 </div>
-
-<pre>{{ visiblePages | json }}</pre>

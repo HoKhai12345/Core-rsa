@@ -1,22 +1,29 @@
 import {Injectable} from '@angular/core';
 import {Actions, createEffect, ofType} from '@ngrx/effects';
 import * as AuthActions from './auth.action';
-import {catchError, from, map, mergeMap, of, switchMap, tap} from 'rxjs';
+import {catchError, exhaustMap, from, map, of, switchMap, tap} from 'rxjs';
 import {AuthenticationService} from "../../../pages/auth/services/authentication.service";
 import {HttpErrorResponse} from "@angular/common/http";
 import {LocalStorageService} from "../../../services/local-storage.service";
 import {Router} from "@angular/router";
+import * as ToggleAction from '../toast/toast.action'
+import {ToastService} from "../../../services/toast.service";
+import {TranslateService} from "@ngx-translate/core";
+import {LoadingService} from "../../../services/loading.service";
 
 @Injectable()
 export class AuthEffects {
   login$ = createEffect(() =>
     this.actions$.pipe(
       ofType(AuthActions.login),
+      tap(action =>  this.loadingService.show()),
       tap(action => console.log('Reducer login, type=', (action as any).type, action)),
-      switchMap(({username, password}: { username: string, password: string }) =>
+      exhaustMap(({username, password}: { username: string, password: string }) =>
         from(this.authService.login({username, password})).pipe(
           map(res => {
-            console.log("res", res);
+            if (res) {
+              this.toastService.success(this.trans.instant('common.auth.login.notification.loginSuccess'), this.trans.instant('common.alert'));
+            }
             return AuthActions.loginSuccess({user: res.data.user, token: res.data.accessToken})
           }),
           tap(() => {
@@ -24,7 +31,8 @@ export class AuthEffects {
           }),
           catchError((error: HttpErrorResponse) => {
               console.log("error", error);
-              return of(AuthActions.loginFailed({error: error.message}))
+            this.toastService.error(this.trans.instant('common.auth.login.notification.loginFailed'), this.trans.instant('common.alert'));
+            return of(AuthActions.loginFailed({error: error.message}))
             }
           )
         )
@@ -37,6 +45,9 @@ export class AuthEffects {
     private actions$: Actions,
     private authService: AuthenticationService,
     private localStorage: LocalStorageService,
+    private toastService: ToastService,
+    private loadingService: LoadingService,
+    private trans: TranslateService,
     private router: Router
   ) {
   }

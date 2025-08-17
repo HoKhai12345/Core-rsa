@@ -5,6 +5,8 @@
     "login": "Login",
     "email": "Email",
     "password": "Password",
+    "warning": "Cảnh báo",
+    "alert": "Thông báo",
     "forgotPassword": "Forgot Password",
     "header": {
       "tooltip": {
@@ -27,10 +29,28 @@
       "bookingLocation": "Booking location",
       "myBooking": "My booking"
     },
-    "alert": {
-      "loginSuccess": "Login success",
-      "loginFailed": "Login failed",
-      "signUp": "Sign up"
+    "auth": {
+      "login": {
+        "notification": {
+          "loginSuccess": "Đăng nhập thành công",
+          "loginFailed": "Đăng nhập thất bại"
+        }
+      }
+    },
+    "core": {
+      "admin": {
+        "roles": {
+          "manageRole": "Quản lý roles",
+          "id": "ID",
+          "name": "Tên",
+          "action": "Hành động",
+          "status": "Trạng thái",
+          "status1": "Hoạt động",
+          "status0": "Dừng hoạt động",
+          "edit": "Sửa",
+          "delete": "Xóa"
+        }
+      }
     }
   }
 }
