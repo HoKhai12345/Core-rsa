@@ -1,9 +1,92 @@
-/* Simple CSS helpers so we don't need TS for layout math */
-.calendar-header { display: grid; grid-template-columns: 200px repeat(14, minmax(80px, 1fr)); }
-.calendar-row { display: grid; grid-template-columns: 200px repeat(14, minmax(80px, 1fr)); }
-.booking { grid-column: var(--start) / span var(--span); }
-.today-shade { background: linear-gradient(90deg, transparent 0, transparent calc(50% - 0.5px), rgba(0,0,0,0.04) calc(50% - 0.5px), rgba(0,0,0,0.04) 100% ); }
-.day-cell { height: 56px; }
-.zebra:nth-child(odd) .day-cell { background-color: rgba(0,0,0,0.02); }
-.sticky-col { position: sticky; left: 0; z-index: 10; }
+.main-booking-location {
+  /* Simple CSS helpers so we don't need TS for layout math */
+  .calendar-header { display: grid; grid-template-columns: 200px repeat(14, minmax(80px, 1fr)); }
+  .calendar-row { display: grid; grid-template-columns: 200px repeat(14, minmax(80px, 1fr)); }
+  .booking { grid-column: var(--start) / span var(--span); }
+  .today-shade { background: linear-gradient(90deg, transparent 0, transparent calc(50% - 0.5px), rgba(0,0,0,0.04) calc(50% - 0.5px), rgba(0,0,0,0.04) 100% ); }
+  .day-cell { height: 56px; }
+  .zebra:nth-child(odd) .day-cell { background-color: rgba(0,0,0,0.02); }
+  .sticky-col { position: sticky; left: 0; z-index: 10; }
+  .border-grey {
+    border: solid grey 1px
+  }
 
+  .table-wrapper {
+    max-height: 500px;
+    overflow: auto; /* scroll dọc + ngang */
+    position: relative;
+    width: 100%;
+    border: 1px solid #ccc;
+  }
+
+  .table-wrapper {
+    max-height: 500px;
+    overflow: auto;
+    position: relative;
+    width: 100%;
+    border: 1px solid #ccc;
+  }
+
+  /* table cơ bản */
+  .custom-table {
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  /* cell chung */
+  .custom-table th,
+  .custom-table td {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: center;
+    background: #fff;
+    white-space: nowrap;
+  }
+
+  /* header sticky */
+  .custom-table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #f9f9f9;
+  }
+
+  /* 2 cột đầu */
+  .custom-table th:nth-child(1),
+  .custom-table td:nth-child(1) {
+    width: 200px;
+    min-width: 200px;
+    max-width: 200px;
+    position: sticky;
+    left: 0;
+    z-index: 3;
+    background: #fff;
+  }
+
+  .custom-table th:nth-child(2),
+  .custom-table td:nth-child(2) {
+    width: 200px;
+    min-width: 200px;
+    max-width: 200px;
+    position: sticky;
+    left: 200px;
+    z-index: 3;
+    background: #fff;
+  }
+
+  /* 7 cột ngày đầu tiên: chia đều 100% còn lại */
+  .custom-table th:nth-child(n+3):nth-child(-n+9),
+  .custom-table td:nth-child(n+3):nth-child(-n+9) {
+    width: calc((100% - 400px) / 7);
+    min-width: calc((100% - 400px) / 7);
+  }
+
+  /* Các cột thừa sau 7 ngày giữ đúng kích cỡ đó */
+  .custom-table th:nth-child(n+10),
+  .custom-table td:nth-child(n+10) {
+    min-width: calc((100% - 400px) / 7);
+    width: calc((100% - 400px) / 7);
+  }
+
+}
