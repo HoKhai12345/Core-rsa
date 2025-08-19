@@ -12,6 +12,24 @@ export class BookingLocationComponent implements OnInit {
     { label: 'Home', nameIcon: 'home', url: '/dashboard' },
     { label: 'Booking location', nameIcon: 'calculator', url: '/booking-location' }
   ]
+
+  timeDayWeek= [
+    {label: 'Thứ 2'},
+    {label: 'Thứ 3'},
+    {label: 'Thứ 4'},
+    {label: 'Thứ 5'},
+    {label: 'Thứ 6'},
+    {label: 'Thứ 7'},
+    {label: 'Chủ nhật'},
+    {label: 'Thứ 2'},
+    {label: 'Thứ 3'},
+    {label: 'Thứ 4'},
+    {label: 'Thứ 5'},
+    {label: 'Thứ 6'},
+    {label: 'Thứ 7'},
+    {label: 'Chủ nhật'},
+  ]
+  timeSlots = ['Sáng', 'Chiều', 'Tối'];
   constructor() { }
 
   ngOnInit(): void {

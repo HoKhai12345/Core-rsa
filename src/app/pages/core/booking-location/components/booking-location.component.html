@@ -6,7 +6,7 @@
   <!-- name of each tab group should be unique -->
   <div class="content-site">
     <div class="tabs tabs-lift mt-2">
-      <label class="tab">
+      <label class="tab is-selected">
         <input type="radio" name="my_tabs_4" />
         <app-svg-icon name="map">
         </app-svg-icon>
@@ -65,49 +65,37 @@
           <div class="card bg-base-100 shadow-sm overflow-x-auto">
             <div class="card-body p-0">
                 <div class="gap-4">
-                  <div class="table style-scroll">
+                  <div class="">
                     <div class="custom-table-scroll">
                       <div class="overflow-x-auto">
                         <div class="table-wrapper">
-                          <div class="table-wrapper">
-                            <table class="custom-table">
-                              <thead>
-                              <tr>
-                                <th class="col-fixed">Vị trí</th>
-                                <th class="col-fixed">Khung giờ</th>
-                                <th>Thứ 2</th>
-                                <th>Thứ 3</th>
-                                <th>Thứ 4</th>
-                                <th>Thứ 5</th>
-                                <th>Thứ 6</th>
-                                <th>Thứ 7</th>
-                                <th>Chủ nhật</th>
-                                <th>Thứ 2</th>
-                                <th>Thứ 3</th>
-                                <th>Thứ 4</th>
-                                <th>Thứ 5</th>
-                                <th>Thứ 6</th>
-                                <th>Thứ 7</th>
-                                <th>Chủ nhật</th>
-                                <!-- thêm nhiều ngày nữa thì scroll -->
-                              </tr>
-                              </thead>
-                              <tbody>
-                              <tr>
-                                <td>11</td>
-                                <td>Andy Tipple</td>
-                                <td>Librarian</td>
-                                <td>Hilpert Group</td>
-                                <td>Poland</td>
-                                <td>7/9/2020</td>
-                                <td>Indigo</td>
-                                <td>Indigo</td>
-                                <td>11</td>
-                              </tr>
-                              <!-- thêm row -->
-                              </tbody>
-                            </table>
-                          </div>
+                          <table class="custom-table">
+                            <thead>
+                            <tr>
+                              <th class="col-fixed th-location" rowspan="2">Vị trí</th>
+                              <th class="col-fixed th-time" rowspan="2">Khung giờ</th>
+                              <ng-container *ngFor="let day of timeDayWeek">
+                                <th class="col-date-booking" colspan="1">{{ '20/07/2024' }}</th>
+                              </ng-container>
+                            </tr>
+                            <tr>
+                              <ng-container *ngFor="let day of timeDayWeek">
+                                <th class="col-date-booking" colspan="1">{{ day.label }}</th>
+                              </ng-container>
+                              <!-- thêm nhiều ngày nữa thì scroll -->
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr *ngFor="let i of [0, 1, 2]">
+                              <td class="td-col-fix" *ngIf="i === 0" [attr.rowspan]="timeSlots.length">Top header</td>
+                              <td class="td-col-fix time-slot-cell">{{ timeSlots[i] }}</td>
+                              <ng-container *ngFor="let day of timeDayWeek">
+                                <td class="location-booking"></td>
+                              </ng-container>
+                            </tr>
+                            <!-- thêm row -->
+                            </tbody>
+                          </table>
                         </div>
                       </div>
                     </div>

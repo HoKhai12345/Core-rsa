@@ -37,7 +37,7 @@
   /* cell chung */
   .custom-table th,
   .custom-table td {
-    border: 1px solid #000;
+    border: 1px solid whitesmoke;
     padding: 8px;
     text-align: center;
     background: #fff;
@@ -53,40 +53,88 @@
   }
 
   /* 2 cột đầu */
-  .custom-table th:nth-child(1),
+  /*.custom-table th:nth-child(1),*/
   .custom-table td:nth-child(1) {
     width: 200px;
     min-width: 200px;
     max-width: 200px;
     position: sticky;
     left: 0;
-    z-index: 3;
+    /*z-index: 3;*/
     background: #fff;
+    border-right: 1px solid #ccc;
   }
 
-  .custom-table th:nth-child(2),
+  /*.custom-table th:nth-child(2),*/
   .custom-table td:nth-child(2) {
     width: 200px;
     min-width: 200px;
     max-width: 200px;
     position: sticky;
     left: 200px;
-    z-index: 3;
+    /*z-index: 3;*/
     background: #fff;
+    border-right: 1px solid #ccc;
   }
 
-  /* 7 cột ngày đầu tiên: chia đều 100% còn lại */
-  .custom-table th:nth-child(n+3):nth-child(-n+9),
-  .custom-table td:nth-child(n+3):nth-child(-n+9) {
-    width: calc((100% - 400px) / 7);
-    min-width: calc((100% - 400px) / 7);
+
+  /*.custom-table th:nth-child(2) {*/
+  /*  width: 200px;*/
+  /*  min-width: 200px;*/
+  /*  max-width: 200px;*/
+  /*  position: sticky;*/
+  /*  left: 200px;*/
+  /*  border-right: 1px solid #ccc;*/
+  /*  height: 150px;*/
+  /*  background: ghostwhite;*/
+  /*  z-index: 3;*/
+  /*}*/
+
+  .td-col-fix {
+    z-index: 2;
+    height: 50px;
   }
 
-  /* Các cột thừa sau 7 ngày giữ đúng kích cỡ đó */
-  .custom-table th:nth-child(n+10),
-  .custom-table td:nth-child(n+10) {
-    min-width: calc((100% - 400px) / 7);
-    width: calc((100% - 400px) / 7);
+  .time-slot-cell {
+    z-index: 2;
+    position: sticky;
+    left: 200px;
+  }
+
+  .location-booking {
+    height: 50px;
+  }
+
+  .custom-table .th-location {
+    height: 150px;
+    background: ghostwhite;
+    z-index: 3;
+    width: 200px;
+    min-width: 200px;
+    max-width: 200px;
+    position: sticky;
+    left: 0;
+    border-right: 1px solid #ccc;
+  }
+
+  .custom-table .th-time {
+    height: 150px;
+    background: ghostwhite;
+    z-index: 3;
+    width: 200px;
+    min-width: 200px;
+    max-width: 200px;
+    position: sticky;
+    left: 0;
+    border-right: 1px solid #ccc;
+  }
+
+
+  .col-date-booking {
+      width: 200px;
+      height: 75px; /* Half of 150px for each row of the date/day header */
+      background-color: #f0f0f0; /* Grey background */
+      z-index: 1; /* Ensure these are behind sticky headers */
   }
 
 }
