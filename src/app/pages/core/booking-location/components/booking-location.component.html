@@ -86,14 +86,17 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr *ngFor="let i of [0, 1, 2]">
-                              <td class="td-col-fix" *ngIf="i === 0" [attr.rowspan]="timeSlots.length">Top header</td>
-                              <td class="td-col-fix time-slot-cell">{{ timeSlots[i] }}</td>
-                              <ng-container *ngFor="let day of timeDayWeek">
-                                <td class="location-booking"></td>
-                              </ng-container>
-                            </tr>
-                            <!-- thêm row -->
+                            <ng-container *ngFor="let header of headers">
+                              <tr *ngFor="let slot of timeSlots; let i = index">
+                                <td class="td-col-fix th-location" *ngIf="i === 0" [attr.rowspan]="timeSlots.length">
+                                  {{ header.name }}
+                                </td>
+                                <td class="td-col-fix th-time">{{ slot }}</td>
+                                <ng-container *ngFor="let day of timeDayWeek">
+                                  <td class="location-booking"></td>
+                                </ng-container>
+                              </tr>
+                            </ng-container>
                             </tbody>
                           </table>
                         </div>

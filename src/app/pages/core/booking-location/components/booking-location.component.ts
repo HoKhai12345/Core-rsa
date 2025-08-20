@@ -13,6 +13,18 @@ export class BookingLocationComponent implements OnInit {
     { label: 'Booking location', nameIcon: 'calculator', url: '/booking-location' }
   ]
 
+  headers = [
+    {
+      name: 'Top header'
+    },
+    {
+      name: 'Content'
+    },
+    {
+      name: 'Footer'
+    },
+  ]
+
   timeDayWeek= [
     {label: 'Thứ 2'},
     {label: 'Thứ 3'},

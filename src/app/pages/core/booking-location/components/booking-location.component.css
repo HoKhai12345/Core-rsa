@@ -37,7 +37,7 @@
   /* cell chung */
   .custom-table th,
   .custom-table td {
-    border: 1px solid whitesmoke;
+    border: 1px solid grey !important;
     padding: 8px;
     text-align: center;
     background: #fff;
@@ -48,7 +48,7 @@
   .custom-table thead th {
     position: sticky;
     top: 0;
-    z-index: 2;
+    z-index: 4;
     background: #f9f9f9;
   }
 
@@ -60,9 +60,8 @@
     max-width: 200px;
     position: sticky;
     left: 0;
-    /*z-index: 3;*/
     background: #fff;
-    border-right: 1px solid #ccc;
+    border-right: 1px solid grey;
   }
 
   /*.custom-table th:nth-child(2),*/
@@ -72,7 +71,6 @@
     max-width: 200px;
     position: sticky;
     left: 200px;
-    /*z-index: 3;*/
     background: #fff;
     border-right: 1px solid #ccc;
   }
@@ -95,10 +93,30 @@
     height: 50px;
   }
 
-  .time-slot-cell {
-    z-index: 2;
+  /* Cột 1 */
+  .custom-table th.th-location,
+  .custom-table td.td-col-fix:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 3;
+    background: #fff;
+    width: 200px;
+    min-width: 200px;
+    max-width: 200px;
+    border-right: 1px solid grey;
+  }
+
+  /* Cột 2 */
+  .custom-table th.th-time,
+  .custom-table td.time-slot-cell {
     position: sticky;
     left: 200px;
+    z-index: 3;
+    background: #fff;
+    width: 200px;
+    min-width: 200px;
+    max-width: 200px;
+    border-right: 1px solid grey;
   }
 
   .location-booking {
@@ -106,34 +124,36 @@
   }
 
   .custom-table .th-location {
-    height: 150px;
+    height: 100px;
     background: ghostwhite;
     z-index: 3;
-    width: 200px;
+    width: 199px;
     min-width: 200px;
     max-width: 200px;
     position: sticky;
-    left: 0;
-    border-right: 1px solid #ccc;
+    left: -1px;
+    border-right: 1px solid grey;
   }
 
   .custom-table .th-time {
-    height: 150px;
+    height: 100px;
     background: ghostwhite;
     z-index: 3;
-    width: 200px;
+    width: 199px;
     min-width: 200px;
     max-width: 200px;
     position: sticky;
     left: 0;
-    border-right: 1px solid #ccc;
+    border-right: 1px solid grey;
   }
 
 
   .col-date-booking {
       width: 200px;
-      height: 75px; /* Half of 150px for each row of the date/day header */
-      background-color: #f0f0f0; /* Grey background */
+      height: 50px; /* Half of 150px for each row of the date/day header */
+      /*background-color: darkseagreen !important; !* Grey background *!*/
+      border-radius: 8px;
+      color: black;
       z-index: 1; /* Ensure these are behind sticky headers */
   }
 
