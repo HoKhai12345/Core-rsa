@@ -10,3 +10,10 @@ export class RoleModel {
     this.status = data.status
   }
 }
+
+interface Role {
+  id: number;
+}
+interface Role {
+  name: string;
+}

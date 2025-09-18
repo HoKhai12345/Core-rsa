@@ -4,6 +4,9 @@ import {RoleService} from "../services/role.service";
 import {RoleModel} from "../../../../../models/role.model";
 import {CorePaginationConfig} from "../../../../../models/pagination.model";
 import {TranslateService} from "@ngx-translate/core";
+import {Subscription} from "rxjs";
+import {DialogService} from "../../../../../services/dialog.service";
+import {DialogRoleCreateComponent} from "../dialog/create/create.component";
 
 interface Filter {
     page: number,
@@ -47,14 +50,19 @@ export class RolesComponent implements OnInit {
     showItemsPerPage: true,
     showTotal: true
   };
+  private dataSubcription: Subscription;
   constructor(
+    private dialogService: DialogService,
     private roleService: RoleService,
     private translate: TranslateService
-  ) {}
+  ) {
+    this.dataSubcription = this.roleService.role$.subscribe(value => {
+      this.listRole = value;
+    })
+  }
 
   ngOnInit(): void {
     this.getListRole();
-
     document.addEventListener('click', (event) => {
       const target = event.target as HTMLElement;
       if (!target.closest('.action-dropdown')) {
@@ -62,6 +70,7 @@ export class RolesComponent implements OnInit {
       }
     });
   }
+
 
   getListRole() {
     const queries: {
@@ -80,7 +89,7 @@ export class RolesComponent implements OnInit {
     if (this.filter.status) {
       queries.status = this.filter.status
     }
-    this.roleService.index(queries).then((result: any) => {
+    this.roleService.index(queries).subscribe((result: any) => {
       this.listRole = result.roles;
       this.config.totalItems = result.total;
       this.config = { ...this.config };
@@ -127,6 +136,14 @@ export class RolesComponent implements OnInit {
         dropdown.style.top = (rect.top - dropdown.offsetHeight - 8) + 'px';
       }
     }, 0);
+  }
+
+  async openDialog() {
+    const result = await this.dialogService.open(DialogRoleCreateComponent);
+    if (result) {
+      console.log('Role created:', result);
+    }
+
   }
 
   closeAllDropdowns() {

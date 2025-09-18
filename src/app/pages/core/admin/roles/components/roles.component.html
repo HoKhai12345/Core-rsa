@@ -3,10 +3,15 @@
     <app-bread-crumbs [listBreadCrumbs]="breadcrumbs">
     </app-bread-crumbs>
   </div>
-  <div class="m-2 font-size-large">
-    <strong>{{ 'common.core.admin.roles.manageRole' | translate }}</strong>
+  <div class="flex items-center">
+    <div class="m-2 font-size-large">
+      <strong>{{ 'common.core.admin.roles.manageRole' | translate }}</strong>
+    </div>
+    <div class="ml-auto">
+      <button class="btn btn-primary" (click)="openDialog()">Open Dynamic Dialog</button>
+    </div>
   </div>
-  <div class="gap-4 flex mt-2">
+  <div class="gap-4 flex">
     <div class="card bg-base-100 sm:w-full shadow-sm">
       <div class="overflow-x-auto">
         <table class="table table-tr-custom custom-table">

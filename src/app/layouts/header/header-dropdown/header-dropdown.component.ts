@@ -4,12 +4,12 @@ import {startLoading, stopLoading} from "../../../store/shared/loading/loading.a
 import {select, Store} from "@ngrx/store";
 import {ToastService} from "../../../services/toast.service";
 import {Router} from "@angular/router";
-import {logout} from "../../../store/shared/auth/auth.action";
+import {logout, switchUser} from "../../../store/shared/auth/auth.action";
 import {BaseComponent} from "../../../components/base/base.component";
 import {Observable, publish} from "rxjs";
 import {AppState} from "../../../store/app.state";
 import {UserModel} from "../../../models/user.model";
-import {selectUser} from "../../../store/shared/auth/auth.selectors";
+import {selectOriginUser, selectUser} from "../../../store/shared/auth/auth.selectors";
 
 @Component({
   selector: 'app-header-dropdown',
@@ -18,6 +18,7 @@ import {selectUser} from "../../../store/shared/auth/auth.selectors";
 })
 export class HeaderDropdownComponent implements OnInit {
   currentUser$: Observable<UserModel> = this.store.pipe(select(selectUser));
+  originUser$: Observable<UserModel> = this.store.pipe(select(selectOriginUser))
   @Input()
   type: 'chat' | 'notification' | 'setupUser' | 'setting' | null = null;
   @Output() close = new EventEmitter<void>();
@@ -27,6 +28,10 @@ export class HeaderDropdownComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  switch() {
+    this.store.dispatch(switchUser({id: 2}))
+  }
 
   logOut() {
     this.store.dispatch(startLoading())

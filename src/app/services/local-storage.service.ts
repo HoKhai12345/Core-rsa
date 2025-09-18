@@ -5,7 +5,7 @@ import {UserModel} from "../models/user.model";
 @Injectable({providedIn: 'root'})
 
 export class LocalStorageService {
-
+  originUser = 'origin_user';
   userKey = 'current_user';
   tokenKey = 'token';
   prefix = environment.appPrefix
@@ -36,6 +36,11 @@ export class LocalStorageService {
 
   public getCurrentUser() {
     const currentUser: string | null = this.get(this.userKey);
+    return currentUser ? JSON.parse(currentUser) : null;
+  }
+
+  public getOriginUser() {
+    const currentUser: string | null = this.get(this.originUser);
     return currentUser ? JSON.parse(currentUser) : null;
   }
 }

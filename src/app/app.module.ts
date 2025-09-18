@@ -36,6 +36,8 @@ import {BaseComponent} from "./components/base/base.component";
 import { NgSelectModule } from '@ng-select/ng-select';
 import {AuthInterceptor} from "./interceptor/auth.interceptor";
 import {ForbiddenComponent} from "./components/forbidden/forbidden.component";
+import {DialogComponent} from "./components/dialog/dialog.component";
+import {DialogRoleCreateComponent} from "./pages/core/admin/roles/dialog/create/create.component";
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -61,7 +63,9 @@ export function appInitializerFactory(translate: TranslateService) {
     HeaderDropdownComponent,
     NotFoundComponent,
     ForbiddenComponent,
-    BaseComponent
+    BaseComponent,
+    DialogComponent,
+    DialogRoleCreateComponent
   ],
   imports: [
     BrowserModule,

@@ -10,13 +10,14 @@ export class LoadingInterceptor implements HttpInterceptor {
   constructor(private loadingService: LoadingService) {}
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    // Không bỏ qua auth request nữa
-    if (this.requests.length === 0) {
-      this.loadingService.show();
+    if (req.url.includes('/api/')) {
+      if (this.requests.length === 0) {
+        this.loadingService.show();
+      }
     }
 
     this.requests.push(req);
-    
+
     return next.handle(req).pipe(
       finalize(() => {
         this.requests = this.requests.filter(r => r !== req);

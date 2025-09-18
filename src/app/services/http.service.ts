@@ -19,10 +19,8 @@ export class HttpService {
 
   }
 
-  async get<T>(path: string, options: {}): Promise<T> {
-    return await firstValueFrom(
-      this.httpClient.get<T>(this._buildUrl(path), options)
-    )
+  get<T>(path: string, options: {}): Observable<T> {
+      return this.httpClient.get<T>(this._buildUrl(path), options)
   }
 
   async post<T>(path: string, body: {}, options: {}): Promise<T> {

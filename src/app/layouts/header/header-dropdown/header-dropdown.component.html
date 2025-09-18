@@ -9,6 +9,7 @@
     <div *ngSwitchCase="'setting'">
       <p class="text-sm font-semibold mb-2">{{ 'common.header.setupUser' | translate }}</p>
     </div>
+    <pre>{{ currentUser$ | async | json }}</pre>
     <div *ngSwitchCase="'setupUser'" class="w-100">
       <div class="flex gap-4 p-2 info-setup-user">
         <div class="avatar w-1/4">
@@ -17,11 +18,20 @@
         <div *ngIf="currentUser$ | async as user" class="title-name w-3/4 flex items-center font-size-large">
           <b class="ms-2">{{ user.name }}</b>
         </div>
+        <div *ngIf="originUser$ | async as user" class="title-name w-3/4 flex items-center font-size-large">
+          <b class="ms-2">{{ user.name }}</b>
+        </div>
       </div>
-      <div class="pt-2 flex">
-        <button class="info-view-user w-4/4 w-full flex items-center text-center font-size-middle btn mx-1">
+      <div class="pt-2 flex" *ngIf="(currentUser$ | async) === (originUser$ | async)">
+        <button class="info-view-user w-4/4 w-full flex items-center text-center font-size-middle btn mx-1" (click)="switch()">
           <app-svg-icon name="user-circle" class="w-6 h-6"></app-svg-icon>
-          <b class="ms-2">{{ 'common.header.infoUser' | translate }}</b>
+          <b class="ms-2">{{ 'common.header.switchUser' | translate }}</b>
+        </button>
+      </div>
+      <div class="pt-2 flex" *ngIf="(currentUser$ | async) !== (originUser$ | async)">
+        <button class="info-view-user w-4/4 w-full flex items-center text-center font-size-middle btn mx-1" (click)="switch()">
+          <app-svg-icon name="user-circle" class="w-6 h-6"></app-svg-icon>
+          <b class="ms-2">{{ 'common.header.backUser' | translate }}</b>
         </button>
       </div>
       <div class="pt-2 flex">

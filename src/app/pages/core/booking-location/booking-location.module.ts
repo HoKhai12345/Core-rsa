@@ -24,7 +24,7 @@ import {BookingLocationComponent} from "./components/booking-location.component"
     }),
     EffectsModule.forFeature([AuthEffects]),
     RouterModule.forChild([
-      {path: '', component: BookingLocationComponent}
+      {path: '', component: BookingLocationComponent},
     ])
   ],
   exports: [BookingLocationComponent]

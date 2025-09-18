@@ -42,6 +42,5 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.authService.restoreAuth();
   }
 
-  ngAfterViewInit(): void {
-  }
+  ngAfterViewInit(): void {}
 }

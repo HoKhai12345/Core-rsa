@@ -10,5 +10,14 @@ export const selectToken = createSelector(
 
 export const selectUser = createSelector(
   selectAuthState,
-  (state) => state.user
+  (state) => {
+    return state.user
+  }
 );
+
+export const selectOriginUser = createSelector(
+  selectAuthState,
+  (state) => {
+    return state.originUser
+  }
+)

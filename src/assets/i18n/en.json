@@ -13,6 +13,8 @@
         "message": "Message",
         "notification": "Notification"
       },
+      "switch": "Switch user",
+      "backUser": "Back user",
       "setupUser": "Setup user",
       "setting": "Setting",
       "message": "Message",

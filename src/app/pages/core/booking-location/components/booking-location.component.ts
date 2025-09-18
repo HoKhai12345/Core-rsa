@@ -42,6 +42,313 @@ export class BookingLocationComponent implements OnInit {
     {label: 'Chủ nhật'},
   ]
   timeSlots = ['Sáng', 'Chiều', 'Tối'];
+  listChannel = [
+    {
+      id: 1,
+      level: '1',
+      timeMorning: '222222',
+      timeAfternoon: '02225',
+      timeNight: '02222',
+      name: 'gggggg'
+    },
+    {
+      id: 2,
+      level: '1',
+      timeMorning: '222222',
+      timeAfternoon: '02225',
+      timeNight: '02222',
+      name: 'gggggg'
+    },
+    {
+      id: 3,
+      level: '1',
+      timeMorning: '222222',
+      timeAfternoon: '02225',
+      timeNight: '02222',
+      name: 'gggggg'
+    },
+    {
+      id: 4,
+      level: '1',
+      timeMorning: '222222',
+      timeAfternoon: '02225',
+      timeNight: '02222',
+      name: 'gggggg'
+    },
+    {
+      id: 4,
+      level: '1',
+      timeMorning: '222222',
+      timeAfternoon: '02225',
+      timeNight: '02222',
+      name: 'gggggg'
+    },
+    {
+      id: 4,
+      level: '1',
+      timeMorning: '222222',
+      timeAfternoon: '02225',
+      timeNight: '02222',
+      name: 'gggggg'
+    },
+    {
+      id: 4,
+      level: '1',
+      timeMorning: '222222',
+      timeAfternoon: '02225',
+      timeNight: '02222',
+      name: 'gggggg'
+    },
+    {
+      id: 4,
+      level: '1',
+      timeMorning: '222222',
+      timeAfternoon: '02225',
+      timeNight: '02222',
+      name: 'gggggg'
+    },{
+      id: 4,
+      level: '1',
+      timeMorning: '222222',
+      timeAfternoon: '02225',
+      timeNight: '02222',
+      name: 'gggggg'
+    },
+    {
+      id: 4,
+      level: '1',
+      timeMorning: '222222',
+      timeAfternoon: '02225',
+      timeNight: '02222',
+      name: 'gggggg'
+    },
+    {
+      id: 4,
+      level: '1',
+      timeMorning: '222222',
+      timeAfternoon: '02225',
+      timeNight: '02222',
+      name: 'gggggg'
+    },
+
+  ]
+
+  dayName = [{key: 'Monday', name: 'Thứ 2'}, {key: 'Tuesday', name: 'Thứ 3'},
+    {key: 'Wednesday', name: 'Thứ 4'}, {key: 'Thursday', name: 'Thứ 5'}, {key: 'Friday', name: 'Thứ 6'},
+    {key: 'Saturday', name: 'Thứ 7'}, {key: 'Sunday', name: 'Chủ Nhật'}
+  ];
+
+  dateTime = {
+    date: [
+      { label: "22-07",
+        value: 2207,
+        day: this.getDayName("Monday"),
+        dataBooking: {
+          morning: [{
+            id: 1,
+            status: 1,
+            name: 'booking',
+            timeFrom: '11:00'
+          }],
+          noon: [{
+            id: 2,
+            status: 1,
+            name: 'booking',
+            timeFrom: '11:00'
+          }],
+          dinner: [{
+            id: 3,
+            status: 1,
+            name: 'booking',
+            timeFrom: '11:00'
+          }]
+        }},
+      { label: "23-07",
+        value: 2207,
+        day: this.getDayName("Monday"),
+        dataBooking: {
+          morning: [{
+            id: 1,
+            status: 1,
+            name: 'booking',
+            timeFrom: '11:00'
+          }],
+          noon: [{
+            id: 2,
+            status: 1,
+            name: 'booking',
+            timeFrom: '11:00'
+          }],
+          dinner: [{
+            id: 3,
+            status: 1,
+            name: 'booking',
+            timeFrom: '11:00'
+          }]
+        }},
+      { label: "24-07",
+        value: 2207,
+        day: this.getDayName("Monday"),
+        dataBooking: {
+          morning: [{
+            id: 1,
+            status: 1,
+            name: 'booking',
+            timeFrom: '11:00'
+          }],
+          noon: [{
+            id: 2,
+            status: 1,
+            name: 'booking',
+            timeFrom: '11:00'
+          }],
+          dinner: [{
+            id: 3,
+            status: 1,
+            name: 'booking',
+            timeFrom: '11:00'
+          }]
+        }},
+      { label: "25-07",
+        value: 2207,
+        day: this.getDayName("Monday"),
+        dataBooking: {
+          morning: [{
+            id: 1,
+            status: 1,
+            name: 'booking',
+            timeFrom: '11:00'
+          }],
+          noon: [{
+            id: 2,
+            status: 1,
+            name: 'booking',
+            timeFrom: '11:00'
+          }],
+          dinner: [{
+            id: 3,
+            status: 1,
+            name: 'booking',
+            timeFrom: '11:00'
+          }]
+        }},
+      { label: "26-07",
+        value: 2207,
+        day: this.getDayName("Monday"),
+        dataBooking: {
+          morning: [{
+            id: 1,
+            status: 1,
+            name: 'booking',
+            timeFrom: '11:00'
+          }],
+          noon: [{
+            id: 2,
+            status: 1,
+            name: 'booking',
+            timeFrom: '11:00'
+          }],
+          dinner: [{
+            id: 3,
+            status: 1,
+            name: 'booking',
+            timeFrom: '11:00'
+          }]
+        }},
+      { label: "27-07",
+        value: 2207,
+        day: this.getDayName("Monday"),
+        dataBooking: {
+          morning: [{
+            id: 1,
+            status: 1,
+            name: 'booking',
+            timeFrom: '11:00'
+          }],
+          noon: [{
+            id: 2,
+            status: 1,
+            name: 'booking',
+            timeFrom: '11:00'
+          }],
+          dinner: [{
+            id: 3,
+            status: 1,
+            name: 'booking',
+            timeFrom: '11:00'
+          }]
+        }},
+      { label: "28-07",
+        value: 2207,
+        day: this.getDayName("Monday"),
+        dataBooking: {
+          morning: [{
+            id: 1,
+            status: 1,
+            name: 'booking',
+            timeFrom: '11:00'
+          }],
+          noon: [{
+            id: 2,
+            status: 1,
+            name: 'booking',
+            timeFrom: '11:00'
+          }],
+          dinner: [{
+            id: 3,
+            status: 1,
+            name: 'booking',
+            timeFrom: '11:00'
+          }]
+        }},
+      { label: "29-07",
+        value: 2207,
+        day: this.getDayName("Monday"),
+        dataBooking: {
+          morning: [{
+            id: 1,
+            status: 1,
+            name: 'booking',
+            timeFrom: '11:00'
+          }],
+          noon: [{
+            id: 2,
+            status: 1,
+            name: 'booking',
+            timeFrom: '11:00'
+          }],
+          dinner: [{
+            id: 3,
+            status: 1,
+            name: 'booking',
+            timeFrom: '11:00'
+          }]
+        }},
+      { label: "30-07",
+        value: 2207,
+        day: this.getDayName("Monday"),
+        dataBooking: {
+          morning: [{
+            id: 1,
+            status: 1,
+            name: 'booking',
+            timeFrom: '11:00'
+          }],
+          noon: [{
+            id: 2,
+            status: 1,
+            name: 'booking',
+            timeFrom: '11:00'
+          }],
+          dinner: [{
+            id: 3,
+            status: 1,
+            name: 'booking',
+            timeFrom: '11:00'
+          }]
+        }}
+    ]
+  }
   constructor() { }
 
   ngOnInit(): void {
@@ -49,6 +356,14 @@ export class BookingLocationComponent implements OnInit {
 
   onDateChange(event: Event) {
 
+  }
+
+  getDayName(dayName: string) {
+    console.log("this.dayName", this.dayName);
+    const day = this.dayName.find((item: any) => {
+      return item.key === dayName;
+    });
+    return day?.name ?? dayName;
   }
 
 }

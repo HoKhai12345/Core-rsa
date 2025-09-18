@@ -69,42 +69,116 @@
                     <div class="custom-table-scroll">
                       <div class="overflow-x-auto">
                         <div class="table-wrapper">
-                          <table class="custom-table">
-                            <thead>
-                            <tr>
-                              <th class="col-fixed th-location" rowspan="2">Vị trí</th>
-                              <th class="col-fixed th-time" rowspan="2">Khung giờ</th>
-                              <ng-container *ngFor="let day of timeDayWeek">
-                                <th class="col-date-booking" colspan="1">{{ '20/07/2024' }}</th>
-                              </ng-container>
-                            </tr>
-                            <tr>
-                              <ng-container *ngFor="let day of timeDayWeek">
-                                <th class="col-date-booking" colspan="1">{{ day.label }}</th>
-                              </ng-container>
-                              <!-- thêm nhiều ngày nữa thì scroll -->
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <ng-container *ngFor="let header of headers">
-                              <tr *ngFor="let slot of timeSlots; let i = index">
-                                <td class="td-col-fix th-location" *ngIf="i === 0" [attr.rowspan]="timeSlots.length">
-                                  {{ header.name }}
-                                </td>
-                                <td class="td-col-fix th-time">{{ slot }}</td>
-                                <ng-container *ngFor="let day of timeDayWeek">
-                                  <td class="location-booking"></td>
-                                </ng-container>
-                              </tr>
-                            </ng-container>
-                            </tbody>
-                          </table>
+                          <!-- CARD -->
+                          <div class="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
+                            <h2 class="mb-3 text-xl font-semibold">Booking Calendar</h2>
+
+                            <!-- SCROLLER -->
+                            <div
+                              class="relative h-[420px] overflow-auto rounded-lg border border-gray-200 [scrollbar-gutter:stable] overscroll-contain"
+                            >
+                              <!-- Bảng: đặt min-width đủ lớn để có scroll ngang -->
+                              <div class="relative max-h-[400px] overflow-auto border border-gray-300">
+                                <table class="border-collapse table-fixed min-w-[1200px]">
+                                  <thead>
+                                  <tr>
+                                    <!-- Cột cố định -->
+                                    <th class="sticky left-0 top-0 z-20 bg-white border border-gray-300 w-40">Chuyên mục</th>
+                                    <th class="sticky left-40 top-0 z-20 bg-white border border-gray-300 w-40">Khung giờ</th>
+
+                                    <!-- Nhiều ngày để scroll ngang -->
+                                    <th class="sticky top-0 z-10 bg-white border border-gray-300 w-40">Thứ 5<br>21/08</th>
+                                    <th class="sticky top-0 z-10 bg-white border border-gray-300 w-40">Thứ 6<br>22/08</th>
+                                    <th class="sticky top-0 z-10 bg-white border border-gray-300 w-40">Thứ 7<br>23/08</th>
+                                    <th class="sticky top-0 z-10 bg-white border border-gray-300 w-40 text-red-500">Chủ Nhật<br>24/08</th>
+                                    <th class="sticky top-0 z-10 bg-white border border-gray-300 w-40">Thứ 2<br>25/08</th>
+                                    <th class="sticky top-0 z-10 bg-white border border-gray-300 w-40">Thứ 3<br>26/08</th>
+                                    <th class="sticky top-0 z-10 bg-white border border-gray-300 w-40">Thứ 4<br>27/08</th>
+                                    <th class="sticky top-0 z-10 bg-white border border-gray-300 w-40">Thứ 5<br>28/08</th>
+                                    <th class="sticky top-0 z-10 bg-white border border-gray-300 w-40">Thứ 6<br>29/08</th>
+                                  </tr>
+                                  </thead>
+                                  <tbody>
+                                  <!-- Tạo nhiều rows để có scroll dọc -->
+                                  <tr>
+                                    <td class="sticky left-0 bg-white border border-gray-300">BĐS</td>
+                                    <td class="sticky left-40 bg-white border border-gray-300">08h00 - 11h00</td>
+                                    <td class="border border-gray-300">Data</td>
+                                    <td class="border border-gray-300">Data</td>
+                                    <td class="border border-gray-300">Data</td>
+                                    <td class="border border-gray-300">Data</td>
+                                    <td class="border border-gray-300">Data</td>
+                                    <td class="border border-gray-300">Data</td>
+                                    <td class="border border-gray-300">Data</td>
+                                    <td class="border border-gray-300">Data</td>
+                                    <td class="border border-gray-300">Data</td>
+                                  </tr>
+                                  <tr>
+                                    <td class="sticky left-0 bg-white border border-gray-300">Khóa học</td>
+                                    <td class="sticky left-40 bg-white border border-gray-300">13h00 - 16h00</td>
+                                    <td class="border border-gray-300"></td>
+                                    <td class="border border-gray-300"></td>
+                                    <td class="border border-gray-300"></td>
+                                    <td class="border border-gray-300"></td>
+                                    <td class="border border-gray-300"></td>
+                                    <td class="border border-gray-300"></td>
+                                    <td class="border border-gray-300"></td>
+                                    <td class="border border-gray-300"></td>
+                                    <td class="border border-gray-300"></td>
+                                  </tr>
+
+                                  <!-- Thêm nhiều rows giả để test scroll dọc -->
+                                  <tr>
+                                    <td class="sticky left-0 bg-white border border-gray-300">Khách hàng A</td>
+                                    <td class="sticky left-40 bg-white border border-gray-300">16h00 - 18h00</td>
+                                    <td class="border border-gray-300"></td>
+                                    <td class="border border-gray-300"></td>
+                                    <td class="border border-gray-300"></td>
+                                    <td class="border border-gray-300"></td>
+                                    <td class="border border-gray-300"></td>
+                                    <td class="border border-gray-300"></td>
+                                    <td class="border border-gray-300"></td>
+                                    <td class="border border-gray-300"></td>
+                                    <td class="border border-gray-300"></td>
+                                  </tr>
+                                  <tr>
+                                    <td class="sticky left-0 bg-white border border-gray-300">Khách hàng B</td>
+                                    <td class="sticky left-40 bg-white border border-gray-300">19h00 - 21h00</td>
+                                    <td class="border border-gray-300"></td>
+                                    <td class="border border-gray-300"></td>
+                                    <td class="border border-gray-300"></td>
+                                    <td class="border border-gray-300"></td>
+                                    <td class="border border-gray-300"></td>
+                                    <td class="border border-gray-300"></td>
+                                    <td class="border border-gray-300"></td>
+                                    <td class="border border-gray-300"></td>
+                                    <td class="border border-gray-300"></td>
+                                  </tr>
+                                  <tr>
+                                    <td class="sticky left-0 bg-white border border-gray-300">Khách hàng C</td>
+                                    <td class="sticky left-40 bg-white border border-gray-300">08h00 - 11h00</td>
+                                    <td class="border border-gray-300"></td>
+                                    <td class="border border-gray-300"></td>
+                                    <td class="border border-gray-300"></td>
+                                    <td class="border border-gray-300"></td>
+                                    <td class="border border-gray-300"></td>
+                                    <td class="border border-gray-300"></td>
+                                    <td class="border border-gray-300"></td>
+                                    <td class="border border-gray-300"></td>
+                                    <td class="border border-gray-300"></td>
+                                  </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+
+                            </div>
+                          </div>
+
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-
             </div>
           </div>
         </div>

@@ -6,13 +6,31 @@ import {AuthenticationService} from "../../../pages/auth/services/authentication
 import {HttpErrorResponse} from "@angular/common/http";
 import {LocalStorageService} from "../../../services/local-storage.service";
 import {Router} from "@angular/router";
-import * as ToggleAction from '../toast/toast.action'
 import {ToastService} from "../../../services/toast.service";
 import {TranslateService} from "@ngx-translate/core";
 import {LoadingService} from "../../../services/loading.service";
 
 @Injectable()
 export class AuthEffects {
+
+  switch$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(AuthActions.switchUser),
+      tap(action => this.loadingService.show()),
+      tap(action => console.log('Reducer switch')),
+      exhaustMap(({id}: {id: number}) =>
+        from(this.authService.switch({id})).pipe(
+          map(res => {
+            if (res) {
+              this.toastService.success(this.trans.instant('common.auth.login.notification.loginSuccess'), this.trans.instant('common.alert'));
+            }
+            return AuthActions.switchSuccess({user: res.data.user, token: res.data.accessToken})
+          })
+        )
+      )
+    )
+  )
+
   login$ = createEffect(() =>
     this.actions$.pipe(
       ofType(AuthActions.login),
@@ -56,11 +74,29 @@ export class AuthEffects {
     this.actions$.pipe(
       ofType(AuthActions.loginSuccess),
       tap(({ user, token }) => {
-      this.localStorage.set('current_user', JSON.stringify(user));
-      this.localStorage.set('token', token);
+      const infoUser = {
+        user, token
+      }
+        this.localStorage.set('origin_user', JSON.stringify(infoUser));
+        this.localStorage.set('current_user', JSON.stringify(infoUser));
       })
     ),
     { dispatch: false } // Đặt dispatch là false vì effect này không cần dispatch action mới
+  )
+
+  saveAuthDataSwitch$ = createEffect(() =>
+      this.actions$.pipe(
+        ofType(AuthActions.switchSuccess),
+        tap(({ user, token }) => {
+          const infoUser = {
+            user, token
+          }
+          this.localStorage.set('current_user', JSON.stringify(infoUser));
+          // this.authService.restoreAuth();
+          this.router.navigate(['core/dashboard']);
+        })
+      ),
+    { dispatch: false }
   )
 
   /** LOGOUT */
@@ -71,6 +107,7 @@ export class AuthEffects {
         tap(() => {
           this.localStorage.delete('token');
           this.localStorage.delete('current_user');
+          this.localStorage.delete('origin_user');
           this.router.navigate(['/auth/login']);
         })
       ),
