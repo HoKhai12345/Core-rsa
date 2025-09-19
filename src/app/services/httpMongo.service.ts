@@ -13,14 +13,14 @@ interface ApiResponse {
 
 export class HttpService {
 
-  apiServer = environment.apiServer.mysql;
+  apiServer = environment.apiServer.mongoDb;
 
   constructor(private httpClient: HttpClient) {
 
   }
 
   get<T>(path: string, options: {}): Observable<T> {
-      return this.httpClient.get<T>(this._buildUrl(path), options)
+    return this.httpClient.get<T>(this._buildUrl(path), options)
   }
 
   async post<T>(path: string, body: {}, options: {}): Promise<T> {
@@ -43,7 +43,6 @@ export class HttpService {
 
   _buildUrl(path: string) {
     let baseUrl = '';
-    console.log("___this.apiServer___", this.apiServer);
     if (this.apiServer.host) {
       baseUrl = this.apiServer.ssl === true ? 'https://' : 'http://';
       baseUrl += this.apiServer.host;
@@ -51,9 +50,7 @@ export class HttpService {
     if (this.apiServer.prefix !== '') {
       baseUrl += '/' + this.apiServer.prefix;
     }
-
-    console.log("___________________________________________", baseUrl + '/' + path);
     return baseUrl + '/' + path;
   }
 
-  }
+}

@@ -61,7 +61,6 @@ export class AuthenticationService{
   restoreAuth() {
     const userInfo = this.localStorageService.getCurrentUser();
     const originUserInfo = this.localStorageService.getOriginUser();
-    console.log('======================originUser===================', originUserInfo);
     const originUser = originUserInfo?.user;
     const originToken = originUserInfo?.token;
     const user = userInfo?.user;

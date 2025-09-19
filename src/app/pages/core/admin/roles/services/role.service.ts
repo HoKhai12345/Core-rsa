@@ -26,7 +26,7 @@ export class RoleService {
     }
     const path = this.apiService.paths.admin.role;
     return this.httpService.get<Role[]>(path, options).pipe(map(rs => {
-      console.log("rs", rs[0]);
+      console.log("rs", rs);
       return rs;
     }))
   }

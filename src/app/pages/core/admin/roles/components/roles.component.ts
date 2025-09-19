@@ -90,7 +90,7 @@ export class RolesComponent implements OnInit {
       queries.status = this.filter.status
     }
     this.roleService.index(queries).subscribe((result: any) => {
-      this.listRole = result.roles;
+      this.listRole = result.data.roles;
       this.config.totalItems = result.total;
       this.config = { ...this.config };
     })
