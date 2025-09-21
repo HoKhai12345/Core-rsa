@@ -42,9 +42,11 @@ export class AuthEffects {
             if (res) {
               this.toastService.success(this.trans.instant('common.auth.login.notification.loginSuccess'), this.trans.instant('common.alert'));
             }
-            return AuthActions.loginSuccess({user: res.data.user, token: res.data.accessToken})
+            console.log("==========", res)
+            return AuthActions.loginSuccess({user: res.data.user, token: res.data.token})
           }),
           tap(() => {
+            console.log("loginSuccess");
             this.router.navigate(['core/dashboard']);
           }),
           catchError((error: HttpErrorResponse) => {

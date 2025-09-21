@@ -8,7 +8,7 @@ export const environment = {
       prefix: 'api',
       paths: {
         auth: {
-          login: 'login',
+          login: 'auth/login',
           switch: 'switch'
         },
         admin: {

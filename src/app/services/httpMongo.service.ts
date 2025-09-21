@@ -11,7 +11,7 @@ interface ApiResponse {
 
 @Injectable({providedIn: 'root'})
 
-export class HttpService {
+export class HttpMongoService {
 
   apiServer = environment.apiServer.mongoDb;
 

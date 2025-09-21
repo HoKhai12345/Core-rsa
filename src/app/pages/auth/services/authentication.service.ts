@@ -8,6 +8,7 @@ import * as AuthActions from "../../../store/shared/auth/auth.action"
 import {UserModel} from "../../../models/user.model";
 import {BaseComponent} from "../../../components/base/base.component";
 import {selectAuthState, selectOriginUser, selectUser} from "../../../store/shared/auth/auth.selectors";
+import {HttpMongoService} from "../../../services/httpMongo.service";
 
 @Injectable({providedIn: 'root'})
 
@@ -18,20 +19,20 @@ export class AuthenticationService{
   originUser = null;
   constructor(
     private httpService: HttpService,
+    private httpMongoService: HttpMongoService,
     private localStorageService: LocalStorageService,
     private store: Store
   ) {
     this.store.select(selectAuthState).pipe().subscribe(result => {
       this.currentUser = result.user;
       this.originUser = result.originUser;
-      console.log("result", result);
     })
   }
 
   login(data: { username: string, password: string }): Promise<any> {
     const path = this.apiService.paths.auth.login;
-    return this.httpService.post(path, data, {}).then((result: any) => {
-      if (result.status === 1) {
+    return this.httpMongoService.post(path, data, {}).then((result: any) => {
+      if (result.status === 200) {
         return result
       } else {
         throw new Error(result.message);
