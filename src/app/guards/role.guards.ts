@@ -3,6 +3,7 @@ import {ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTre
 import {selectAuthState} from "../store/shared/auth/auth.selectors";
 import {Store} from "@ngrx/store";
 import {map, take} from "rxjs";
+import {globalConfig} from "../global";
 
 @Injectable({providedIn: 'root'})
 export class RoleGuards implements CanActivate {
@@ -17,7 +18,7 @@ export class RoleGuards implements CanActivate {
       take(1),
       map(auth => {
         if (auth.isAuthenticated && auth.token) {
-          if (auth.user.role.id === 1) {
+          if (auth.user?.roleIds === globalConfig.roles.admin) {
               return true
           }
           return this.router.navigate(['error-403'])

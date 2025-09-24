@@ -11,7 +11,11 @@ export class UserModel {
     public isActive: string,
     public createdAt: string,
     public updatedAt: string,
-    public role: RoleModel
+    public role: RoleModel,
+
+
+
+    public roleIds: string[]
   ) {
   }
 }

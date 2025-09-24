@@ -53,7 +53,7 @@
           </li>
         </ul>
       </li>
-      <ng-container *ngIf="(currentUser$ | async)?.role?.id == globalConfig.roles.admin">
+      <ng-container *ngIf="(currentUser$ | async)?.roleIds?.includes(globalConfig.roles.admin)">
         <li class="" (click)="redirect('core/dashboard')">
           <strong>Admin</strong>
         </li>
