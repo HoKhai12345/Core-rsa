@@ -1,8 +1,10 @@
-import { Injectable, ComponentFactoryResolver, ApplicationRef, Injector, Type } from '@angular/core';
+import {Injectable, ComponentFactoryResolver, ApplicationRef, Injector, Type, ComponentRef} from '@angular/core';
 import {DialogComponent} from "../components/dialog/dialog.component";
 
 @Injectable({ providedIn: 'root' })
 export class DialogService {
+  private dialogRef?: ComponentRef<DialogComponent>;
+
   constructor(
     private resolver: ComponentFactoryResolver,
     private appRef: ApplicationRef,
@@ -12,22 +14,37 @@ export class DialogService {
   open<T>(component: Type<T>): Promise<boolean> {
     return new Promise((resolve) => {
       const dialogFactory = this.resolver.resolveComponentFactory(DialogComponent);
-      const dialogRef = dialogFactory.create(this.injector);
+      this.dialogRef = dialogFactory.create(this.injector);
 
       // attach dialog to DOM
-      this.appRef.attachView(dialogRef.hostView);
-      document.body.appendChild(dialogRef.location.nativeElement);
+      this.appRef.attachView(this.dialogRef.hostView);
+      document.body.appendChild(this.dialogRef.location.nativeElement);
 
       // render custom component into dialog
       const contentFactory = this.resolver.resolveComponentFactory(component);
-      const contentRef = dialogRef.instance.contentHost.createComponent(contentFactory);
+      const contentRef = this.dialogRef.instance.contentHost.createComponent(contentFactory);
 
-      dialogRef.instance.closed.subscribe((result: boolean) => {
+      // listen close event
+      this.dialogRef.instance.closed.subscribe((result: boolean) => {
         resolve(result);
-        this.appRef.detachView(dialogRef.hostView);
-        dialogRef.destroy();
-        contentRef.destroy();
+        this.cleanup(contentRef);
       });
     });
+  }
+
+  close(result: boolean = false) {
+    if (this.dialogRef) {
+      // Gọi thẳng close() của DialogComponent
+      this.dialogRef.instance.close(result);
+    }
+  }
+
+  private cleanup(contentRef: any) {
+    if (this.dialogRef) {
+      this.appRef.detachView(this.dialogRef.hostView);
+      this.dialogRef.destroy();
+      contentRef.destroy();
+      this.dialogRef = undefined;
+    }
   }
 }

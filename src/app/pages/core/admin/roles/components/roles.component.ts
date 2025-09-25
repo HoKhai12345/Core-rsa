@@ -86,7 +86,6 @@ export class RolesComponent implements OnInit {
   }
 
   getListRole() {
-    console.log("____this.filter.page____", this.filter.page);
     const queries: {
       page: number;
       limit: number;
@@ -105,7 +104,7 @@ export class RolesComponent implements OnInit {
       {
         relativeTo: this.route,
         queryParams: queries,
-        queryParamsHandling: 'merge' // Giữ lại các params khác nếu có
+        queryParamsHandling: 'merge'
       }
   );
     this.roleService.index(queries).subscribe((result: any) => {
@@ -116,7 +115,6 @@ export class RolesComponent implements OnInit {
   }
 
   pageChange(page: number) {
-    console.log("page", page);
       this.filter.page = page;
       this.getListRole();
   }

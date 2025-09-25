@@ -21,6 +21,7 @@ export class RoleService {
     return this.httpService.post<any>(path, body, options).pipe(map(rs => {
       if (rs.status == 200) {
         const current = this._role.getValue();
+        console.log("current", current);
         const updated = [...current, body];
         this._role.next(updated);
       }
@@ -33,8 +34,10 @@ export class RoleService {
       params: params
     }
     const path = this.apiService.paths.admin.role.list;
-    return this.httpService.get<Role[]>(path, options).pipe(map(rs => {
-      console.log("rs", rs);
+    return this.httpService.get<any>(path, options).pipe(map(rs => {
+      if (rs.status == 200) {
+        this._role.next(rs?.data?.role?.items);
+      }
       return rs;
     }))
   }

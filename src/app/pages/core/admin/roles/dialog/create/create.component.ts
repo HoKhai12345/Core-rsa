@@ -1,6 +1,9 @@
 import {Component, EventEmitter, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {RoleService} from "../../services/role.service";
+import {DialogService} from "../../../../../../services/dialog.service";
+import {ToastService} from "../../../../../../services/toast.service";
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-dialog-role-create',
@@ -14,6 +17,9 @@ export class DialogRoleCreateComponent {
   form: FormGroup;
 
   constructor(private fb: FormBuilder,
+              private dialogService: DialogService,
+              private toastService: ToastService,
+              private trans: TranslateService,
               private roleService: RoleService) {
     this.form = this.fb.group({
       name: ['', Validators.required]
@@ -21,7 +27,7 @@ export class DialogRoleCreateComponent {
   }
 
   close() {
-    this.closeDialog.emit();
+    this.dialogService.close(false);
   }
 
   save() {
@@ -30,8 +36,10 @@ export class DialogRoleCreateComponent {
     }
     const role = this.form.value;
     this.roleService.createRole(role).subscribe((result) => {
-      console.log("____result____", result);
-      this.closeDialog.emit(result);
+      if(result.status === 200) {
+        this.toastService.success('Tạo role thành công!', this.trans.instant('common.alert'));
+        this.dialogService.close(result?.data?.role);
+      }
     });
 
   }
