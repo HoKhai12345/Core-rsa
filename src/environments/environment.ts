@@ -24,6 +24,12 @@ export const environment = {
         driver: {
           list: 'api/drivers',
           detail: 'api/drivers/{DRIVER_ID}'
+        },
+        admin: {
+          role: {
+            list: 'roles/list',
+            create: 'roles/create'
+          }
         }
       }
     }

@@ -29,19 +29,16 @@ export class AuthenticationService{
     })
   }
 
-  login(data: { username: string, password: string }): Promise<any> {
+  login(data: { username: string, password: string }): Observable<any> {
     const path = this.apiService.paths.auth.login;
-    return this.httpMongoService.post(path, data, {}).then((result: any) => {
+    return this.httpMongoService.post(path, data, {}).pipe((result: any) => {
       if (result.status === 200) {
         return result
       } else {
         throw new Error(result.message);
         return null;
       }
-    }).catch((err) => {
-      console.warn("err", err);
-      return null;
-    });
+    })
   }
 
   switch(data: { id: number }): Promise<any> {

@@ -23,10 +23,8 @@ export class HttpMongoService {
     return this.httpClient.get<T>(this._buildUrl(path), options)
   }
 
-  async post<T>(path: string, body: {}, options: {}): Promise<T> {
-    return await firstValueFrom(
-      this.httpClient.post<T>(this._buildUrl(path), body, options)
-    )
+  post<T>(path: string, body: {}, options: {}): Observable<T> {
+    return this.httpClient.post<T>(this._buildUrl(path), body, options)
   }
 
   async put<T>(path: string, body: {}, options: {}): Promise<T> {

@@ -7,6 +7,7 @@ import {TranslateService} from "@ngx-translate/core";
 import {Subscription} from "rxjs";
 import {DialogService} from "../../../../../services/dialog.service";
 import {DialogRoleCreateComponent} from "../dialog/create/create.component";
+import {ActivatedRoute, Router} from "@angular/router";
 
 interface Filter {
     page: number,
@@ -54,7 +55,9 @@ export class RolesComponent implements OnInit {
   constructor(
     private dialogService: DialogService,
     private roleService: RoleService,
-    private translate: TranslateService
+    private route: ActivatedRoute,
+    private router: Router,
+  private translate: TranslateService
   ) {
     this.dataSubcription = this.roleService.role$.subscribe(value => {
       this.listRole = value;
@@ -63,6 +66,7 @@ export class RolesComponent implements OnInit {
 
   ngOnInit(): void {
     this.getListRole();
+    this.setParams();
     document.addEventListener('click', (event) => {
       const target = event.target as HTMLElement;
       if (!target.closest('.action-dropdown')) {
@@ -71,32 +75,48 @@ export class RolesComponent implements OnInit {
     });
   }
 
+  setParams() {
+     this.route.queryParams.subscribe(params => {
+       this.filter.page = parseInt(params['page'], 10) || 1;
+       this.filter.limit = parseInt(params['limit'], 10) || 10;
+       // Đọc các trường tùy chọn. Nếu không có, giữ nguyên giá trị mặc định ('') hoặc undefined.
+       this.filter.name = params['name'] || '';
+       this.getListRole(); // Tải dữ liệu sau khi filter được cập nhật
+    });
+  }
 
   getListRole() {
+    console.log("____this.filter.page____", this.filter.page);
     const queries: {
-      offset: number;
+      page: number;
       limit: number;
       name?: string;
       status?: number;
     } = {
-      offset: (this.filter.page - 1) * this.filter.limit,
+      page: this.filter.page,
       limit: this.filter.limit,
     };
     if (this.filter.name !== '') {
       queries.name = this.filter.name
     }
 
-    if (this.filter.status) {
-      queries.status = this.filter.status
-    }
+    this.router.navigate(
+      [],
+      {
+        relativeTo: this.route,
+        queryParams: queries,
+        queryParamsHandling: 'merge' // Giữ lại các params khác nếu có
+      }
+  );
     this.roleService.index(queries).subscribe((result: any) => {
-      this.listRole = result.data.roles;
-      this.config.totalItems = result.total;
+      this.listRole = result.data.role?.items ?? [];
+      this.config.totalItems = result.data.role.totalCount ?? 0;
       this.config = { ...this.config };
     })
   }
 
   pageChange(page: number) {
+    console.log("page", page);
       this.filter.page = page;
       this.getListRole();
   }

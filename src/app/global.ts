@@ -1,6 +1,6 @@
 export const globalConfig =  {
   roles: {
-    admin: '68d2b2696d33007a950537a3'
+    admin: '68d116cf551884267ec1b84e'
     // admin: 1
   }
 }

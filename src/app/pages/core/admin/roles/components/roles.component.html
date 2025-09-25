@@ -24,7 +24,7 @@
             </th>
             <th class="id-column">{{ 'common.core.admin.roles.id' | translate }}</th>
             <th class="name-column text-center">{{ 'common.core.admin.roles.name' | translate }}</th>
-            <th class="status-column">{{ 'common.core.admin.roles.status' | translate }}</th>
+<!--            <th class="status-column">{{ 'common.core.admin.roles.status' | translate }}</th>-->
             <th class="action-column"></th>
           </tr>
           </thead>
@@ -39,9 +39,9 @@
               {{ role.id }}
             </td>
             <td class="name-column text-center">{{ role.name }}</td>
-            <td class="status-column text-center">
-              <div appStatusRolesDirective [status]="role.status"></div>
-            </td>
+<!--            <td class="status-column text-center">-->
+<!--              <div appStatusRolesDirective [status]="role.status"></div>-->
+<!--            </td>-->
             <td class="action-column">
 
               <div class="dropdown dropdown-left">
